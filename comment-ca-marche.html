@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Découvrez comment Factory Eat optimise votre visibilité Uber Eats en 4 étapes simples : audit, photos pro, optimisation, suivi.">
+    <title>Comment ça marche - Factory Eat</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* How It Works Page Styles */
+        .page-header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark) 100%);
+            color: var(--color-white);
+            padding: var(--space-3xl) 0 var(--space-2xl);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            color: var(--color-white);
+            margin-bottom: var(--space-md);
+        }
+
+        .page-header p {
+            font-size: var(--fs-xl);
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: var(--space-xl) 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--color-primary), var(--color-success));
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--space-3xl);
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: calc(50% - 50px);
+            background: var(--color-white);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-base);
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .timeline-number {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--fs-3xl);
+            font-weight: 700;
+            color: var(--color-white);
+            box-shadow: var(--shadow-lg);
+            z-index: 2;
+        }
+
+        .timeline-icon {
+            font-size: var(--fs-5xl);
+            margin-bottom: var(--space-md);
+            display: block;
+        }
+
+        .timeline-content h3 {
+            color: var(--color-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .timeline-content p {
+            color: var(--color-dark-light);
+            line-height: 1.7;
+        }
+
+        .timeline-details {
+            margin-top: var(--space-md);
+            padding-top: var(--space-md);
+            border-top: 2px solid var(--color-light-gray);
+        }
+
+        .timeline-details ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-details li {
+            padding: var(--space-xs) 0;
+            padding-left: var(--space-lg);
+            position: relative;
+        }
+
+        .timeline-details li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-success);
+            font-weight: 700;
+        }
+
+        .process-stats {
+            background: var(--color-light-gray);
+            padding: var(--space-2xl) 0;
+            margin-top: var(--space-3xl);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-lg);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: var(--space-lg);
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-number {
+            font-size: var(--fs-5xl);
+            font-weight: 700;
+            color: var(--color-primary);
+            display: block;
+            margin-bottom: var(--space-xs);
+        }
+
+        .stat-label {
+            color: var(--color-dark-light);
+            font-size: var(--fs-base);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 40px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                flex-direction: row;
+            }
+
+            .timeline-content {
+                width: calc(100% - 100px);
+                margin-left: auto;
+            }
+
+            .timeline-number {
+                left: 40px;
+                width: 60px;
+                height: 60px;
+                font-size: var(--fs-2xl);
+            }
+
+            .timeline-icon {
+                font-size: var(--fs-4xl);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                🍽️ Factory Eat
+            </a>
+            <button class="navbar-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="comment-ca-marche.html" class="active">Comment ça marche</a></li>
+                <li><a href="nos-partenaires.html">Nos Partenaires</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" class="btn btn-primary btn-sm">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Comment ça marche ?</h1>
+            <p>4 étapes simples pour transformer votre visibilité Uber Eats et booster vos ventes</p>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="section">
+        <div class="container">
+            <div class="timeline">
+                <!-- Step 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <span class="timeline-icon">🔍</span>
+                        <h3>Audit gratuit de votre fiche Uber Eats</h3>
+                        <p>
+                            Nous analysons en profondeur votre présence actuelle sur Uber Eats :
+                            positionnement, photos, descriptions, prix, zones de livraison, et performances.
+                        </p>
+                        <div class="timeline-details">
+                            <ul>
+                                <li>Analyse de votre visibilité algorithmique</li>
+                                <li>Étude de la concurrence locale</li>
+                                <li>Identification des points d'amélioration</li>
+                                <li>Rapport détaillé sous 48h</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <span class="timeline-icon">📸</span>
+                        <h3>Shooting photos professionnelles</h3>
+                        <p>
+                            Nos photographes experts viennent dans votre restaurant pour capturer
+                            VOS plats sous leur meilleur jour. Des visuels qui donnent faim et convertissent.
+                        </p>
+                        <div class="timeline-details">
+                            <ul>
+                                <li>Photographe professionnel sur place</li>
+                                <li>20-30 photos haute qualité de vos plats</li>
+                                <li>Retouche et optimisation pour mobile</li>
+                                <li>Livraison sous 5 jours ouvrés</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <span class="timeline-icon">⚙️</span>
+                        <h3>Optimisation complète</h3>
+                        <p>
+                            Nous optimisons tous les aspects de votre fiche : descriptions SEO,
+                            prix dynamiques, zones et horaires de livraison, promos ciblées.
+                        </p>
+                        <div class="timeline-details">
+                            <ul>
+                                <li>Descriptions optimisées pour l'algorithme</li>
+                                <li>Stratégie de prix dynamique</li>
+                                <li>Optimisation zones/horaires de livraison</li>
+                                <li>Mise en place de promos data-driven</li>
+                                <li>Gestion des avis clients</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-content">
+                        <span class="timeline-icon">📊</span>
+                        <h3>Suivi et ajustements continus</h3>
+                        <p>
+                            Nous suivons vos performances en temps réel et ajustons la stratégie
+                            pour maximiser vos résultats mois après mois.
+                        </p>
+                        <div class="timeline-details">
+                            <ul>
+                                <li>Dashboard de suivi en temps réel</li>
+                                <li>Rapports mensuels détaillés</li>
+                                <li>Ajustements stratégiques réguliers</li>
+                                <li>Support 7j/7 par WhatsApp</li>
+                                <li>Optimisation continue de l'algorithme</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Stats -->
+    <section class="process-stats">
+        <div class="container">
+            <h2 class="text-center mb-xl">Nos résultats en chiffres</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">48h</span>
+                    <span class="stat-label">Délai audit gratuit</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">+30%</span>
+                    <span class="stat-label">Commandes en moyenne</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">7j/7</span>
+                    <span class="stat-label">Support disponible</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Restaurants partenaires</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prêt à commencer ?</h2>
+                <p>Demandez votre audit gratuit dès maintenant</p>
+                <a href="contact.html" class="btn btn-success btn-lg">Demander un audit gratuit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Factory Eat</h4>
+                    <p>Optimisation de visibilité Uber Eats pour restaurants physiques</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="comment-ca-marche.html">Comment ça marche</a></li>
+                        <li><a href="nos-partenaires.html">Nos Partenaires</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: contact@factory-eat.fr</p>
+                    <p>Tél: +33 1 XX XX XX XX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Factory Eat. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCCSTJZ2DP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VCCSTJZ2DP');
+    </script>
+</body>
+
+</html>

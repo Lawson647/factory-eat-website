@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contactez Factory Eat pour booster vos ventes Uber Eats. Demandez votre audit gratuit dès maintenant.">
+    <title>Contact - Factory Eat</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/contact.css">
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("eY4L2WOlxyF-NUakn");
+        })();
+    </script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                🍽️ Factory Eat
+            </a>
+            <button class="navbar-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="comment-ca-marche.html">Comment ça marche</a></li>
+                <li><a href="nos-partenaires.html">Nos Partenaires</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" class="btn btn-primary btn-sm active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contactez-nous</h1>
+            <p>Prêt à booster vos ventes Uber Eats ? Demandez votre audit gratuit</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h2>Demander un audit gratuit</h2>
+                    <p class="form-intro">Remplissez ce formulaire et nous vous recontactons sous 24h avec votre audit
+                        personnalisé.</p>
+
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="restaurant-name" class="form-label">Nom du restaurant *</label>
+                            <input type="text" id="restaurant-name" name="restaurant-name" class="form-input" required
+                                placeholder="Ex: Le Gourmet Parisien">
+                            <span class="form-error" id="restaurant-name-error">Veuillez entrer le nom de votre
+                                restaurant</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city" class="form-label">Ville *</label>
+                            <input type="text" id="city" name="city" class="form-input" required
+                                placeholder="Ex: Paris">
+                            <span class="form-error" id="city-error">Veuillez entrer votre ville</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="email" class="form-input" required
+                                placeholder="votre@email.fr">
+                            <span class="form-error" id="email-error">Veuillez entrer une adresse email valide</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Téléphone / WhatsApp</label>
+                            <input type="tel" id="phone" name="phone" class="form-input"
+                                placeholder="+33 6 XX XX XX XX">
+                            <span class="form-error" id="phone-error">Format invalide</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ubereats-link" class="form-label">Lien Uber Eats actuel</label>
+                            <input type="url" id="ubereats-link" name="ubereats-link" class="form-input"
+                                placeholder="https://www.ubereats.com/fr/store/...">
+                            <span class="form-error" id="ubereats-link-error">Veuillez entrer une URL valide</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message / Objectif CA livraison</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="5"
+                                placeholder="Parlez-nous de vos objectifs, vos attentes, votre situation actuelle..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg" id="submit-btn">
+                            Envoyer ma demande
+                        </button>
+
+                        <div class="form-message" id="form-success">
+                            ✓ Merci ! Votre demande a été envoyée. Nous vous recontactons sous 24h.
+                        </div>
+
+                        <div class="form-message error" id="form-error">
+                            ✗ Une erreur s'est produite. Veuillez réessayer ou nous contacter directement.
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Contact Info & Calendly -->
+                <div class="contact-sidebar">
+                    <div class="contact-info card">
+                        <h3>Informations de contact</h3>
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <strong>Email</strong>
+                                <p><a href="mailto:contact@factory-eat.fr">contact@factory-eat.fr</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div>
+                                <strong>Téléphone</strong>
+                                <p><a href="tel:+33XXXXXXXXX">+33 1 XX XX XX XX</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">💬</div>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <p><a href="https://wa.me/33XXXXXXXXX" target="_blank">Discuter maintenant</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">⏰</div>
+                            <div>
+                                <strong>Horaires</strong>
+                                <p>Lun-Ven : 9h-19h<br>Sam : 10h-17h</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calendly Embed -->
+                    <div class="calendly-wrapper card">
+                        <h3>Réserver un appel</h3>
+                        <p class="mb-md">Planifiez un rendez-vous téléphonique avec notre équipe</p>
+
+                        <!-- Calendly inline widget begin -->
+                        <div class="calendly-inline-widget" data-url="https://calendly.com/guillaume-aulanet/30min"
+                            style="min-width:320px;height:630px;">
+                        </div>
+                        <!-- Calendly inline widget end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="section bg-light trust-section">
+        <div class="container">
+            <h2 class="text-center mb-xl">Pourquoi nous faire confiance ?</h2>
+            <div class="grid grid-4">
+                <div class="trust-item">
+                    <div class="trust-icon">🏆</div>
+                    <h4>50+ Partenaires</h4>
+                    <p>Restaurants satisfaits partout en France</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">📈</div>
+                    <h4>+30% en moyenne</h4>
+                    <p>Augmentation des ventes Uber Eats</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">⚡</div>
+                    <h4>Réponse 24h</h4>
+                    <p>Audit gratuit sous 48h maximum</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">🔒</div>
+                    <h4>Sans engagement</h4>
+                    <p>Test gratuit 1 mois, arrêt à tout moment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Factory Eat</h4>
+                    <p>Optimisation de visibilité Uber Eats pour restaurants physiques</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="comment-ca-marche.html">Comment ça marche</a></li>
+                        <li><a href="nos-partenaires.html">Nos Partenaires</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: contact@factory-eat.fr</p>
+                    <p>Tél: +33 1 XX XX XX XX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Factory Eat. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/form-validation.js"></script>
+
+    <!-- Calendly widget script -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCCSTJZ2DP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VCCSTJZ2DP');
+    </script>
+</body>
+
+</html>
