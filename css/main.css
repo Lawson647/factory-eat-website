@@ -574,3 +574,81 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================
+   Dark Mode Overrides
+   ============================================ */
+body.dark-mode {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+}
+
+body.dark-mode .section.bg-white {
+  background-color: var(--color-bg-dark);
+}
+
+body.dark-mode .section.bg-subtle {
+  background-color: var(--color-bg-darker);
+}
+
+body.dark-mode .card,
+body.dark-mode .menu-item {
+  background-color: var(--color-bg-darker);
+  border-color: var(--color-border-dark);
+  color: var(--color-text-light);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode strong,
+body.dark-mode .text-dark,
+body.dark-mode .feature-icon,
+body.dark-mode .price-amount {
+  color: var(--color-white);
+}
+
+body.dark-mode h3 {
+  color: var(--color-primary);
+}
+
+body.dark-mode .text-muted {
+  color: var(--color-text-muted-light);
+}
+
+body.dark-mode .navbar {
+  background-color: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid var(--color-border-dark);
+}
+
+body.dark-mode .logo,
+body.dark-mode .navbar-logo {
+  color: var(--color-white);
+}
+
+body.dark-mode .pricing-card {
+  background-color: var(--color-bg-darker);
+  border-color: var(--color-border-dark);
+}
+
+body.dark-mode .pricing-note {
+  background-color: var(--color-bg-darker);
+  color: var(--color-text-light);
+}
+
+body.dark-mode .pricing-features li {
+  border-bottom-color: var(--color-border-dark);
+}
+
+/* Animations for Theme Switch */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.section,
+.card,
+.navbar,
+.menu-item {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}

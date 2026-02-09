@@ -4,405 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Découvrez comment Factory Eat optimise votre visibilité Uber Eats en 4 étapes simples : audit, photos pro, optimisation, suivi.">
-    <title>Comment ça marche - Factory Eat</title>
+    <title>Factory Eat - Comment ça marche ?</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/main.css">
-    <style>
-        /* How It Works Page Styles */
-        .page-header {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark) 100%);
-            color: var(--color-white);
-            padding: var(--space-3xl) 0 var(--space-2xl);
-            text-align: center;
-        }
+    <link rel="stylesheet" href="css/home.css"> <!-- Reusing V2 utilities -->
 
-        .page-header h1 {
-            color: var(--color-white);
-            margin-bottom: var(--space-md);
-        }
-
-        .page-header p {
-            font-size: var(--fs-xl);
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: var(--space-xl) 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(to bottom, var(--color-primary), var(--color-success));
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: var(--space-3xl);
-            display: flex;
-            align-items: center;
-        }
-
-        .timeline-item:nth-child(odd) {
-            flex-direction: row;
-        }
-
-        .timeline-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .timeline-content {
-            width: calc(50% - 50px);
-            background: var(--color-white);
-            padding: var(--space-xl);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
-            transition: all var(--transition-base);
-        }
-
-        .timeline-content:hover {
-            transform: scale(1.05);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .timeline-number {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: var(--fs-3xl);
-            font-weight: 700;
-            color: var(--color-white);
-            box-shadow: var(--shadow-lg);
-            z-index: 2;
-        }
-
-        .timeline-icon {
-            font-size: var(--fs-5xl);
-            margin-bottom: var(--space-md);
-            display: block;
-        }
-
-        .timeline-content h3 {
-            color: var(--color-primary);
-            margin-bottom: var(--space-sm);
-        }
-
-        .timeline-content p {
-            color: var(--color-dark-light);
-            line-height: 1.7;
-        }
-
-        .timeline-details {
-            margin-top: var(--space-md);
-            padding-top: var(--space-md);
-            border-top: 2px solid var(--color-light-gray);
-        }
-
-        .timeline-details ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .timeline-details li {
-            padding: var(--space-xs) 0;
-            padding-left: var(--space-lg);
-            position: relative;
-        }
-
-        .timeline-details li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--color-success);
-            font-weight: 700;
-        }
-
-        .process-stats {
-            background: var(--color-light-gray);
-            padding: var(--space-2xl) 0;
-            margin-top: var(--space-3xl);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--space-lg);
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: var(--space-lg);
-            background: var(--color-white);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-        }
-
-        .stat-number {
-            font-size: var(--fs-5xl);
-            font-weight: 700;
-            color: var(--color-primary);
-            display: block;
-            margin-bottom: var(--space-xs);
-        }
-
-        .stat-label {
-            color: var(--color-dark-light);
-            font-size: var(--fs-base);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .timeline::before {
-                left: 40px;
-            }
-
-            .timeline-item,
-            .timeline-item:nth-child(even) {
-                flex-direction: row;
-            }
-
-            .timeline-content {
-                width: calc(100% - 100px);
-                margin-left: auto;
-            }
-
-            .timeline-number {
-                left: 40px;
-                width: 60px;
-                height: 60px;
-                font-size: var(--fs-2xl);
-            }
-
-            .timeline-icon {
-                font-size: var(--fs-4xl);
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="index.html" class="navbar-logo">
-                🍽️ Factory Eat
-            </a>
-            <button class="navbar-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="navbar-menu">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="comment-ca-marche.html" class="active">Comment ça marche</a></li>
-                <li><a href="nos-partenaires.html">Nos Partenaires</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html" class="btn btn-primary btn-sm">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Comment ça marche ?</h1>
-            <p>4 étapes simples pour transformer votre visibilité Uber Eats et booster vos ventes</p>
-        </div>
-    </section>
-
-    <!-- Timeline Section -->
-    <section class="section">
-        <div class="container">
-            <div class="timeline">
-                <!-- Step 1 -->
-                <div class="timeline-item">
-                    <div class="timeline-number">1</div>
-                    <div class="timeline-content">
-                        <span class="timeline-icon">🔍</span>
-                        <h3>Audit gratuit de votre fiche Uber Eats</h3>
-                        <p>
-                            Nous analysons en profondeur votre présence actuelle sur Uber Eats :
-                            positionnement, photos, descriptions, prix, zones de livraison, et performances.
-                        </p>
-                        <div class="timeline-details">
-                            <ul>
-                                <li>Analyse de votre visibilité algorithmique</li>
-                                <li>Étude de la concurrence locale</li>
-                                <li>Identification des points d'amélioration</li>
-                                <li>Rapport détaillé sous 48h</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="timeline-item">
-                    <div class="timeline-number">2</div>
-                    <div class="timeline-content">
-                        <span class="timeline-icon">📸</span>
-                        <h3>Shooting photos professionnelles</h3>
-                        <p>
-                            Nos photographes experts viennent dans votre restaurant pour capturer
-                            VOS plats sous leur meilleur jour. Des visuels qui donnent faim et convertissent.
-                        </p>
-                        <div class="timeline-details">
-                            <ul>
-                                <li>Photographe professionnel sur place</li>
-                                <li>20-30 photos haute qualité de vos plats</li>
-                                <li>Retouche et optimisation pour mobile</li>
-                                <li>Livraison sous 5 jours ouvrés</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="timeline-item">
-                    <div class="timeline-number">3</div>
-                    <div class="timeline-content">
-                        <span class="timeline-icon">⚙️</span>
-                        <h3>Optimisation complète</h3>
-                        <p>
-                            Nous optimisons tous les aspects de votre fiche : descriptions SEO,
-                            prix dynamiques, zones et horaires de livraison, promos ciblées.
-                        </p>
-                        <div class="timeline-details">
-                            <ul>
-                                <li>Descriptions optimisées pour l'algorithme</li>
-                                <li>Stratégie de prix dynamique</li>
-                                <li>Optimisation zones/horaires de livraison</li>
-                                <li>Mise en place de promos data-driven</li>
-                                <li>Gestion des avis clients</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="timeline-item">
-                    <div class="timeline-number">4</div>
-                    <div class="timeline-content">
-                        <span class="timeline-icon">📊</span>
-                        <h3>Suivi et ajustements continus</h3>
-                        <p>
-                            Nous suivons vos performances en temps réel et ajustons la stratégie
-                            pour maximiser vos résultats mois après mois.
-                        </p>
-                        <div class="timeline-details">
-                            <ul>
-                                <li>Dashboard de suivi en temps réel</li>
-                                <li>Rapports mensuels détaillés</li>
-                                <li>Ajustements stratégiques réguliers</li>
-                                <li>Support 7j/7 par WhatsApp</li>
-                                <li>Optimisation continue de l'algorithme</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Stats -->
-    <section class="process-stats">
-        <div class="container">
-            <h2 class="text-center mb-xl">Nos résultats en chiffres</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-number">48h</span>
-                    <span class="stat-label">Délai audit gratuit</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">+30%</span>
-                    <span class="stat-label">Commandes en moyenne</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">7j/7</span>
-                    <span class="stat-label">Support disponible</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">50+</span>
-                    <span class="stat-label">Restaurants partenaires</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="section cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Prêt à commencer ?</h2>
-                <p>Demandez votre audit gratuit dès maintenant</p>
-                <a href="contact.html" class="btn btn-success btn-lg">Demander un audit gratuit</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Factory Eat</h4>
-                    <p>Optimisation de visibilité Uber Eats pour restaurants physiques</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Navigation</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="comment-ca-marche.html">Comment ça marche</a></li>
-                        <li><a href="nos-partenaires.html">Nos Partenaires</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Email: contact@factory-eat.fr</p>
-                    <p>Tél: +33 1 XX XX XX XX</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Factory Eat. Tous droits réservés.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
-    <script src="js/animations.js"></script>
-
-    <!-- Google Analytics 4 -->
+    <!-- GA4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCCSTJZ2DP"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -410,6 +25,187 @@
         gtag('js', new Date());
         gtag('config', 'G-VCCSTJZ2DP');
     </script>
+</head>
+
+<body class="bg-dark">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-dark">
+        <div class="container navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <span class="text-primary">🍽️</span> Factory Eat
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="comment-ca-marche.html" class="active">Comment ça marche</a></li>
+                <li><a href="services.html">Le Concept</a></li>
+                <li><a href="contact.html">Devenir Partenaire</a></li>
+            </ul>
+            <div class="flex items-center gap-sm">
+                <button id="theme-toggle" class="btn btn-ghost text-xl" aria-label="Toggle Dark Mode">🌙</button>
+                <a href="contact.html" class="btn btn-primary">Devenir partenaire</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="section section-dark text-center pt-3xl pb-xl relative overflow-hidden">
+        <div class="container relative z-10">
+            <div class="badge badge-primary mb-md">Onboarding Simple & Rapide</div>
+            <h1 class="mb-md">Lancez votre marque virtuelle en <span class="text-gradient">15 jours</span></h1>
+            <p class="text-muted-light max-w-2xl mx-auto text-xl">
+                Une méthodologie éprouvée pour transformer votre cuisine sans perturber votre activité actuelle.
+            </p>
+        </div>
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-gray-900 to-transparent z-0"></div>
+    </header>
+
+    <!-- Steps Section -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="timeline interactive-timeline">
+
+                <!-- Step 1 -->
+                <div class="timeline-item reversed">
+                    <div class="timeline-content card glass-card p-xl fade-up">
+                        <div class="flex items-center gap-md mb-md">
+                            <div
+                                class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl">
+                                1</div>
+                            <h3 class="mb-0 text-primary">Audit & Validation</h3>
+                        </div>
+                        <p class="text-muted mb-md">Nous analysons votre zone de chalandise (Uber Eats/Deliveroo) et
+                            votre équipement de cuisine actuel. Si vous avez une plancha et une friteuse, vous êtes
+                            éligible.</p>
+                        <div class="text-sm font-bold text-dark">⏳ Durée : 48h</div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-content card glass-card p-xl fade-up delay-100">
+                        <div class="flex items-center gap-md mb-md">
+                            <div
+                                class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl">
+                                2</div>
+                            <h3 class="mb-0 text-primary">Formation & Setup</h3>
+                        </div>
+                        <p class="text-muted mb-md">Envoi du Pack de Démarrage (Tablette, Packaging, PLV). Formation de
+                            votre équipe en visio (1h30) aux process d'assemblage Factory Eat.</p>
+                        <div class="text-sm font-bold text-dark">⏳ Durée : 7 jours</div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="timeline-item reversed">
+                    <div class="timeline-content card glass-card p-xl fade-up delay-200">
+                        <div class="flex items-center gap-md mb-md">
+                            <div
+                                class="w-12 h-12 bg-success text-white rounded-full flex items-center justify-center font-bold text-xl">
+                                3</div>
+                            <h3 class="mb-0 text-success">Lancement Officiel 🚀</h3>
+                        </div>
+                        <p class="text-muted mb-md">Activation de la marque sur les plateformes. Nous lançons une
+                            campagne "1 offert = 1 acheté" pour propulser votre restaurant en haut des résultats.</p>
+                        <div class="text-sm font-bold text-dark">⏳ Jour J</div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-content card glass-card p-xl fade-up delay-300">
+                        <div class="flex items-center gap-md mb-md">
+                            <div
+                                class="w-12 h-12 bg-dark text-white rounded-full flex items-center justify-center font-bold text-xl">
+                                4</div>
+                            <h3 class="mb-0 text-dark">Pilotage & Croissance</h3>
+                        </div>
+                        <p class="text-muted mb-md">Suivi hebdomadaire de vos performances. Optimisation des prix et des
+                            promotions. Vous recevez vos virements tous les 15 jours.</p>
+                        <div class="text-sm font-bold text-dark">📈 En continu</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section (V2 style) -->
+    <section class="section bg-subtle">
+        <div class="container max-w-4xl">
+            <h2 class="text-center mb-xl">Questions Fréquentes</h2>
+
+            <div class="card p-lg mb-md">
+                <h3 class="text-lg font-bold mb-xs text-primary">Dois-je embaucher du personnel ?</h3>
+                <p class="text-muted">Non. Le concept est conçu pour être géré par votre équipe actuelle lors des temps
+                    morts.</p>
+            </div>
+
+            <div class="card p-lg mb-md">
+                <h3 class="text-lg font-bold mb-xs text-primary">Quel est le coût d'entrée ?</h3>
+                <p class="text-muted">Il n'y a pas de droit d'entrée. Nous prenons une commission uniquement sur les
+                    ventes générées. Modèle Gagnant-Gagnant.</p>
+            </div>
+
+            <div class="card p-lg mb-md">
+                <h3 class="text-lg font-bold mb-xs text-primary">Et les ingrédients ?</h3>
+                <p class="text-muted">Nous vous référençons chez nos fournisseurs partenaires (Metro, Transgourmet) avec
+                    nos tarifs négociés.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-dark text-center py-3xl">
+        <div class="container">
+            <h2 class="text-white mb-lg">Prêt à démarrer l'audit ?</h2>
+            <a href="contact.html" class="btn btn-primary btn-lg shadow-xl">Contactez l'équipe d'expansion</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darker py-xl text-white border-t border-gray-800">
+        <div class="container">
+            <div class="grid grid-4 gap-xl">
+                <div>
+                    <div class="text-xl font-bold mb-md flex items-center gap-xs">
+                        <span class="text-primary">🍽️</span> Factory Eat
+                    </div>
+                    <p class="text-sm text-muted-light">Restaurant virtuel nouvelle génération.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold uppercase mb-md text-muted-light">Navigation</h4>
+                    <ul class="space-y-sm text-sm">
+                        <li><a href="index.html" class="text-white hover:text-primary">Accueil</a></li>
+                        <li><a href="services.html" class="text-white hover:text-primary">Le Concept</a></li>
+                        <li><a href="contact.html" class="text-white hover:text-primary">Devenir Partenaire</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold uppercase mb-md text-muted-light">Légal</h4>
+                    <ul class="space-y-sm text-sm">
+                        <li><a href="#" class="text-white hover:text-primary">CGV</a></li>
+                        <li><a href="#" class="text-white hover:text-primary">Mentions Légales</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold uppercase mb-md text-muted-light">Contact B2B</h4>
+                    <div class="text-sm space-y-sm">
+                        <p>📧 franchise@factory-eat.fr</p>
+                        <p>📱 +33 6 00 00 00 00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-xl pt-lg text-center text-sm text-muted-light">
+                &copy; 2026 Factory Eat. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>

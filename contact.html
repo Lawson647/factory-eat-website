@@ -4,248 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Contactez Factory Eat pour booster vos ventes Uber Eats. Demandez votre audit gratuit dès maintenant.">
-    <title>Contact - Factory Eat</title>
+    <title>Devenir Partenaire - Factory Eat</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/contact.css"> <!-- Specific form styles -->
+    <link rel="stylesheet" href="css/home.css">
 
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("eY4L2WOlxyF-NUakn");
-        })();
-    </script>
-</head>
-
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="index.html" class="navbar-logo">
-                🍽️ Factory Eat
-            </a>
-            <button class="navbar-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="navbar-menu">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="comment-ca-marche.html">Comment ça marche</a></li>
-                <li><a href="nos-partenaires.html">Nos Partenaires</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html" class="btn btn-primary btn-sm active">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Contactez-nous</h1>
-            <p>Prêt à booster vos ventes Uber Eats ? Demandez votre audit gratuit</p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section contact-section">
-        <div class="container">
-            <div class="contact-grid">
-                <!-- Contact Form -->
-                <div class="contact-form-wrapper">
-                    <h2>Demander un audit gratuit</h2>
-                    <p class="form-intro">Remplissez ce formulaire et nous vous recontactons sous 24h avec votre audit
-                        personnalisé.</p>
-
-                    <form id="contact-form" class="contact-form">
-                        <div class="form-group">
-                            <label for="restaurant-name" class="form-label">Nom du restaurant *</label>
-                            <input type="text" id="restaurant-name" name="restaurant-name" class="form-input" required
-                                placeholder="Ex: Le Gourmet Parisien">
-                            <span class="form-error" id="restaurant-name-error">Veuillez entrer le nom de votre
-                                restaurant</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="city" class="form-label">Ville *</label>
-                            <input type="text" id="city" name="city" class="form-input" required
-                                placeholder="Ex: Paris">
-                            <span class="form-error" id="city-error">Veuillez entrer votre ville</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email *</label>
-                            <input type="email" id="email" name="email" class="form-input" required
-                                placeholder="votre@email.fr">
-                            <span class="form-error" id="email-error">Veuillez entrer une adresse email valide</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone" class="form-label">Téléphone / WhatsApp</label>
-                            <input type="tel" id="phone" name="phone" class="form-input"
-                                placeholder="+33 6 XX XX XX XX">
-                            <span class="form-error" id="phone-error">Format invalide</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="ubereats-link" class="form-label">Lien Uber Eats actuel</label>
-                            <input type="url" id="ubereats-link" name="ubereats-link" class="form-input"
-                                placeholder="https://www.ubereats.com/fr/store/...">
-                            <span class="form-error" id="ubereats-link-error">Veuillez entrer une URL valide</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message" class="form-label">Message / Objectif CA livraison</label>
-                            <textarea id="message" name="message" class="form-textarea" rows="5"
-                                placeholder="Parlez-nous de vos objectifs, vos attentes, votre situation actuelle..."></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-lg" id="submit-btn">
-                            Envoyer ma demande
-                        </button>
-
-                        <div class="form-message" id="form-success">
-                            ✓ Merci ! Votre demande a été envoyée. Nous vous recontactons sous 24h.
-                        </div>
-
-                        <div class="form-message error" id="form-error">
-                            ✗ Une erreur s'est produite. Veuillez réessayer ou nous contacter directement.
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Contact Info & Calendly -->
-                <div class="contact-sidebar">
-                    <div class="contact-info card">
-                        <h3>Informations de contact</h3>
-                        <div class="contact-item">
-                            <div class="contact-icon">📧</div>
-                            <div>
-                                <strong>Email</strong>
-                                <p><a href="mailto:contact@factory-eat.fr">contact@factory-eat.fr</a></p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">📱</div>
-                            <div>
-                                <strong>Téléphone</strong>
-                                <p><a href="tel:+33XXXXXXXXX">+33 1 XX XX XX XX</a></p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">💬</div>
-                            <div>
-                                <strong>WhatsApp</strong>
-                                <p><a href="https://wa.me/33XXXXXXXXX" target="_blank">Discuter maintenant</a></p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">⏰</div>
-                            <div>
-                                <strong>Horaires</strong>
-                                <p>Lun-Ven : 9h-19h<br>Sam : 10h-17h</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Calendly Embed -->
-                    <div class="calendly-wrapper card">
-                        <h3>Réserver un appel</h3>
-                        <p class="mb-md">Planifiez un rendez-vous téléphonique avec notre équipe</p>
-
-                        <!-- Calendly inline widget begin -->
-                        <div class="calendly-inline-widget" data-url="https://calendly.com/guillaume-aulanet/30min"
-                            style="min-width:320px;height:630px;">
-                        </div>
-                        <!-- Calendly inline widget end -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust Section -->
-    <section class="section bg-light trust-section">
-        <div class="container">
-            <h2 class="text-center mb-xl">Pourquoi nous faire confiance ?</h2>
-            <div class="grid grid-4">
-                <div class="trust-item">
-                    <div class="trust-icon">🏆</div>
-                    <h4>50+ Partenaires</h4>
-                    <p>Restaurants satisfaits partout en France</p>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">📈</div>
-                    <h4>+30% en moyenne</h4>
-                    <p>Augmentation des ventes Uber Eats</p>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">⚡</div>
-                    <h4>Réponse 24h</h4>
-                    <p>Audit gratuit sous 48h maximum</p>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">🔒</div>
-                    <h4>Sans engagement</h4>
-                    <p>Test gratuit 1 mois, arrêt à tout moment</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Factory Eat</h4>
-                    <p>Optimisation de visibilité Uber Eats pour restaurants physiques</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Navigation</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="comment-ca-marche.html">Comment ça marche</a></li>
-                        <li><a href="nos-partenaires.html">Nos Partenaires</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Email: contact@factory-eat.fr</p>
-                    <p>Tél: +33 1 XX XX XX XX</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Factory Eat. Tous droits réservés.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
-    <script src="js/form-validation.js"></script>
-
-    <!-- Calendly widget script -->
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
-    <!-- Google Analytics 4 -->
+    <!-- GA4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCCSTJZ2DP"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -253,6 +26,179 @@
         gtag('js', new Date());
         gtag('config', 'G-VCCSTJZ2DP');
     </script>
+</head>
+
+<body class="bg-dark">
+
+    <!-- Navigation (V2) -->
+    <nav class="navbar navbar-dark">
+        <div class="container navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <span class="text-primary">🍽️</span> Factory Eat
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="comment-ca-marche.html">Comment ça marche</a></li>
+                <li><a href="services.html">Le Concept</a></li>
+                <li><a href="contact.html" class="active">Devenir Partenaire</a></li>
+            </ul>
+            <div class="flex items-center gap-sm">
+                <button id="theme-toggle" class="btn btn-ghost text-xl" aria-label="Toggle Dark Mode">🌙</button>
+                <a href="contact.html" class="btn btn-primary">Devenir partenaire</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="section section-dark text-center pt-3xl pb-xl relative overflow-hidden">
+        <div class="container relative z-10">
+            <div class="badge badge-primary mb-md">Candidature Franchise</div>
+            <h1 class="mb-md">Rejoignez le réseau <span class="text-gradient">Factory Eat</span></h1>
+            <p class="text-muted-light max-w-2xl mx-auto text-xl">
+                Vérifiez votre éligibilité pour exploiter nos marques dans votre ville. <br>
+                Réponse sous 24h.
+            </p>
+        </div>
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-gray-900 to-transparent z-0"></div>
+    </header>
+
+    <!-- Form Section -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="grid grid-2 gap-xl">
+
+                <!-- Contact Info Side -->
+                <div>
+                    <div class="card bg-subtle p-xl mb-lg">
+                        <h3 class="mb-md">Pourquoi postuler ?</h3>
+                        <ul class="space-y-md">
+                            <li class="flex items-start gap-sm">
+                                <span class="text-success text-xl">✓</span>
+                                <div>
+                                    <strong>Marque Éprouvée</strong>
+                                    <p class="text-sm text-muted">Vendez des produits déjà validés par des milliers de
+                                        clients.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-sm">
+                                <span class="text-success text-xl">✓</span>
+                                <div>
+                                    <strong>Marketing Inclus</strong>
+                                    <p class="text-sm text-muted">Photos, Algorithmie Uber Eats, Promotions... On gère
+                                        tout.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-sm">
+                                <span class="text-success text-xl">✓</span>
+                                <div>
+                                    <strong>Exclusivité de Zone</strong>
+                                    <p class="text-sm text-muted">Soyez le seul à vendre Factory Eat dans votre secteur
+                                        (selon disponibilité).</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card border border-primary p-lg">
+                        <h3 class="text-primary mb-sm">Besoin d'info rapide ?</h3>
+                        <p class="mb-xs">📞 06 00 00 00 00</p>
+                        <p>📧 franchise@factory-eat.fr</p>
+                    </div>
+                </div>
+
+                <!-- The Form -->
+                <div class="card shadow-lg p-xl">
+                    <form id="contact-form" class="space-y-md">
+                        <div>
+                            <label class="block text-sm font-bold mb-xs" for="restaurant-name">Nom du restaurant</label>
+                            <input type="text" id="restaurant-name" class="w-full p-sm border rounded-md"
+                                placeholder="Ex: Le Bistrot Gourmand" required>
+                        </div>
+
+                        <div class="grid grid-2 gap-md">
+                            <div>
+                                <label class="block text-sm font-bold mb-xs" for="name">Votre Nom</label>
+                                <input type="text" id="name" class="w-full p-sm border rounded-md" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold mb-xs" for="city">Ville</label>
+                                <input type="text" id="city" class="w-full p-sm border rounded-md" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold mb-xs" for="platform">Plateformes actuelles</label>
+                            <select id="platform" class="w-full p-sm border rounded-md">
+                                <option>Uber Eats & Deliveroo</option>
+                                <option>Uber Eats uniquement</option>
+                                <option>Deliveroo uniquement</option>
+                                <option>Aucune (Je débute)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold mb-xs" for="email">Email</label>
+                            <input type="email" id="email" class="w-full p-sm border rounded-md" required>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold mb-xs" for="phone">Téléphone</label>
+                            <input type="tel" id="phone" class="w-full p-sm border rounded-md" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-full py-md text-lg">Vérifier mon
+                            éligibilité</button>
+                        <p class="text-xs text-center text-muted mt-sm">Gratuit et sans engagement.</p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darker py-xl text-white border-t border-gray-800">
+        <div class="container">
+            <div class="grid grid-4 gap-xl">
+                <div>
+                    <div class="text-xl font-bold mb-md flex items-center gap-xs">
+                        <span class="text-primary">🍽️</span> Factory Eat
+                    </div>
+                    <p class="text-sm text-muted-light">La Franchise Virtuelle n°1 en France.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold uppercase mb-md text-muted-light">Navigation</h4>
+                    <ul class="space-y-sm text-sm">
+                        <li><a href="index.html" class="text-white hover:text-primary">Accueil</a></li>
+                        <li><a href="services.html" class="text-white hover:text-primary">Le Concept</a></li>
+                        <li><a href="contact.html" class="text-white hover:text-primary">Devenir Partenaire</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold uppercase mb-md text-muted-light">Légal</h4>
+                    <ul class="space-y-sm text-sm">
+                        <li><a href="#" class="text-white hover:text-primary">CGV</a></li>
+                        <li><a href="#" class="text-white hover:text-primary">Mentions Légales</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold uppercase mb-md text-muted-light">Contact Franchise</h4>
+                    <div class="text-sm space-y-sm">
+                        <p>📧 franchise@factory-eat.fr</p>
+                        <p>📱 +33 6 00 00 00 00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-xl pt-lg text-center text-sm text-muted-light">
+                &copy; 2026 Factory Eat. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>
