@@ -4,351 +4,433 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Factory Eat — Restaurant Virtuel Rentable | Uber Eats & Deliveroo</title>
+    <title>Factory Eat — Restaurant Virtuel | Toutes Villes France Uber Eats</title>
     <meta name="description"
-        content="Factory Eat - Votre restaurant virtuel rentable. Nous gérons la marque, le menu, les photos et l'optimisation Uber Eats. Vous cuisinez et partagez les marges 50/50. Zéro investissement initial.">
+        content="Factory Eat — Votre restaurant virtuel rentable. Implanté partout en France (Uber Eats, Deliveroo). Toutes cuisines éligibles. Commissions 10-20%. Zéro investissement.">
     <meta name="theme-color" content="#FF6B35">
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Schema FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Comment fonctionne Factory Eat ?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Factory Eat est un tremplin pour booster les ventes de votre restaurant physique via Uber Eats et Deliveroo. Commissions négociables de 10 à 20%." }
+            },
+            {
+                "@type": "Question",
+                "name": "Quelles cuisines sont éligibles ?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Toutes cuisines : burgers, pizzas, rôtisseries, foodtrucks, sushi, poke bowls... Si vous avez une cuisine physique, vous êtes éligible." }
+            }
+        ]
+    }
+    </script>
 </head>
 
 <body>
 
     <!-- ============================================
-     NAVBAR
+     NAVBAR (Glassmorphism)
      ============================================ -->
     <nav class="navbar" id="navbar">
         <div class="container">
             <a href="#accueil" class="navbar-brand">Factory Eat</a>
             <div class="navbar-menu">
                 <a href="#accueil">Accueil</a>
-                <a href="#comment">Comment ça marche</a>
+                <a href="#carte">Carte</a>
+                <a href="#etapes">Étapes</a>
                 <a href="#avantages">Avantages</a>
-                <a href="#temoignages">Témoignages</a>
-                <a href="#contact" class="btn btn-primary">Devenir partenaire</a>
+                <a href="#simulation">Simulation</a>
+                <button id="dark-toggle" class="dark-toggle" aria-label="Dark mode">🌙</button>
+                <a href="#contact" class="btn btn-primary">Vérifier éligibilité</a>
             </div>
-            <button class="burger" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
-    <!-- Mobile menu -->
     <div class="mobile-menu">
         <a href="#accueil">Accueil</a>
-        <a href="#comment">Comment ça marche</a>
+        <a href="#carte">Carte</a>
+        <a href="#etapes">Étapes</a>
         <a href="#avantages">Avantages</a>
-        <a href="#temoignages">Témoignages</a>
-        <a href="#contact" class="btn btn-primary" style="text-align:center;">Devenir partenaire</a>
+        <a href="#simulation">Simulation</a>
+        <a href="#contact" class="btn btn-primary" style="text-align:center;">Vérifier éligibilité</a>
     </div>
 
     <!-- ============================================
-     HERO
+     HERO (Carousel + Particles)
      ============================================ -->
-    <section class="hero section" id="accueil">
+    <section class="hero" id="accueil">
+        <div class="hero-slides">
+            <div class="hero-slide active"
+                style="background-image:url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1920&h=1080&fit=crop&q=80');">
+            </div>
+            <div class="hero-slide"
+                style="background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1920&h=1080&fit=crop&q=80');">
+            </div>
+            <div class="hero-slide"
+                style="background-image:url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1920&h=1080&fit=crop&q=80');">
+            </div>
+            <div class="hero-slide"
+                style="background-image:url('https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=1920&h=1080&fit=crop&q=80');">
+            </div>
+        </div>
+        <canvas id="particles-canvas"></canvas>
+
         <div class="container">
-            <div class="hero-content fade-in">
-                <div class="badge">🚀 Restaurant virtuel n°1 en France</div>
-                <h1>
-                    <span class="highlight">Factory Eat</span> —<br>
-                    Votre Restaurant Virtuel Rentable
-                </h1>
+            <div class="hero-content fade-up">
+                <div class="badge">🚀 Restaurant virtuel nationale</div>
+                <h1><span class="highlight">Factory Eat</span> —<br>Restaurant Virtuel Rentable Nationwide</h1>
                 <p class="subtitle">
-                    Nous gérons la marque, le menu, les photos et l'optimisation Uber Eats.
-                    Vous cuisinez et partagez les marges <strong>50/50</strong>.
-                    Zéro investissement initial.
+                    Implanté dans toutes les villes de France desservies par Uber Eats ou Deliveroo.
+                    Toutes cuisines éligibles : burgers, pizzas, rôtisseries, foodtrucks...
+                    Nous boostons votre cuisine physique avec <strong>commissions négociables 10-20%</strong>.
+                    Zéro menus Factory Eat imposés – juste un tremplin pour vos ventes !
                 </p>
                 <div class="hero-cta">
-                    <a href="#comment" class="btn btn-primary">Démarrer en 3 étapes →</a>
-                    <a href="#simulation" class="btn btn-outline">Simuler mes revenus</a>
+                    <a href="#contact" class="btn btn-primary">Vérifiez votre éligibilité <span
+                            class="btn-arrow">→</span></a>
+                    <a href="#contact" class="btn btn-outline">Contactez-nous</a>
                 </div>
-                <div class="hero-icons">
-                    <div class="hero-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                            stroke="currentColor">
-                            <circle cx="12" cy="12" r="10" />
-                            <polyline points="12 6 12 12 16 14" />
-                        </svg>
-                        <span>Setup en 48h</span>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-count="50" data-suffix="+">0</span>
+                        <span class="stat-label">Villes</span>
                     </div>
-                    <div class="hero-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                            stroke="currentColor">
-                            <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                        </svg>
-                        <span>+2 000€/mois</span>
+                    <div class="stat">
+                        <span class="stat-number" data-count="100" data-suffix="+">0</span>
+                        <span class="stat-label">Partenaires</span>
                     </div>
-                    <div class="hero-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                            stroke="currentColor">
+                    <div class="stat">
+                        <span class="stat-number" data-count="30" data-prefix="+" data-suffix="%">0</span>
+                        <span class="stat-label">CA moyen</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+     CARTE DE FRANCE (Leaflet.js)
+     ============================================ -->
+    <section class="map-section section" id="carte">
+        <div class="container">
+            <div class="map-header fade-up">
+                <div class="badge">Couverture nationale</div>
+                <h2>Partenaires Factory Eat en France</h2>
+            </div>
+            <div id="france-map" class="fade-up"></div>
+            <div class="map-legend">
+                <span><span class="dot"></span> Ville éligible : toute ville desservie par Uber Eats / Deliveroo</span>
+            </div>
+            <div class="city-list fade-up-group">
+                <div class="city-item"><span>Paris</span> <span class="count">15 restos</span></div>
+                <div class="city-item"><span>Marseille</span> <span class="count">12 restos</span></div>
+                <div class="city-item"><span>Toulouse</span> <span class="count">9 restos</span></div>
+                <div class="city-item"><span>Lyon</span> <span class="count">8 restos</span></div>
+                <div class="city-item"><span>Nantes</span> <span class="count">7 restos</span></div>
+                <div class="city-item"><span>Bordeaux</span> <span class="count">6 restos</span></div>
+                <div class="city-item"><span>Lille</span> <span class="count">5 restos</span></div>
+                <div class="city-item"><span>Nice</span> <span class="count">4 restos</span></div>
+                <div class="city-item"><span>Rennes</span> <span class="count">4 restos</span></div>
+                <div class="city-item"><span>Strasbourg</span> <span class="count">3 restos</span></div>
+            </div>
+            <div class="text-center" style="margin-top:24px;">
+                <a href="#contact" class="btn btn-primary">Ajouter votre ville <span class="btn-arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+     4 ÉTAPES TIMELINE
+     ============================================ -->
+    <section class="timeline-section section" id="etapes">
+        <div class="container">
+            <div class="timeline-header fade-up">
+                <div class="badge">4 étapes simples</div>
+                <h2>Implantez Factory Eat dans votre ville</h2>
+            </div>
+            <div class="timeline fade-up-group">
+                <div class="timeline-item">
+                    <div class="timeline-num">1</div>
+                    <div class="icon-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                    </div>
+                    <h3>Vérifiez votre éligibilité</h3>
+                    <p>Uber Eats ou Deliveroo opèrent dans votre ville ? Vous êtes éligible ! Toutes cuisines acceptées.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-num">2</div>
+                    <div class="icon-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <h3>Négociez vos commissions</h3>
+                    <p>Commissions flexibles de 10 à 20% sur vos ventes boostées. On s'adapte à votre modèle.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-num">3</div>
+                    <div class="icon-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path
                                 d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z" />
                             <line x1="6" y1="17" x2="18" y2="17" />
                         </svg>
-                        <span>Menu simple</span>
                     </div>
+                    <h3>On gère la visibilité</h3>
+                    <p>Identité optimisée, menu tremplin, photos pro, SEO Uber Eats — nous maximisons vos commandes.</p>
                 </div>
-            </div>
-            <div class="hero-image fade-in">
-                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&h=500&fit=crop&q=80"
-                    alt="Smash burger gourmet Factory Eat" width="600" height="400" loading="eager">
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-     COMMENT ÇA MARCHE — 3 Étapes
-     ============================================ -->
-    <section class="steps section" id="comment">
-        <div class="container">
-            <div class="steps-header fade-in">
-                <div class="badge">Comment ça marche</div>
-                <h2>En 3 étapes, générez du CA supplémentaire</h2>
-            </div>
-            <div class="steps-grid fade-in-group">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>On signe ensemble</h3>
-                    <p>Vous avez un restaurant ou food truck ? On crée une marque virtuelle ensemble. Contrat test d'1
-                        mois, sans engagement.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3>On lance la marque</h3>
-                    <p>Nous gérons tout pour vous :</p>
-                    <ul>
-                        <li>Nom & identité visuelle</li>
-                        <li>Photos professionnelles</li>
-                        <li>Menu optimisé</li>
-                        <li>Inscription Uber Eats & Deliveroo</li>
-                        <li>SEO & promotions ciblées</li>
-                    </ul>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>Vous encaissez</h3>
-                    <p>Les commandes tombent, vous préparez. Partage 50/50 sur la marge nette. Jusqu'à <strong
-                            style="color:var(--primary);">+2 000€/mois</strong> de CA additionnel.</p>
-                    <a href="#contact" class="btn btn-primary" style="margin-top:20px; width:100%;">Commencer
-                        maintenant</a>
+                <div class="timeline-item">
+                    <div class="timeline-num">4</div>
+                    <div class="icon-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                    </div>
+                    <h3>Les commandes affluent</h3>
+                    <p>Vous cuisinez vos propres recettes, les commandes tombent. CA additionnel dès la première semaine
+                        !</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================
-     AVANTAGES — 4 Cartes
+     5 AVANTAGES
      ============================================ -->
     <section class="advantages section" id="avantages">
         <div class="container">
-            <div class="advantages-header fade-in">
-                <div class="badge">Pourquoi Factory Eat</div>
-                <h2>Exploitez votre cuisine sous-utilisée</h2>
+            <div class="advantages-header fade-up">
+                <div class="badge">5 raisons clés</div>
+                <h2>Pourquoi choisir Factory Eat ?</h2>
             </div>
-            <div class="advantages-grid fade-in-group">
+            <div class="advantages-grid fade-up-group">
                 <div class="advantage-card">
-                    <div class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                            stroke="currentColor">
-                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-                        </svg>
+                    <img class="advantage-img" loading="lazy"
+                        src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=250&fit=crop&q=80"
+                        alt="Restaurant national">
+                    <div class="advantage-body">
+                        <div class="icon-inline">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <h3>National : Toutes villes Uber/Deliveroo</h3>
+                        <p>Présents dans 50+ villes. Si Uber Eats ou Deliveroo livre chez vous, Factory Eat peut
+                            s'implanter.</p>
                     </div>
-                    <h3>Formation &lt;2h sur recettes</h3>
-                    <p>On vous forme en moins de 2 heures. Smash burgers prêts en <strong>3-4 minutes</strong>. Recettes
-                        standardisées.</p>
                 </div>
                 <div class="advantage-card">
-                    <div class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                            stroke="currentColor">
-                            <rect x="3" y="3" width="7" height="7" />
-                            <rect x="14" y="3" width="7" height="7" />
-                            <rect x="3" y="14" width="7" height="7" />
-                            <rect x="14" y="14" width="7" height="7" />
-                        </svg>
+                    <img class="advantage-img" loading="lazy"
+                        src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=250&fit=crop&q=80"
+                        alt="Toutes cuisines">
+                    <div class="advantage-body">
+                        <div class="icon-inline">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z" />
+                                <line x1="6" y1="17" x2="18" y2="17" />
+                            </svg>
+                        </div>
+                        <h3>Flex : Toutes cuisines physiques</h3>
+                        <p>Burgers, pizzas, rôtisseries, sushi, poke, foodtrucks... Aucune cuisine n'est exclue.</p>
                     </div>
-                    <h3>Menu simple à exécuter</h3>
-                    <p><strong>3 burgers, 3 sides, 2 menus.</strong> Recettes standardisées, impossible de se tromper.
-                    </p>
                 </div>
                 <div class="advantage-card">
-                    <div class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                            stroke="currentColor">
-                            <path
-                                d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-                            <circle cx="12" cy="13" r="4" />
-                        </svg>
+                    <img class="advantage-img" loading="lazy"
+                        src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop&q=80"
+                        alt="Rentabilité">
+                    <div class="advantage-body">
+                        <div class="icon-inline">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                                <polyline points="17 6 23 6 23 12" />
+                            </svg>
+                        </div>
+                        <h3>Rentable : 10-20% commissions</h3>
+                        <p>Commissions négociables et transparentes. Vous ne payez que sur les ventes additionnelles
+                            générées.</p>
                     </div>
-                    <h3>Photos pro + SEO max</h3>
-                    <p>Photos professionnelles, descriptions optimisées, <strong>promotions ciblées</strong> pour
-                        maximiser votre visibilité.</p>
                 </div>
                 <div class="advantage-card">
-                    <div class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                            stroke="currentColor">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                        </svg>
+                    <img class="advantage-img" loading="lazy"
+                        src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop&q=80"
+                        alt="Simplicité">
+                    <div class="advantage-body">
+                        <div class="icon-inline">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4" />
+                            </svg>
+                        </div>
+                        <h3>Simple : Tremplin sans menus imposés</h3>
+                        <p>Gardez vos recettes. Factory Eat est un tremplin qui booste votre visibilité, pas un menu
+                            imposé.</p>
                     </div>
-                    <h3>Zéro risque, test 1 mois</h3>
-                    <p>Aucun investissement initial, aucune charge fixe. <strong>Si ça ne marche pas, vous
-                            arrêtez.</strong></p>
+                </div>
+                <div class="advantage-card">
+                    <img class="advantage-img" loading="lazy"
+                        src="https://images.unsplash.com/photo-1526367790999-0150786686a2?w=400&h=250&fit=crop&q=80"
+                        alt="Rapidité">
+                    <div class="advantage-body">
+                        <div class="icon-inline">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                            </svg>
+                        </div>
+                        <h3>Rapide : +25% CA en 1 mois</h3>
+                        <p>Résultats dès la première semaine. Nos partenaires constatent en moyenne +25% de CA
+                            additionnel.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================
-     SIMULATION ÉCONOMIQUE
+     SIMULATION + TÉMOIGNAGES
      ============================================ -->
-    <section class="simulation section" id="simulation">
+    <section class="sim-section section" id="simulation">
         <div class="container">
-            <div class="simulation-header fade-in">
-                <div class="badge">Simulez vos gains</div>
-                <h2>Simulation : Smash Burger Classic à 12€</h2>
+            <div class="sim-header fade-up">
+                <div class="badge">Calculateur</div>
+                <h2>Simulez votre boost CA</h2>
             </div>
-            <div class="simulation-box fade-in">
-                <div class="slider-group">
-                    <label>
-                        Ventes par jour :
-                        <span id="sim-slider-value">25</span> burgers
-                    </label>
-                    <input type="range" id="sim-slider" min="5" max="60" value="25" step="1">
+            <div class="sim-grid">
+                <!-- Calculator -->
+                <div class="sim-box fade-up">
+                    <div class="sim-inputs">
+                        <div class="sim-field">
+                            <label for="sim-sales">Ventes / jour</label>
+                            <input type="number" id="sim-sales" value="30" min="1" max="200">
+                        </div>
+                        <div class="sim-field">
+                            <label for="sim-price">Prix moyen (€)</label>
+                            <input type="number" id="sim-price" value="12" min="1" max="100" step="0.5">
+                        </div>
+                        <div class="sim-field">
+                            <label for="sim-commission">Commission (%)</label>
+                            <input type="number" id="sim-commission" value="15" min="5" max="30">
+                        </div>
+                    </div>
+                    <div class="sim-result-box">
+                        <div class="big-number" id="sim-output">+1 188€/mois</div>
+                        <div class="detail" id="sim-detail">30 ventes × 12€ × 15% × 22 jours</div>
+                    </div>
                 </div>
-                <div class="slider-group">
-                    <label>
-                        Marge nette par burger :
-                        <span id="sim-margin-value">2,30</span>€
-                    </label>
-                    <input type="range" id="sim-margin" min="1.00" max="5.00" value="2.30" step="0.10">
-                </div>
-                <table class="sim-table">
-                    <thead>
-                        <tr>
-                            <th>Élément</th>
-                            <th>Détail</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Prix de vente</td>
-                            <td><strong>12€</strong></td>
-                        </tr>
-                        <tr>
-                            <td>Coût ingrédients</td>
-                            <td>≈ 4€</td>
-                        </tr>
-                        <tr>
-                            <td>Commission plateforme</td>
-                            <td>≈ 3,40€</td>
-                        </tr>
-                        <tr>
-                            <td>Marge nette / burger</td>
-                            <td><strong id="sim-margin-display" style="color:var(--secondary);">2,30€</strong> (votre
-                                part 50/50)</td>
-                        </tr>
-                        <tr class="sim-result">
-                            <td>💰 Votre revenu</td>
-                            <td><strong id="sim-daily">58€/j</strong> → <strong id="sim-monthly">+1 265€/mois</strong>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
 
-    <!-- ============================================
-     TÉMOIGNAGES
-     ============================================ -->
-    <section class="testimonials section" id="temoignages">
-        <div class="container">
-            <div class="testimonials-header fade-in">
-                <div class="badge">Témoignages</div>
-                <h2>Ce que disent nos partenaires</h2>
-            </div>
-            <div class="carousel fade-in">
-                <div class="carousel-track">
-                    <div class="carousel-slide">
-                        <div class="testimonial-card">
-                            <div class="quote">En 3 semaines, on faisait déjà 25 burgers/jour en plus de notre activité
-                                principale. Aucun investissement, juste de l'huile de coude !</div>
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">MR</div>
-                                <div class="testimonial-info">
-                                    <div class="name">Marc R.</div>
-                                    <div class="role">Restaurateur, Lyon</div>
+                <!-- Testimonials -->
+                <div class="fade-up">
+                    <div class="carousel">
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <div class="testimonial-card">
+                                    <div class="stars">★★★★★</div>
+                                    <div class="quote">Rôtisserie Lyon : +40 commandes/semaine ! Factory Eat a boosté
+                                        notre visibilité sans rien changer à nos recettes. Commission à 12%, top !</div>
+                                    <div class="testimonial-author">
+                                        <div class="testimonial-avatar">PL</div>
+                                        <div class="testimonial-info">
+                                            <div class="name">Pierre L.</div>
+                                            <div class="role">Rôtisserie, Lyon</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="testimonial-card">
+                                    <div class="stars">★★★★★</div>
+                                    <div class="quote">Foodtruck Marseille : Commissions à 12%, c'est imbattable. On a
+                                        doublé nos commandes Uber Eats en 3 semaines sans effort !</div>
+                                    <div class="testimonial-author">
+                                        <div class="testimonial-avatar">SA</div>
+                                        <div class="testimonial-info">
+                                            <div class="name">Sarah A.</div>
+                                            <div class="role">Foodtruck, Marseille</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="testimonial-card">
+                                    <div class="stars">★★★★★</div>
+                                    <div class="quote">En tant que pizzeria, je ne pensais pas être éligible. Factory
+                                        Eat a optimisé mon profil et mon CA a bondi de 35% le premier mois !</div>
+                                    <div class="testimonial-author">
+                                        <div class="testimonial-avatar">MR</div>
+                                        <div class="testimonial-info">
+                                            <div class="name">Marco R.</div>
+                                            <div class="role">Pizzeria, Bordeaux</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="testimonial-card">
+                                    <div class="stars">★★★★★</div>
+                                    <div class="quote">Le concept est simple : ils gèrent la visibilité, je cuisine.
+                                        Résultat : 25 commandes/jour en plus. Négocié à 15% de commission.</div>
+                                    <div class="testimonial-author">
+                                        <div class="testimonial-avatar">KD</div>
+                                        <div class="testimonial-info">
+                                            <div class="name">Karim D.</div>
+                                            <div class="role">Restaurant, Toulouse</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <div class="testimonial-card">
-                            <div class="quote">L'équipe Factory Eat a tout géré : photos, menu, Uber Eats. J'ai juste eu
-                                à cuisiner. Mon CA a augmenté de 30% le premier mois.</div>
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">SB</div>
-                                <div class="testimonial-info">
-                                    <div class="name">Sophie B.</div>
-                                    <div class="role">Food truck, Toulouse</div>
-                                </div>
+                        <div class="carousel-controls">
+                            <button class="carousel-btn carousel-btn-prev" aria-label="Précédent">←</button>
+                            <div class="carousel-dots">
+                                <button class="carousel-dot active" aria-label="Slide 1"></button>
+                                <button class="carousel-dot" aria-label="Slide 2"></button>
+                                <button class="carousel-dot" aria-label="Slide 3"></button>
+                                <button class="carousel-dot" aria-label="Slide 4"></button>
                             </div>
+                            <button class="carousel-btn carousel-btn-next" aria-label="Suivant">→</button>
                         </div>
                     </div>
-                    <div class="carousel-slide">
-                        <div class="testimonial-card">
-                            <div class="quote">Le concept est génial. Le menu est simple, rapide à exécuter, et les
-                                clients adorent les smash burgers. On est passés de 0 à 35 commandes/jour.</div>
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">KA</div>
-                                <div class="testimonial-info">
-                                    <div class="name">Karim A.</div>
-                                    <div class="role">Restaurateur, Marseille</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-controls">
-                    <button class="carousel-btn carousel-btn-prev" aria-label="Précédent">←</button>
-                    <div class="carousel-dots">
-                        <button class="carousel-dot active" aria-label="Slide 1"></button>
-                        <button class="carousel-dot" aria-label="Slide 2"></button>
-                        <button class="carousel-dot" aria-label="Slide 3"></button>
-                    </div>
-                    <button class="carousel-btn carousel-btn-next" aria-label="Suivant">→</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================
-     CTA FINAL
+     CTA + FORM
      ============================================ -->
     <section class="cta-section section" id="contact">
-        <div class="container fade-in">
-            <h2>Prêt à booster votre chiffre d'affaires ?</h2>
-            <p>Rejoignez Factory Eat et commencez à générer du CA supplémentaire dès la première semaine. Votre ville
-                est-elle la prochaine ?</p>
-            <a href="mailto:hello@factoryeat.fr" class="btn btn-white">Contactez-nous →</a>
-            <div class="cta-platforms">
-                <span>Disponible sur</span>
-                <svg width="120" height="36" viewBox="0 0 120 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="120" height="36" rx="6" fill="rgba(255,255,255,0.2)" /><text x="60" y="22"
-                        text-anchor="middle" fill="#fff" font-family="Inter" font-weight="700" font-size="12">Uber
-                        Eats</text>
-                </svg>
-                <svg width="120" height="36" viewBox="0 0 120 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="120" height="36" rx="6" fill="rgba(255,255,255,0.2)" /><text x="60" y="22"
-                        text-anchor="middle" fill="#fff" font-family="Inter" font-weight="700"
-                        font-size="12">Deliveroo</text>
-                </svg>
-            </div>
+        <div class="container fade-up">
+            <h2>Votre ville est la prochaine ?</h2>
+            <p>Contactez-nous pour vérifier votre éligibilité et négocier vos commissions.</p>
+            <form class="cta-form" id="cta-form">
+                <input type="text" name="name" placeholder="Votre nom" required>
+                <input type="text" name="city" placeholder="Votre ville" required>
+                <input type="email" name="email" placeholder="E-mail" required>
+                <input type="tel" name="phone" placeholder="Téléphone">
+                <button type="submit" class="btn btn-white" style="grid-column: 1 / -1;">Négocier mes commissions <span
+                        class="btn-arrow">→</span></button>
+            </form>
         </div>
     </section>
 
@@ -360,51 +442,73 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="footer-brand">Factory Eat</div>
-                    <p>Restaurant virtuel nouvelle génération. Nous connectons les meilleurs cuisiniers avec les clients
-                        affamés partout en France.</p>
+                    <p>Restaurant virtuel nouvelle génération. Nous boostons la visibilité de votre cuisine physique
+                        dans toute la France via Uber Eats & Deliveroo.</p>
                     <div class="footer-socials">
-                        <a href="#" aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                                <rect x="2" y="9" width="4" height="12" />
-                                <circle cx="4" cy="4" r="2" />
-                            </svg>
-                        </a>
                         <a href="#" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <svg viewBox="0 0 24 24">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                             </svg>
                         </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h4>Navigation</h4>
-                    <a href="#accueil">Accueil</a>
-                    <a href="#comment">Comment ça marche</a>
+                    <h4>Services</h4>
+                    <a href="#etapes">Comment ça marche</a>
                     <a href="#avantages">Avantages</a>
-                    <a href="#temoignages">Témoignages</a>
+                    <a href="#simulation">Simulation CA</a>
                     <a href="#contact">Devenir partenaire</a>
                 </div>
                 <div class="footer-col">
+                    <h4>Top Villes</h4>
+                    <a href="#carte">Paris (15)</a>
+                    <a href="#carte">Marseille (12)</a>
+                    <a href="#carte">Toulouse (9)</a>
+                    <a href="#carte">Lyon (8)</a>
+                    <a href="#carte">Nantes (7)</a>
+                </div>
+                <div class="footer-col">
                     <h4>Plateformes</h4>
-                    <p>Disponible sur Uber Eats & Deliveroo dans 12 villes en France.</p>
+                    <div class="footer-platforms">
+                        <svg width="80" height="32" viewBox="0 0 80 32">
+                            <rect width="80" height="32" rx="6" fill="rgba(255,255,255,0.1)" /><text x="40" y="20"
+                                text-anchor="middle" fill="#95a5a6" font-family="Poppins" font-weight="700"
+                                font-size="10">Uber Eats</text>
+                        </svg>
+                        <svg width="80" height="32" viewBox="0 0 80 32">
+                            <rect width="80" height="32" rx="6" fill="rgba(255,255,255,0.1)" /><text x="40" y="20"
+                                text-anchor="middle" fill="#95a5a6" font-family="Poppins" font-weight="700"
+                                font-size="10">Deliveroo</text>
+                        </svg>
+                    </div>
                 </div>
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <a href="mailto:hello@factoryeat.fr">hello@factoryeat.fr</a>
                     <a href="tel:+33600000000">06 00 00 00 00</a>
-                    <p style="margin-top:8px; font-size:0.85rem;">France</p>
+                    <a href="https://wa.me/33600000000">WhatsApp</a>
+                    <p style="margin-top:8px; font-size:0.82rem;">Aureilhan, France</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                © 2026 Factory Eat. Tous droits réservés. | Conforme RGPD
+                © 2026 Factory Eat — Tous droits réservés | <a href="#">Mentions légales</a> | <a href="#">CGV</a> |
+                Conforme RGPD
             </div>
         </div>
     </footer>
 
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Main JS -->
     <script src="script.js"></script>
 </body>
 
