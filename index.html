@@ -135,39 +135,100 @@
     <!-- ============================================
      OFFRE UBER 25% (Inline Hero + Calculateur)
      ============================================ -->
+    <!-- ============================================
+     OFFRE UBER + DELIVEROO (Multi-Platform Hero)
+     ============================================ -->
     <section class="uber-offer-hero">
         <div class="container">
-            <h2>Offre Exclusive Restaurants Physiques :<br>Uber à <span class="uber-rate">25%</span> (au lieu de 30%)
-            </h2>
-            <p class="offer-text">
-                Solo sur Uber Eats ? <strong>30% commissions</strong>. Avec Factory Eat ?
-                <strong>25% négociés</strong> via notre volume multi-villes (50+ concepts 2026).
-                On gère inscription, menu tremplin, SEO — vous cuisinez !
-                <strong>Testé La Réole : +30 commandes, -5% frais.</strong>
-            </p>
+            <div class="offer-grid">
+                <!-- Text / Value Prop -->
+                <div class="offer-content fade-up">
+                    <div class="badge bg-gradient-multi">🚀 Stratégie Multi-Plateformes</div>
+                    <h2 class="text-gradient-multi sales-title">Boostez Votre Restaurant sur Uber Eats +
+                        Deliveroo</h2>
+                    <p class="offer-desc">
+                        Ne vous limitez pas. Factory Eat vous propulse sur les <strong>2 plateformes
+                            leaders</strong> pour maximiser votre volume de commandes et débloquer des
+                        commissions réduites.
+                    </p>
 
-            <div class="inline-calculator">
-                <div class="calc-inputs">
-                    <div class="calc-field">
-                        <label>Ventes / jour</label>
-                        <input type="range" id="home-calc-sales" min="5" max="100" value="30">
-                        <div class="range-value" id="home-calc-sales-val">30</div>
-                    </div>
-                    <div class="calc-field">
-                        <label>Prix moyen (€)</label>
-                        <input type="range" id="home-calc-price" min="5" max="30" value="12" step="0.5">
-                        <div class="range-value" id="home-calc-price-val">12€</div>
+                    <ul class="offer-steps">
+                        <li>
+                            <span class="step-num">1</span>
+                            <div>
+                                <strong>Inscription & Optimisation</strong>
+                                <p>On vous lance sur Uber Eats ET Deliveroo (gratuit). Taux standard 25-30%.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step-num">2</span>
+                            <div>
+                                <strong>Volume x2</strong>
+                                <p>Grâce au multi-plateformes, vous atteignez vite +30 commandes/semaine
+                                    (ex: La Réole).</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step-num">3</span>
+                            <div>
+                                <strong>Négociation (Obj. 25%)</strong>
+                                <p>Avec ce volume, on négocie pour vous la baisse de commission à 25%.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="offer-cta-group">
+                        <a href="offre-restaurants.html" class="btn btn-white">Simuler mon potentiel <span
+                                class="btn-arrow">→</span></a>
+                        <a href="contact.html" class="btn btn-outline-white">Contacter un expert</a>
                     </div>
                 </div>
-                <div class="calc-result" id="home-calc-result">
-                    <span class="saving-amount" id="home-saving">180€</span>
-                    <span class="saving-label">d'économie / mois (25% vs 30%)</span>
-                </div>
-            </div>
 
-            <div class="offer-cta-duo" style="margin-top:28px;">
-                <a href="offre-restaurants.html" class="btn-white-solid">📊 Calculer mon gain</a>
-                <a href="contact.html" class="btn-outline-white">📞 Contact Offre Uber</a>
+                <!-- Calculator -->
+                <div class="offer-calc fade-up delay-100">
+                    <div class="inline-calculator">
+                        <h3>📈 Simulez votre gain Multi-Plateformes</h3>
+                        <p style="font-size:0.9rem; color:#666; margin-bottom:20px;">
+                            Comparez <strong>Solo (1 plateforme)</strong> vs <strong>Factory Eat (2
+                                plateformes + Négo)</strong> sur 6 mois.
+                        </p>
+
+                        <div class="calc-input-group">
+                            <label>Commandes / jour (est.)</label>
+                            <div class="range-wrap">
+                                <input type="range" id="home-calc-sales" min="10" max="100" value="30" step="5">
+                                <span class="range-val" id="home-calc-sales-val">30</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-input-group">
+                            <label>Panier moyen ('€')</label>
+                            <div class="range-wrap">
+                                <input type="range" id="home-calc-price" min="10" max="40" value="12" step="1">
+                                <span class="range-val" id="home-calc-price-val">12€</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-result-box">
+                            <div class="calc-res-row">
+                                <span>Solo (Uber seul)</span>
+                                <strong>2 100 €</strong>
+                            </div>
+                            <div class="calc-res-row highlight">
+                                <span>Factory Eat (Uber+Deliveroo)</span>
+                                <strong class="text-gradient-multi" style="font-size:1.4rem;">2 500
+                                    €</strong>
+                            </div>
+                            <div class="calc-saving">
+                                🎉 Économie & Gain : <span id="home-saving">400€</span> / mois !
+                            </div>
+                            <p style="font-size:0.75rem; color:#888; margin-top:10px; text-align:center;">
+                                *Projection mois 6 avec négo 25% et volume doublé.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -367,107 +428,11 @@
     <section class="sim-section section" id="simulation">
         <div class="container">
             <div class="sim-header fade-up">
-                <div class="badge">Calculateur</div>
-                <h2>Simulez votre boost CA</h2>
+                <div class="badge">Avis Vérifiés</div>
+                <h2>Ils nous font confiance</h2>
             </div>
             <div class="sim-grid">
-                <!-- UBER + DELIVEROO OFFER HERO -->
-                <section class="uber-offer-hero">
-                    <div class="container">
-                        <div class="offer-grid">
-                            <!-- Text / Value Prop -->
-                            <div class="offer-content fade-up">
-                                <div class="badge bg-gradient-multi">🚀 Stratégie Multi-Plateformes</div>
-                                <h2 class="text-gradient-multi sales-title">Boostez Votre Restaurant sur Uber Eats +
-                                    Deliveroo</h2>
-                                <p class="offer-desc">
-                                    Ne vous limitez pas. Factory Eat vous propulse sur les <strong>2 plateformes
-                                        leaders</strong> pour maximiser votre volume de commandes et débloquer des
-                                    commissions réduites.
-                                </p>
-
-                                <ul class="offer-steps">
-                                    <li>
-                                        <span class="step-num">1</span>
-                                        <div>
-                                            <strong>Inscription & Optimisation</strong>
-                                            <p>On vous lance sur Uber Eats ET Deliveroo (gratuit). Taux standard 25-30%.
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <span class="step-num">2</span>
-                                        <div>
-                                            <strong>Volume x2</strong>
-                                            <p>Grâce au multi-plateformes, vous atteignez vite +30 commandes/semaine
-                                                (ex: La Réole).</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <span class="step-num">3</span>
-                                        <div>
-                                            <strong>Négociation (Obj. 25%)</strong>
-                                            <p>Avec ce volume, on négocie pour vous la baisse de commission à 25%.</p>
-                                        </div>
-                                    </li>
-                                </ul>
-
-                                <div class="offer-cta-group">
-                                    <a href="offre-restaurants.html" class="btn btn-white">Simuler mon potentiel <span
-                                            class="btn-arrow">→</span></a>
-                                    <a href="contact.html" class="btn btn-outline-white">Contacter un expert</a>
-                                </div>
-                            </div>
-
-                            <!-- Calculator -->
-                            <div class="offer-calc fade-up delay-100">
-                                <div class="inline-calculator">
-                                    <h3>📈 Simulez votre gain Multi-Plateformes</h3>
-                                    <p style="font-size:0.9rem; color:#666; margin-bottom:20px;">
-                                        Comparez <strong>Solo (1 plateforme)</strong> vs <strong>Factory Eat (2
-                                            plateformes + Négo)</strong> sur 6 mois.
-                                    </p>
-
-                                    <div class="calc-input-group">
-                                        <label>Commandes / jour (est.)</label>
-                                        <div class="range-wrap">
-                                            <input type="range" id="home-calc-sales" min="10" max="100" value="30"
-                                                step="5">
-                                            <span class="range-val" id="home-calc-sales-val">30</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="calc-input-group">
-                                        <label>Panier moyen ('€')</label>
-                                        <div class="range-wrap">
-                                            <input type="range" id="home-calc-price" min="10" max="40" value="12"
-                                                step="1">
-                                            <span class="range-val" id="home-calc-price-val">12€</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="calc-result-box">
-                                        <div class="calc-res-row">
-                                            <span>Solo (Uber seul)</span>
-                                            <strong>2 100 €</strong>
-                                        </div>
-                                        <div class="calc-res-row highlight">
-                                            <span>Factory Eat (Uber+Deliveroo)</span>
-                                            <strong class="text-gradient-multi" style="font-size:1.4rem;">2 500
-                                                €</strong>
-                                        </div>
-                                        <div class="calc-saving">
-                                            🎉 Économie & Gain : <span id="home-saving">400€</span> / mois !
-                                        </div>
-                                        <p style="font-size:0.75rem; color:#888; margin-top:10px; text-align:center;">
-                                            *Projection mois 6 avec négo 25% et volume doublé.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <!-- Testimonials moved to full width or kept in grid -->
                 <!-- Testimonials -->
                 <div class="fade-up">
                     <div class="carousel">
