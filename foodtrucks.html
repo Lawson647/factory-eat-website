@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="dark">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -15,6 +15,12 @@
 
 <body>
 
+    <!-- PROMO BANNER -->
+    <div class="promo-banner" id="promo-banner">
+        🚚 <strong>Spécial Foodtrucks</strong> | Visibilité Uber Eats & Deliveroo sur vos spots ! On gère les zones.
+        <button class="banner-close" id="banner-close" aria-label="Fermer">✕</button>
+    </div>
+
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="container">
@@ -23,11 +29,12 @@
                 <a href="index.html">Accueil</a>
                 <a href="partenaires.html">Partenaires</a>
                 <a href="comment-ca-marche.html">Comment Ça Marche</a>
+                <a href="tarifs.html">Tarifs</a>
                 <a href="offre-restaurants.html">Solution Restos</a>
                 <a href="foodtrucks.html" class="active">Foodtrucks</a>
                 <a href="contact.html">Contact</a>
-                <a href="blog.html">Blog</a>
-                <a href="contact.html" class="btn btn-primary" style="padding:10px 20px;">Contact Négo</a>
+                <button id="dark-toggle" class="dark-toggle" aria-label="Dark mode">🌙</button>
+                <a href="foodtrucks.html" class="btn btn-primary">Multi-Plateformes</a>
             </div>
             <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
         </div>
@@ -37,187 +44,223 @@
         <a href="index.html">Accueil</a>
         <a href="partenaires.html">Partenaires</a>
         <a href="comment-ca-marche.html">Comment Ça Marche</a>
+        <a href="tarifs.html">Tarifs</a>
         <a href="offre-restaurants.html">Solution Restos</a>
         <a href="foodtrucks.html" class="active">Foodtrucks</a>
         <a href="contact.html">Contact</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html" class="btn btn-primary" style="text-align:center;">Contact Négo</a>
+        <a href="foodtrucks.html" class="btn btn-primary" style="text-align:center;">Multi-Plateformes</a>
     </div>
 
-    <!-- HERO SECTION (Dark Overlay) -->
-    <section class="hero-dark-overlay"
-        style="min-height:80vh; display:flex; align-items:center; background-image: url('https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&w=1600&q=80');">
+    <!-- HERO SECTION -->
+    <section class="uber-offer-hero"
+        style="padding-top:100px; padding-bottom:80px; background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&w=1600&q=80'); background-size:cover; background-position:center;">
         <div class="container text-center">
-            <div class="badge bg-gradient-multi fade-up">🚚 Spécial Foodtrucks</div>
-
-            <h1 class="text-shadow-strong fade-up delay-100"
-                style="font-size:3.5rem; max-width:900px; margin:20px auto;">Foodtrucks : Uber Eats &
+            <div class="badge bg-gradient-multi" style="margin:0 auto 20px;">🚚 Spécial Foodtrucks</div>
+            <div class="platform-logos fade-up">
+                <svg height="50" viewBox="0 0 100 30"
+                    style="vertical-align:middle; margin-right:20px; filter:brightness(0) invert(1);"><text y="20"
+                        font-family="Arial" font-weight="bold" fill="#06C167" font-size="20">Uber Eats</text></svg>
+                <span style="font-size:2rem; vertical-align:middle; color:white;">+</span>
+                <svg height="50" viewBox="0 0 100 30"
+                    style="vertical-align:middle; margin-left:20px; filter:brightness(0) invert(1);"><text y="20"
+                        font-family="Arial" font-weight="bold" fill="#00CCBC" font-size="20">deliveroo</text></svg>
+            </div>
+            <h1 class="fade-up delay-100" style="max-width:900px; margin:20px auto; color:white;">Uber Eats &
                 Deliveroo<br>Adaptés à vos Emplacements Variables</h1>
-
-            <p class="fade-up delay-200 text-shadow-md"
-                style="font-size:1.3rem; color:rgba(255,255,255,0.95); max-width:800px; margin:0 auto 40px;">
-                Mobilité gérée (GPS App). Zones Flexibles 5-10km. <br>
-                <strong>Doublez vos ventes sur les marchés et spots privés.</strong>
+            <p class="lead fade-up delay-200" style="max-width:700px; margin:0 auto 40px; color:rgba(255,255,255,0.9);">
+                Factory Eat gère vos changements d'adresse quotidiens via une app simple. Doublez votre visibilité sur
+                les marchés et spots privés. <strong>Pas de local fixe nécessaire.</strong>
             </p>
-
             <div class="hero-cta fade-up delay-300">
                 <a href="#simulator" class="btn btn-primary">Calculer CA Foodtruck <span class="btn-arrow">→</span></a>
-                <a href="#how" class="btn btn-outline-white">Comment ça marche ?</a>
+                <a href="#timeline" class="btn btn-outline-white">Voir comment ça marche</a>
             </div>
         </div>
     </section>
 
     <!-- SECTION 1: COMPARISON -->
-    <section class="section" style="background:#111; color:white;">
+    <section class="section">
         <div class="container">
             <div class="text-center fade-up" style="margin-bottom:40px;">
-                <h2 class="text-shadow-md">La Solution pour Foodtrucks Mobiles</h2>
-                <p style="color:#aaa;">Enfin une présence plateforme qui suit vos déplacements.</p>
+                <h2>La Solution pour Foodtrucks Mobiles</h2>
+                <p>Enfin une présence plateforme qui suit vos déplacements.</p>
             </div>
-            <table class="comparison-table fade-up" style="background:#222; border-color:#333; color:white;">
-                <thead style="background:#333;">
+            <table class="comparison-table fade-up">
+                <thead>
                     <tr>
-                        <th style="background:#333; color:white;">Solution</th>
-                        <th style="background:#333; color:white;">Adresse / GPS</th>
-                        <th style="background:#333; color:white;">Visibilité</th>
-                        <th style="background:#333; color:white;">Commission</th>
+                        <th>Solution</th>
+                        <th>Adresse / GPS</th>
+                        <th>Visibilité</th>
+                        <th>Commission</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="color:#e74c3c;"><strong>Solo (Classique)</strong></td>
-                        <td style="color:#ccc;">Impossible (Fixe)</td>
-                        <td style="color:#ccc;">0 (Non adapté)</td>
-                        <td class="strikethrough" style="color:#e74c3c;">-</td>
+                        <td><strong>Solo (Classique)</strong></td>
+                        <td>Impossible (Fixe)</td>
+                        <td>0 (Non adapté)</td>
+                        <td class="strikethrough">-</td>
                     </tr>
-                    <tr class="highlight-row" style="background:rgba(255,107,53,0.1);">
-                        <td style="color:#FF6B35;"><strong>Factory Truck</strong></td>
-                        <td style="color:#fff;"><strong>Variable (App Gps)</strong></td>
-                        <td style="color:#fff;"><strong>Uber + Deliveroo</strong></td>
-                        <td style="color:#27AE60;"><strong>25% (Négocié volume)</strong></td>
+                    <tr class="highlight-row">
+                        <td><strong>Factory Truck</strong></td>
+                        <td><strong>Variable (App Gps)</strong></td>
+                        <td><strong>Uber + Deliveroo</strong></td>
+                        <td><strong>25% (Négocié volume)</strong></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </section>
 
-    <!-- SECTION 2: 3 ETAPES (Dark) -->
-    <section class="section" id="how" style="background:#1A1A1A; color:white;">
+    <!-- SECTION 2: TIMELINE 3 STEPS -->
+    <section class="section" id="timeline" style="background:var(--bg-alt);">
         <div class="container">
             <div class="text-center fade-up" style="margin-bottom:50px;">
                 <h2>3 Étapes Simples</h2>
-                <p style="color:#aaa;">On s'occupe de tout l'administratif complexe.</p>
+                <p>On s'occupe de tout l'administratif complexe.</p>
             </div>
 
             <div class="step-nego-grid">
                 <!-- Step 1 -->
-                <div class="step-card fade-up" style="background:#222; border-color:#333; color:white;">
+                <div class="step-card fade-up">
                     <div class="step-icon">1</div>
-                    <h4>QG Fixe (Base)</h4>
-                    <p style="color:#ccc;">On inscrit 1 adresse de base (votre QG ou spot principal) sur Uber/Deliveroo
-                        pour valider le compte administratif.</p>
+                    <h4>Inscription Fixe</h4>
+                    <p>On inscrit 1 adresse de base (votre QG ou spot principal) sur Uber/Deliveroo avec vos docs
+                        (KBIS/Siret suffisent). On crée "Factory Truck [Votre Ville]".</p>
                 </div>
                 <!-- Step 2 -->
-                <div class="step-card fade-up delay-100" style="background:#222; border-color:#333; color:white;">
+                <div class="step-card fade-up delay-100">
                     <div class="step-icon">2</div>
                     <h4>Zones Flexibles</h4>
-                    <p style="color:#ccc;">On définit un rayon de livraison large (5-10km). Vous mettez à jour vos
-                        emplacements quotidiens via notre app Manager.</p>
+                    <p>On définit un rayon de livraison large (5-10km). Vous mettez à jour vos emplacements quotidiens
+                        via notre app Manager (géoloc GPS facile).</p>
                 </div>
                 <!-- Step 3 -->
-                <div class="step-card fade-up delay-200" style="background:#222; border-color:#333; color:white;">
+                <div class="step-card fade-up delay-200">
                     <div class="step-icon">3</div>
                     <h4>Multi-Plateformes</h4>
-                    <p style="color:#ccc;">Uber + Deliveroo simultané = double visibilité sur les marchés/foires. Volume
-                        rapide → négociation commissions à 25%.</p>
+                    <p>Uber + Deliveroo simultané = double visibilité sur les marchés/forains. Volume rapide →
+                        négociation commissions à 25%.</p>
                 </div>
             </div>
 
             <!-- Citation -->
-            <div class="partner-card fade-up"
-                style="max-width:600px; margin:50px auto 0; text-align:center; background:#222; border:1px solid #333;">
+            <div class="partner-card fade-up" style="max-width:600px; margin:50px auto 0; text-align:center;">
                 <div class="partner-card-body">
-                    <p class="partner-quote" style="font-size:1.1rem; font-style:italic; color:#ccc;">"Avec mon
-                        foodtruck asiatique à La Réole, je change de spot tous les midis. Factory Eat gère la mise à
-                        jour Uber. J'ai pris +25 commandes/jour !"</p>
-                    <div class="partner-meta" style="margin-top:15px; font-weight:bold; color:var(--primary);">—
-                        Foodtruck "Le Dragon", La Réole (33)</div>
+                    <p class="partner-quote" style="font-size:1.1rem; font-style:italic;">"Avec mon foodtruck asiatique
+                        à La Réole, je change de spot tous les midis. Factory Eat gère la mise à jour Uber. J'ai pris
+                        +25 commandes/jour !"</p>
+                    <div class="partner-meta" style="margin-top:15px; font-weight:bold;">— Foodtruck "Le Dragon", La
+                        Réole (33)
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3: SIMULATOR -->
-    <section class="section" id="simulator" style="background:#111; color:white;">
+    <!-- SECTION 3: SIMULATOR & GRAPH -->
+    <section class="section" id="simulator">
         <div class="container">
-            <div class="contact-form-box fade-up"
-                style="max-width:600px; margin:0 auto; background:#222; border:1px solid #333; box-shadow:none;">
-                <h3>Calculez votre potentiel Foodtruck</h3>
-                <p style="font-size:0.9rem; margin-bottom:20px; color:#ccc;">Simulation CA additionnel mobile.</p>
-                <form class="contact-form" id="truck-sim-form">
-                    <div class="form-group">
-                        <label style="color:#ccc;">Jours d'activité / semaine</label>
-                        <input type="number" id="sim-days" min="1" max="7" value="5" required
-                            style="background:#333; border-color:#444; color:white;">
+            <div class="two-col-grid reverse-mobile">
+
+                <!-- Graph or Explanation -->
+                <div class="fade-up">
+                    <h3>Projection CA Foodtruck</h3>
+                    <p style="margin-bottom:20px;">Estimation basée sur un panier moyen de 12-15€.</p>
+                    <div class="chart-container"
+                        style="background:white; padding:20px; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.05);">
+                        <!-- Using same chart ID but will init differently in JS if needed, or reuse comparison logic -->
+                        <canvas id="multi-chart" height="250"></canvas>
                     </div>
-                    <div class="form-group">
-                        <label style="color:#ccc;">Ventes estimées par spot</label>
-                        <select id="sim-spot-sales" style="background:#333; border-color:#444; color:white;">
-                            <option value="15">Démarrage (15)</option>
-                            <option value="30" selected>Moyen (30)</option>
-                            <option value="50">Fort (50+)</option>
-                        </select>
+                    <div class="testimonial-box"
+                        style="margin-top:30px; border-left:4px solid #FF6B35; padding-left:15px;">
+                        <p style="font-size:0.95rem;"><em>"Avant je perdais les clients qui ne voulaient pas faire la
+                                queue. Maintenant ils commandent en click & collect ou livraison pendant que je
+                                cuisine."</em>
+                        </p>
+                        <strong>— Marc, Burger Truck</strong>
                     </div>
-                    <div class="form-group">
-                        <label style="color:#ccc;">Panier Moyen (€)</label>
-                        <input type="number" id="sim-truck-price" value="13" min="8" max="25"
-                            style="background:#333; border-color:#444; color:white;">
-                    </div>
-                    <div class="form-group full">
-                        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
-                            Calculer mon CA <span class="btn-arrow">→</span>
-                        </button>
-                    </div>
-                </form>
-                <div id="truck-sim-result"
-                    style="margin-top:20px; text-align:center; font-weight:bold; color:#FF6B35; font-size:1.2rem;">
                 </div>
+
+                <!-- Form Simulator -->
+                <div class="contact-form-box fade-up delay-100">
+                    <h3>Calculez votre potentiel</h3>
+                    <p style="font-size:0.9rem; margin-bottom:20px;">Simulation revenus additionnels.</p>
+                    <form class="contact-form" id="truck-sim-form">
+                        <div class="form-group">
+                            <label>Jours d'activité / semaine</label>
+                            <input type="number" id="sim-days" min="1" max="7" value="5" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Ventes estimées par spot</label>
+                            <select id="sim-spot-sales">
+                                <option value="15">Démarrage (15)</option>
+                                <option value="30" selected>Moyen (30)</option>
+                                <option value="50">Fort (50+)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Panier Moyen (€)</label>
+                            <input type="number" id="sim-truck-price" value="13" min="8" max="25">
+                        </div>
+                        <div class="form-group full">
+                            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+                                Calculer mon CA <span class="btn-arrow">→</span>
+                            </button>
+                        </div>
+                        <p style="font-size:0.75rem; color:#888; margin-top:10px; text-align:center;">Réponse indicative
+                            immediate.</p>
+                    </form>
+                    <div id="truck-sim-result"
+                        style="margin-top:20px; text-align:center; font-weight:bold; color:#FF6B35; font-size:1.2rem;">
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer" style="background:#0f1117; color:#888; border-top:1px solid #222;">
+    <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div class="footer-brand text-white">Factory Eat</div>
-                    <p>Accélérateur de revenus pour Restaurants & Foodtrucks.</p>
+                    <div class="footer-brand">Factory Eat</div>
+                    <p>Solution Foodtrucks & Restaurants. Boostez votre visibilité via Uber Eats & Deliveroo partout en
+                        France.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg></a>
+                    </div>
                 </div>
                 <div class="footer-col">
-                    <h4 class="text-white">Services</h4>
+                    <h4>Services</h4>
                     <a href="offre-restaurants.html">Restaurants Physiques</a>
                     <a href="foodtrucks.html">Foodtrucks</a>
                     <a href="contact.html">Devenir partenaire</a>
                 </div>
                 <div class="footer-col">
-                    <h4 class="text-white">Foodtrucks</h4>
+                    <h4>Foodtrucks</h4>
                     <a href="foodtrucks.html">Zones flexibles</a>
                     <a href="foodtrucks.html">Inscription Uber/Deliveroo</a>
                     <a href="foodtrucks.html">Négo commissions</a>
                 </div>
                 <div class="footer-col">
-                    <h4 class="text-white">Contact</h4>
+                    <h4>Contact</h4>
                     <a href="mailto:hello@factoryeat.fr">hello@factoryeat.fr</a>
-                    <a href="contact.html">Formulaire</a>
+                    <p style="margin-top:8px; font-size:0.82rem;">France</p>
                 </div>
             </div>
-            <div class="footer-bottom" style="border-top:1px solid #222; margin-top:40px; padding-top:20px;">
+            <div class="footer-bottom">
                 © 2026 Factory Eat — Tous droits réservés
             </div>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 </body>
 

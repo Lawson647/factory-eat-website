@@ -1,21 +1,56 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="dark">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Factory Eat — Boostez Votre Cuisine | Uber Eats + Deliveroo Multi-Plateformes</title>
+    <title>25% Uber Eats Restaurants Physiques | Factory Eat — Restaurant Virtuel</title>
     <meta name="description"
-        content="Boostez votre restaurant ou foodtruck avec Factory Eat. Stratégie multi-plateformes Uber Eats & Deliveroo. Départ 25-30% → 25% négo volume. Burgers, Sushis, Nems, Bao...">
+        content="Économisez 5% commissions Uber via notre partenariat. Factory Eat — Restaurant virtuel rentable, toutes villes France. 25% au lieu de 30% solo.">
     <meta name="theme-color" content="#FF6B35">
     <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Schema FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Comment fonctionne Factory Eat ?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Factory Eat est un tremplin pour booster les ventes de votre restaurant physique via Uber Eats et Deliveroo. Commissions négociables de 10 à 20%." }
+            },
+            {
+                "@type": "Question",
+                "name": "Quelles cuisines sont éligibles ?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Toutes cuisines : burgers, pizzas, rôtisseries, foodtrucks, sushi, poke bowls... Si vous avez une cuisine physique, vous êtes éligible." }
+            }
+        ]
+    }
+    </script>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
+    <!-- PROMO BANNER -->
+    <div class="promo-banner" id="promo-banner">
+        🚀 <strong>Multi Uber + Deliveroo</strong> | Départ 25-30% → Objectif 25% après volume. On négocie pour vous !
+        <a href="offre-restaurants.html" style="color:white;text-decoration:underline;margin-left:5px;">En savoir
+            plus</a>
+        <button class="banner-close" id="banner-close" aria-label="Fermer">✕</button>
+    </div>
+
+    <!-- ============================================
+     NAVBAR (Glassmorphism)
+     ============================================ -->
     <nav class="navbar" id="navbar">
         <div class="container">
             <a href="index.html" class="navbar-brand">Factory Eat</a>
@@ -23,11 +58,13 @@
                 <a href="index.html" class="active">Accueil</a>
                 <a href="partenaires.html">Partenaires</a>
                 <a href="comment-ca-marche.html">Comment Ça Marche</a>
+                <a href="tarifs.html">Tarifs</a>
                 <a href="offre-restaurants.html">Solution Restos</a>
                 <a href="foodtrucks.html">Foodtrucks</a>
                 <a href="contact.html">Contact</a>
                 <a href="blog.html">Blog</a>
-                <a href="contact.html" class="btn btn-primary" style="padding:10px 20px;">Contact Négo</a>
+                <button id="dark-toggle" class="dark-toggle" aria-label="Dark mode">🌙</button>
+                <a href="offre-restaurants.html" class="btn btn-primary">Multi-Plateformes</a>
             </div>
             <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
         </div>
@@ -37,269 +74,722 @@
         <a href="index.html" class="active">Accueil</a>
         <a href="partenaires.html">Partenaires</a>
         <a href="comment-ca-marche.html">Comment Ça Marche</a>
+        <a href="tarifs.html">Tarifs</a>
         <a href="offre-restaurants.html">Solution Restos</a>
         <a href="foodtrucks.html">Foodtrucks</a>
         <a href="contact.html">Contact</a>
         <a href="blog.html">Blog</a>
-        <a href="contact.html" class="btn btn-primary" style="text-align:center;">Contact Négo</a>
+        <a href="offre-restaurants.html" class="btn btn-primary" style="text-align:center;">Multi-Plateformes</a>
     </div>
 
-    <!-- HERO SECTION (Dark Overlay 50%) -->
-    <section class="hero-dark-overlay"
-        style="min-height:100vh; display:flex; align-items:center; background-image: url('https://images.unsplash.com/photo-1544025162-d76690b6d029?auto=format&fit=crop&w=1600&q=80');">
-        <div class="container text-center">
-
-            <div class="badge bg-gradient-multi fade-up" style="margin-bottom:20px; font-size:0.9rem;">🚀
-                Multi-Plateformes : Uber Eats + Deliveroo</div>
-
-            <h1 class="text-shadow-strong fade-up delay-100"
-                style="font-size:clamp(2.5rem, 5vw, 4rem); max-width:900px; margin:0 auto 20px;">Factory Eat — Boostez
-                Votre Cuisine</h1>
-
-            <p class="fade-up delay-200 text-shadow-md"
-                style="font-size:1.2rem; color:rgba(255,255,255,0.95); max-width:800px; margin:0 auto 40px; line-height:1.6;">
-                Débloquez votre potentiel de vente. Départ 25-30% → <strong>25% Commission Négociée</strong> via
-                volume.<br>
-                Toutes cuisines : 🍔 Burgers, 🍣 Asiatique (Sushis/Nems/Poké), 🚚 Foodtrucks mobiles.
-            </p>
-
-            <!-- Inline Calculator Hero -->
-            <div class="inline-calculator fade-up delay-300"
-                style="max-width:500px; margin:0 auto; padding:24px; background:rgba(26,26,26,0.9); border:1px solid rgba(255,255,255,0.2);">
-                <div style="font-size:0.9rem; color:#bbb; margin-bottom:15px; font-weight:600;">SIMULATEUR RAPIDE
-                    (Exemple : 25 Jours)</div>
-                <div style="display:flex; justify-content:space-between; margin-bottom:10px; color:white;">
-                    <span>30 Ventes / Jour</span>
-                    <span>x 12€ Panier</span>
-                </div>
-                <div style="font-size:2rem; font-weight:900; color:#27AE60; margin-bottom:5px;">~ 7 500 € / mois</div>
-                <div style="font-size:0.8rem; color:#888; margin-bottom:20px;">* Avec comm. négociée 25% (Est.)</div>
-
-                <div class="offer-cta-duo">
-                    <a href="offre-restaurants.html" class="btn btn-primary" style="width:100%;">Détails Solution</a>
-                    <a href="contact.html" class="btn btn-outline-white" style="width:100%;">Contacter</a>
-                </div>
+    <!-- ============================================
+     HERO (Carousel + Particles)
+     ============================================ -->
+    <section class="hero" id="accueil">
+        <div class="hero-slides">
+            <div class="hero-slide active"
+                style="background-image:url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1920&h=1080&fit=crop&q=80');">
             </div>
-
+            <div class="hero-slide"
+                style="background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1920&h=1080&fit=crop&q=80');">
+            </div>
+            <div class="hero-slide"
+                style="background-image:url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1920&h=1080&fit=crop&q=80');">
+            </div>
+            <div class="hero-slide"
+                style="background-image:url('https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=1920&h=1080&fit=crop&q=80');">
+            </div>
         </div>
-    </section>
+        <canvas id="particles-canvas"></canvas>
 
-    <!-- SECTION 2: TOP PARTENAIRES (Nos Stars) -->
-    <section class="section" style="background:#111; color:white;">
         <div class="container">
-            <div class="text-center fade-up" style="margin-bottom:50px;">
-                <h2 class="text-shadow-strong">Nos Stars 🌟</h2>
-                <p style="color:#aaa;">Ils cartonnent grâce à la stratégie Multi-Plateformes.</p>
+            <div class="hero-content fade-up">
+                <div class="badge">🚀 Restaurant virtuel nationale</div>
+                <h1><span class="highlight">Factory Eat</span> —<br>Restaurant Virtuel Rentable Nationwide</h1>
+                <p class="hero-subtitle fade-up">
+                    Rejoignez <strong>100+ restaurants</strong> partenaires et boostez votre chiffre d'affaires. Sans
+                    frais cachés.
+                </p>
+                <div class="hero-cta fade-up">
+                    <a href="offre-restaurants.html" class="btn btn-primary">Découvrir la Solution Restos <span
+                            class="btn-arrow">→</span></a>
+                    <a href="https://calendly.com/factoryeat/demo" target="_blank" class="btn btn-secondary">Réserver un
+                        audit</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-count="50" data-suffix="+">0</span>
+                        <span class="stat-label">Villes</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="100" data-suffix="+">0</span>
+                        <span class="stat-label">Partenaires</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="30" data-prefix="+" data-suffix="%">0</span>
+                        <span class="stat-label">CA moyen</span>
+                    </div>
+                </div>
             </div>
-
-            <!-- Carousel / Grid of Top Partners -->
-            <div class="asian-grid" style="margin-top:0;">
-
-                <!-- Partner 1 -->
-                <div class="card-dark fade-up">
-                    <div class="top-badge">Top Ventes</div>
-                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80"
-                        alt="Burger">
-                    <div class="card-dark-content">
-                        <h4>La Réole Grill</h4>
-                        <p style="color:#888; font-size:0.9rem;">Spécialiste Burger & Rôtisserie</p>
-                        <div class="revenue-stat">+ 2 500 € / mois</div>
-                        <p style="font-size:0.85rem; margin-top:10px; font-style:italic;">"Négo réussie en 3 mois !"</p>
-                    </div>
-                </div>
-
-                <!-- Partner 2 -->
-                <div class="card-dark fade-up delay-100">
-                    <div class="top-badge">Record</div>
-                    <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=600&q=80"
-                        alt="Sushi">
-                    <div class="card-dark-content">
-                        <h4>Sushi Tokyo</h4>
-                        <p style="color:#888; font-size:0.9rem;">Asiatique & Poké Focus</p>
-                        <div class="revenue-stat">+ 3 200 € / mois</div>
-                        <p style="font-size:0.85rem; margin-top:10px; font-style:italic;">"Menu virtuel tremplin top."
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Partner 3 -->
-                <div class="card-dark fade-up delay-200">
-                    <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80"
-                        alt="Nems">
-                    <div class="card-dark-content">
-                        <h4>Nems Marseille</h4>
-                        <p style="color:#888; font-size:0.9rem;">Traiteur Chinois Rapide</p>
-                        <div class="revenue-stat">+ 1 800 € / mois</div>
-                        <p style="font-size:0.85rem; margin-top:10px; font-style:italic;">"Livraisons Uber explosent."
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Partner 4 -->
-                <div class="card-dark fade-up delay-300">
-                    <div class="top-badge">Mobile 🚚</div>
-                    <img src="https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&w=600&q=80"
-                        alt="Truck">
-                    <div class="card-dark-content">
-                        <h4>Asian Truck TLS</h4>
-                        <p style="color:#888; font-size:0.9rem;">Foodtruck Fusion Emplacements</p>
-                        <div class="revenue-stat">+ 2 100 € / mois</div>
-                        <p style="font-size:0.85rem; margin-top:10px; font-style:italic;">"Gestion zones GPS parfaite."
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="text-center" style="margin-top:40px;">
-                <a href="partenaires.html" class="btn btn-outline-white">Voir tous nos partenaires & Carte →</a>
-            </div>
-
         </div>
     </section>
 
-    <!-- SECTION 3: CUISINES CAROUSEL -->
-    <section class="section" style="background:#1A1A1A; color:white; border-top:1px solid #333;">
+    <!-- ============================================
+     OFFRE UBER 25% (Inline Hero + Calculateur)
+     ============================================ -->
+    <!-- ============================================
+     OFFRE UBER + DELIVEROO (Multi-Platform Hero)
+     ============================================ -->
+    <section class="uber-offer-hero">
+        <div class="container">
+            <div class="offer-grid">
+                <!-- Text / Value Prop -->
+                <div class="offer-content fade-up">
+                    <div class="badge bg-gradient-multi">🚀 Stratégie Multi-Plateformes</div>
+                    <h2 class="text-gradient-multi sales-title">Boostez Votre Restaurant sur Uber Eats +
+                        Deliveroo</h2>
+                    <p class="offer-desc">
+                        Ne vous limitez pas. Factory Eat vous propulse sur les <strong>2 plateformes
+                            leaders</strong> pour maximiser votre volume de commandes et débloquer des
+                        commissions réduites.
+                    </p>
+
+                    <ul class="offer-steps">
+                        <li>
+                            <span class="step-num">1</span>
+                            <div>
+                                <strong>Inscription & Optimisation</strong>
+                                <p>On vous lance sur Uber Eats ET Deliveroo (gratuit). Taux standard 25-30%.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step-num">2</span>
+                            <div>
+                                <strong>Volume x2</strong>
+                                <p>Grâce au multi-plateformes, vous atteignez vite +30 commandes/semaine
+                                    (ex: La Réole).</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step-num">3</span>
+                            <div>
+                                <strong>Négociation (Obj. 25%)</strong>
+                                <p>Avec ce volume, on négocie pour vous la baisse de commission à 25%.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="offer-cta-group">
+                        <a href="offre-restaurants.html" class="btn btn-white">Simuler mon potentiel <span
+                                class="btn-arrow">→</span></a>
+                        <a href="contact.html" class="btn btn-outline-white">Contacter un expert</a>
+                    </div>
+                </div>
+
+                <!-- Calculator -->
+                <div class="offer-calc fade-up delay-100">
+                    <div class="inline-calculator">
+                        <h3>📈 Simulez votre gain Multi-Plateformes</h3>
+                        <p style="font-size:0.9rem; color:#666; margin-bottom:20px;">
+                            Comparez <strong>Solo (1 plateforme)</strong> vs <strong>Factory Eat (2
+                                plateformes + Négo)</strong> sur 6 mois.
+                        </p>
+
+                        <div class="calc-input-group">
+                            <label>Commandes / jour (est.)</label>
+                            <div class="range-wrap">
+                                <input type="range" id="home-calc-sales" min="10" max="100" value="30" step="5">
+                                <span class="range-val" id="home-calc-sales-val">30</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-input-group">
+                            <label>Panier moyen ('€')</label>
+                            <div class="range-wrap">
+                                <input type="range" id="home-calc-price" min="10" max="40" value="12" step="1">
+                                <span class="range-val" id="home-calc-price-val">12€</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-result-box">
+                            <div class="calc-res-row">
+                                <span>Solo (Uber seul)</span>
+                                <strong>2 100 €</strong>
+                            </div>
+                            <div class="calc-res-row highlight">
+                                <span>Factory Eat (Uber+Deliveroo)</span>
+                                <strong class="text-gradient-multi" style="font-size:1.4rem;">2 500
+                                    €</strong>
+                            </div>
+                            <div class="calc-saving">
+                                🎉 Économie & Gain : <span id="home-saving">400€</span> / mois !
+                            </div>
+                            <p style="font-size:0.75rem; color:#888; margin-top:10px; text-align:center;">
+                                *Projection mois 6 avec négo 25% et volume doublé.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+     GALERIE CUISINES MULTIPLES (Carousel)
+     ============================================ -->
+    <section class="cuisines-gallery section-bg-light" style="padding:40px 0;">
         <div class="container text-center fade-up">
-            <h2 class="text-shadow-md">Toutes Cuisines, Tous Formats</h2>
-            <p style="color:#aaa; margin-bottom:40px;">On adapte nos marques virtuelles à votre savoir-faire.</p>
-
+            <h3 style="margin-bottom:20px;">Toutes cuisines : burgers, asiatique (sushi/nems/poké/bao), rôtisserie,
+                pizza...</h3>
             <div class="cuisine-carousel-wrapper">
+                <!-- Using simple CSS scroll snap for now or JS carousel -->
                 <div class="cuisine-scroller">
-
                     <div class="cuisine-card">
                         <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=300&q=80"
-                            alt="Burger">
-                        <span style="color:white;">Smash Burgers</span>
+                            alt="Smash Burger">
+                        <span>Smash Burgers</span>
                     </div>
-
                     <div class="cuisine-card">
                         <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=300&q=80"
                             alt="Sushi">
-                        <span style="color:white;">Sushis Japonais</span>
+                        <span>Sushis Frais</span>
                     </div>
-
                     <div class="cuisine-card">
                         <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=300&q=80"
                             alt="Nems">
-                        <span style="color:white;">Nems Chinois</span>
+                        <span>Nems & Wok</span>
                     </div>
-
                     <div class="cuisine-card">
                         <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=300&q=80"
                             alt="Poke">
-                        <span style="color:white;">Poké / Bao</span>
+                        <span>Poké Bowls</span>
                     </div>
-
                     <div class="cuisine-card">
-                        <img src="https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&w=300&q=80"
-                            alt="Foodtruck">
-                        <span style="color:white;">Foodtrucks</span>
+                        <img src="https://images.unsplash.com/photo-1563245372-f2172732006e?auto=format&fit=crop&w=300&q=80"
+                            alt="Bao">
+                        <span>Bao Vapeur</span>
                     </div>
-
                     <div class="cuisine-card">
-                        <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=300&q=80"
-                            alt="Rotisserie">
-                        <span style="color:white;">Rôtisserie</span>
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=300&q=80"
+                            alt="Pizza">
+                        <span>Pizza</span>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 4: COMMENT CA MARCHE (Timeline) -->
-    <section class="section" style="background:#111; color:white;">
+    <!-- ============================================
+     ASIATIQUE EXPLOSIF
+     ============================================ -->
+    <section class="asian-focus section">
         <div class="container">
-            <div class="text-center fade-up" style="margin-bottom:50px;">
-                <h2>Comment ça marche ?</h2>
-                <p style="color:#aaa;">Simple, rapide et transparent.</p>
+            <div class="section-header text-center fade-up">
+                <div class="badge bg-gradient-multi">Menu Tremplin</div>
+                <h2>Asiatique Explosif 🥢</h2>
+                <p>Sushis, nems chinois, poké bowls, bao vapeur... On adapte nos menus virtuels à vos spécialités !</p>
             </div>
+            <div class="asian-grid">
+                <!-- Card 1 -->
+                <div class="asian-card fade-up">
+                    <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=500&q=80"
+                        alt="Sushi">
+                    <div class="asian-overlay">
+                        <h4>Sushis Japonais</h4>
+                        <p>Menu virtuel "Factory Sushi Poke"</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="asian-card fade-up delay-100">
+                    <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=500&q=80"
+                        alt="Nems">
+                    <div class="asian-overlay">
+                        <h4>Nems & Wok Chinois</h4>
+                        <p>Factory Nems Express</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="asian-card fade-up delay-200">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80"
+                        alt="Poke">
+                    <div class="asian-overlay">
+                        <h4>Poké & Bao</h4>
+                        <p>Factory Asian Fusion</p>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="asian-card fade-up delay-300">
+                    <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=500&q=80"
+                        alt="Ramen">
+                    <div class="asian-overlay">
+                        <h4>Ramen Coréen</h4>
+                        <p>Udon & Kimchi</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center" style="margin-top:20px; font-style:italic; color:#666;">Exemples virtuels testés :
+                +40% visibilité Uber/Deliveroo asiatique.</p>
+        </div>
+    </section>
 
-            <div class="timeline" style="max-width:700px; margin:0 auto; padding-left:20px;">
+    <!-- ============================================
+     SPECIAL FOODTRUCKS
+     ============================================ -->
+    <section class="foodtruck-teaser section" style="background:#2c3e50; color:white;">
+        <div class="container">
+            <div class="two-col-grid align-center">
+                <div class="ft-content fade-up">
+                    <div class="badge" style="background:#FF6B35; color:white;">Nouveau</div>
+                    <h2 style="color:white;">Foodtrucks : Uber Eats & Deliveroo adaptés à vos emplacements variables 🚚
+                    </h2>
+                    <ul class="ft-list">
+                        <li>✅ <strong>Inscription fixe :</strong> 1 adresse base (votre QG) pour valider le compte.</li>
+                        <li>✅ <strong>Zones flexibles :</strong> Définissez rayon livraison large (5-10km).</li>
+                        <li>✅ <strong>Multi-plateformes :</strong> Uber + Deliveroo simultané → idéale foires & marchés.
+                        </li>
+                    </ul>
+                    <div class="ft-cta" style="margin-top:30px;">
+                        <a href="foodtrucks.html" class="btn btn-primary">Foodtruck ? Contact emplacement variable OK !
+                            <span class="btn-arrow">→</span></a>
+                    </div>
+                </div>
+                <div class="ft-image fade-up delay-100">
+                    <img src="https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&w=600&q=80"
+                        alt="Foodtruck" style="border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.3);">
+                    <div class="visual-stat"
+                        style="position:absolute; bottom:20px; left:-20px; background:white; color:#333; padding:15px; border-radius:8px; box-shadow:0 5px 15px rgba(0,0,0,0.2);">
+                        <strong>+25 commandes/jour</strong><br>
+                        <span style="font-size:0.8rem;">sur spots variables</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="timeline-item fade-up" style="background:#222; border-color:#333; color:white;">
+    <!-- ============================================
+     CARTE DE FRANCE (Leaflet.js)
+     ============================================ -->
+    <section class="map-section section" id="carte">
+        <div class="container">
+            <div class="map-header fade-up">
+                <div class="badge">Couverture nationale</div>
+                <h2>Partenaires Factory Eat en France</h2>
+            </div>
+            <div id="france-map" class="fade-up"></div>
+            <div class="map-legend">
+                <span><span class="dot"></span> Ville éligible : toute ville desservie par Uber Eats / Deliveroo</span>
+            </div>
+            <div class="city-list fade-up-group">
+                <div class="city-item"><span>Paris</span> <span class="count">15 restos</span></div>
+                <div class="city-item"><span>Marseille</span> <span class="count">12 restos</span></div>
+                <div class="city-item"><span>Toulouse</span> <span class="count">9 restos</span></div>
+                <div class="city-item"><span>Lyon</span> <span class="count">8 restos</span></div>
+                <div class="city-item"><span>Nantes</span> <span class="count">7 restos</span></div>
+                <div class="city-item"><span>Bordeaux</span> <span class="count">6 restos</span></div>
+                <div class="city-item"><span>Lille</span> <span class="count">5 restos</span></div>
+                <div class="city-item"><span>Nice</span> <span class="count">4 restos</span></div>
+                <div class="city-item"><span>Rennes</span> <span class="count">4 restos</span></div>
+                <div class="city-item"><span>Strasbourg</span> <span class="count">3 restos</span></div>
+                <div class="city-item" style="border-color:var(--primary);background:rgba(255,107,53,0.05);"><span>🔥 La
+                        Réole</span> <span class="count" style="color:var(--primary);font-weight:900;">★ 1er
+                        partenaire</span></div>
+            </div>
+            <div class="text-center" style="margin-top:24px;">
+                <a href="#contact" class="btn btn-primary">Ajouter votre ville <span class="btn-arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+     4 ÉTAPES TIMELINE
+     ============================================ -->
+    <section class="timeline-section section" id="etapes">
+        <div class="container">
+            <div class="timeline-header fade-up">
+                <div class="badge">4 étapes simples</div>
+                <h2>Implantez Factory Eat dans votre ville</h2>
+            </div>
+            <div class="timeline fade-up-group">
+                <div class="timeline-item">
                     <div class="timeline-num">1</div>
-                    <h3 style="color:white;">Inscription Multi-Plateformes</h3>
-                    <p style="color:#ccc;">On vous inscrit sur Uber Eats et Deliveroo simultanément pour doubler la
-                        visibilité. (Foodtrucks : inscription adresse siège + zones flexibles).</p>
+                    <div class="icon-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                    </div>
+                    <h3>Vérifiez votre éligibilité</h3>
+                    <p>Uber Eats ou Deliveroo opèrent dans votre ville ? Vous êtes éligible ! Toutes cuisines acceptées.
+                    </p>
                 </div>
-
-                <div class="timeline-item fade-up delay-100" style="background:#222; border-color:#333; color:white;">
+                <div class="timeline-item">
                     <div class="timeline-num">2</div>
-                    <h3 style="color:white;">Menu Tremplin Factory</h3>
-                    <p style="color:#ccc;">On installe un menu virtuel adapté (Ex: "Factory Sushi" si vous êtes
-                        asiatique) pour booster les commandes sans toucher à votre carte.</p>
+                    <div class="icon-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <h3>Négociez vos commissions</h3>
+                    <p>Commissions flexibles de 10 à 20% sur vos ventes boostées. On s'adapte à votre modèle.</p>
                 </div>
-
-                <div class="timeline-item fade-up delay-200" style="background:#222; border-color:#333; color:white;">
+                <div class="timeline-item">
                     <div class="timeline-num">3</div>
-                    <h3 style="color:white;">Volume & Négociation</h3>
-                    <p style="color:#ccc;">Votre volume augmente. Dès Mois 3, grâce à notre réseau, on négocie vos
-                        commissions à <strong>25%</strong> (au lieu de 30%).</p>
+                    <div class="icon-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z" />
+                            <line x1="6" y1="17" x2="18" y2="17" />
+                        </svg>
+                    </div>
+                    <h3>On gère la visibilité</h3>
+                    <p>Identité optimisée, menu tremplin, photos pro, SEO Uber Eats — nous maximisons vos commandes.</p>
                 </div>
-
-                <div class="timeline-item fade-up delay-300" style="background:#222; border-color:#333; color:white;">
+                <div class="timeline-item">
                     <div class="timeline-num">4</div>
-                    <h3 style="color:white;">Partage Marge</h3>
-                    <p style="color:#ccc;">Modèle gagnant-gagnant. Factory Eat prend 10-20% sur le *surplus* de
-                        commandes apporté.</p>
+                    <div class="icon-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                    </div>
+                    <h3>Les commandes affluent</h3>
+                    <p>Vous cuisinez vos propres recettes, les commandes tombent. CA additionnel dès la première semaine
+                        !</p>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section class="section text-center"
-        style="background:linear-gradient(135deg, #FF6B35 0%, #d35400 100%); color:white; padding:80px 0;">
-        <div class="container fade-up">
-            <h2 class="text-shadow-strong" style="font-size:2.5rem; margin-bottom:20px;">Rejoignez nos tops partenaires
-                !</h2>
-            <p class="text-shadow-md" style="font-size:1.2rem; margin-bottom:40px; opacity:0.9;">Multi-plateformes =
-                double volume, négo commissions et succès garanti.</p>
-            <a href="contact.html" class="btn btn-white" style="font-size:1.1rem; padding:18px 40px;">Démarrer
-                maintenant 🚀</a>
+    <!-- ============================================
+     5 AVANTAGES
+     ============================================ -->
+    <section class="advantages section" id="avantages">
+        <div class="container">
+            <div class="advantages-header fade-up">
+                <div class="badge">5 raisons clés</div>
+                <h2>Pourquoi choisir Factory Eat ?</h2>
+            </div>
+            <div class="advantages-grid fade-up-group">
+                <div class="advantage-card">
+                    <img class="advantage-img" loading="lazy"
+                        src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=250&fit=crop&q=80"
+                        alt="Restaurant national">
+                    <div class="advantage-body">
+                        <div class="icon-inline">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <h3>National : Toutes villes Uber/Deliveroo</h3>
+                        <p>Présents dans 50+ villes. Si Uber Eats ou Deliveroo livre chez vous, Factory Eat peut
+                            s'implanter.</p>
+                    </div>
+                </div>
+                <div class="advantage-card">
+                    <img class="advantage-img" loading="lazy"
+                        src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=250&fit=crop&q=80"
+                        alt="Toutes cuisines">
+                    <div class="advantage-body">
+                        <div class="icon-inline">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z" />
+                                <line x1="6" y1="17" x2="18" y2="17" />
+                            </svg>
+                        </div>
+                        <h3>Flex : Toutes cuisines physiques</h3>
+                        <p>Burgers, pizzas, rôtisseries, sushi, poke, foodtrucks... Aucune cuisine n'est exclue.</p>
+                    </div>
+                </div>
+                <div class="advantage-card">
+                    <img class="advantage-img" loading="lazy"
+                        src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop&q=80"
+                        alt="Rentabilité">
+                    <div class="advantage-body">
+                        <div class="icon-inline">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                                <polyline points="17 6 23 6 23 12" />
+                            </svg>
+                        </div>
+                        <h3>Rentable : 10-20% commissions</h3>
+                        <p>Commissions négociables et transparentes. Vous ne payez que sur les ventes additionnelles
+                            générées.</p>
+                    </div>
+                </div>
+                <div class="advantage-card">
+                    <img class="advantage-img" loading="lazy"
+                        src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop&q=80"
+                        alt="Simplicité">
+                    <div class="advantage-body">
+                        <div class="icon-inline">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4" />
+                            </svg>
+                        </div>
+                        <h3>Simple : Tremplin sans menus imposés</h3>
+                        <p>Gardez vos recettes. Factory Eat est un tremplin qui booste votre visibilité, pas un menu
+                            imposé.</p>
+                    </div>
+                </div>
+                <div class="advantage-card">
+                    <img class="advantage-img" loading="lazy"
+                        src="https://images.unsplash.com/photo-1526367790999-0150786686a2?w=400&h=250&fit=crop&q=80"
+                        alt="Rapidité">
+                    <div class="advantage-body">
+                        <div class="icon-inline">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                            </svg>
+                        </div>
+                        <h3>Rapide : +25% CA en 1 mois</h3>
+                        <p>Résultats dès la première semaine. Nos partenaires constatent en moyenne +25% de CA
+                            additionnel.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer" style="background:#0f1117; color:#888; border-top:1px solid #222;">
+    <!-- ============================================
+     SIMULATION + TÉMOIGNAGES
+     ============================================ -->
+    <section class="sim-section section" id="simulation">
+        <div class="container">
+            <div class="sim-header fade-up">
+                <div class="badge">Avis Vérifiés</div>
+                <h2>Ils nous font confiance</h2>
+            </div>
+            <div class="sim-grid">
+                <!-- Testimonials moved to full width or kept in grid -->
+                <!-- Testimonials -->
+                <div class="fade-up">
+                    <div class="carousel">
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <div class="testimonial-card">
+                                    <div class="stars">★★★★★</div>
+                                    <div class="quote">Rôtisserie Lyon : +40 commandes/semaine ! Factory Eat a boosté
+                                        notre visibilité sans rien changer à nos recettes. Commission à 12%, top !</div>
+                                    <div class="testimonial-author">
+                                        <div class="testimonial-avatar">PL</div>
+                                        <div class="testimonial-info">
+                                            <div class="name">Pierre L.</div>
+                                            <div class="role">Rôtisserie, Lyon</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="testimonial-card">
+                                    <div class="stars">★★★★★</div>
+                                    <div class="quote">Foodtruck Marseille : Commissions à 12%, c'est imbattable. On a
+                                        doublé nos commandes Uber Eats en 3 semaines sans effort !</div>
+                                    <div class="testimonial-author">
+                                        <div class="testimonial-avatar">SA</div>
+                                        <div class="testimonial-info">
+                                            <div class="name">Sarah A.</div>
+                                            <div class="role">Foodtruck, Marseille</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="testimonial-card">
+                                    <div class="stars">★★★★★</div>
+                                    <div class="quote">En tant que pizzeria, je ne pensais pas être éligible. Factory
+                                        Eat a optimisé mon profil et mon CA a bondi de 35% le premier mois !</div>
+                                    <div class="testimonial-author">
+                                        <div class="testimonial-avatar">MR</div>
+                                        <div class="testimonial-info">
+                                            <div class="name">Marco R.</div>
+                                            <div class="role">Pizzeria, Bordeaux</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="testimonial-card">
+                                    <div class="stars">★★★★★</div>
+                                    <div class="quote">Le concept est simple : ils gèrent la visibilité, je cuisine.
+                                        Résultat : 25 commandes/jour en plus. Négocié à 15% de commission.</div>
+                                    <div class="testimonial-author">
+                                        <div class="testimonial-avatar">KD</div>
+                                        <div class="testimonial-info">
+                                            <div class="name">Karim D.</div>
+                                            <div class="role">Restaurant, Toulouse</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-controls">
+                            <button class="carousel-btn carousel-btn-prev" aria-label="Précédent">←</button>
+                            <div class="carousel-dots">
+                                <button class="carousel-dot active" aria-label="Slide 1"></button>
+                                <button class="carousel-dot" aria-label="Slide 2"></button>
+                                <button class="carousel-dot" aria-label="Slide 3"></button>
+                                <button class="carousel-dot" aria-label="Slide 4"></button>
+                            </div>
+                            <button class="carousel-btn carousel-btn-next" aria-label="Suivant">→</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+     NOS PREMIERS PARTENAIRES (Teaser)
+     ============================================ -->
+    <section class="section" style="background:var(--bg);">
+        <div class="container">
+            <div class="text-center fade-up" style="margin-bottom:40px;">
+                <div class="badge">🤝 Partenaires</div>
+                <h2>Nos Premiers Partenaires</h2>
+                <p style="color:var(--text-light);max-width:600px;margin:12px auto 0;">Ils nous font confiance pour
+                    booster leurs ventes via les plateformes de livraison.</p>
+            </div>
+            <div class="partner-featured fade-up">
+                <div class="partner-featured-inner">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&h=600&fit=crop&q=80"
+                        alt="Grillades rôtisserie Biba's Come - Crédit Facebook" class="partner-featured-img">
+                    <div class="partner-featured-body">
+                        <h2>Biba's Come</h2>
+                        <div class="partner-location">📍 La Réole (Gironde)</div>
+                        <p>Foodtruck spécialisé en grillades et rôtisserie du sud-ouest. Viandes locales de qualité,
+                            cuisson au feu de bois. Premier partenaire Factory Eat !</p>
+                        <div class="partner-featured-stats">
+                            <span class="partner-stat">+30% CA</span>
+                            <span class="partner-stat">Commission 15%</span>
+                            <span class="partner-stat">Grillades & Rôtisserie</span>
+                        </div>
+                        <div class="partner-featured-quote">
+                            <p>"Factory Eat a été le tremplin idéal pour nos viandes locales ! En 2 semaines, nos
+                                commandes ont explosé."</p>
+                            <span class="author">— Propriétaire, Biba's Come</span>
+                        </div>
+                        <a href="partenaires.html" class="btn btn-primary">Découvrir nos partenaires <span
+                                class="btn-arrow">→</span></a>
+                        <p class="partner-credit">Photos : <a
+                                href="https://www.facebook.com/profile.php?id=61581283250102" target="_blank"
+                                rel="noopener">Facebook Biba's Come</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="partenaires.html" class="btn btn-outline">Voir tous les partenaires <span
+                        class="btn-arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+    <!-- ============================================
+     CTA + FORM
+     ============================================ -->
+    <section class="cta-section section" id="contact">
+        <div class="container fade-up">
+            <h2>Votre ville est la prochaine ?</h2>
+            <p>Contactez-nous pour vérifier votre éligibilité et négocier vos commissions.</p>
+            <form class="cta-form" id="cta-form">
+                <input type="text" name="name" placeholder="Votre nom" required>
+                <input type="text" name="city" placeholder="Votre ville" required>
+                <input type="email" name="email" placeholder="E-mail" required>
+                <input type="tel" name="phone" placeholder="Téléphone">
+                <button type="submit" class="btn btn-white" style="grid-column: 1 / -1;">Négocier mes commissions <span
+                        class="btn-arrow">→</span></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ============================================
+     FOOTER
+     ============================================ -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div class="footer-brand" style="color:white;">Factory Eat</div>
-                    <p>Accélérateur de revenus pour Restaurants & Foodtrucks.</p>
+                    <div class="footer-brand">Factory Eat</div>
+                    <p>Restaurant virtuel nouvelle génération. Nous boostons la visibilité de votre cuisine physique
+                        dans toute la France via Uber Eats & Deliveroo.</p>
                     <div class="footer-socials">
-                        <a href="#" aria-label="Instagram" style="color:white;"><svg viewBox="0 0 24 24">
+                        <a href="#" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                            </svg></a>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h4 style="color:white;">Liens</h4>
-                    <a href="index.html">Accueil</a>
-                    <a href="offre-restaurants.html">Offre Restos</a>
-                    <a href="foodtrucks.html">Foodtrucks</a>
-                    <a href="partenaires.html">Partenaires</a>
+                    <h4>Services</h4>
+                    <a href="comment-ca-marche.html">Comment ça marche</a>
+                    <a href="partenaires.html">Nos partenaires</a>
+                    <a href="tarifs.html">Tarifs</a>
+                    <a href="offre-restaurants.html">Offre Restaurants</a>
+                    <a href="contact.html">Devenir partenaire</a>
                 </div>
                 <div class="footer-col">
-                    <h4 style="color:white;">Contact</h4>
-                    <a href="mailto:hello@factoryeat.fw">hello@factoryeat.fr</a>
-                    <a href="contact.html">Formulaire</a>
+                    <h4>Inscription & Négo</h4>
+                    <a href="offre-restaurants.html">Inscription Uber + Deliveroo</a>
+                    <a href="offre-restaurants.html">Négo commissions volume</a>
+                    <a href="offre-restaurants.html">-5% via Factory Eat</a>
+                    <a href="offre-restaurants.html">30 commandes/semaine</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Top Villes</h4>
+                    <a href="#carte">Paris (15)</a>
+                    <a href="#carte">Marseille (12)</a>
+                    <a href="#carte">Toulouse (9)</a>
+                    <a href="#carte">Lyon (8)</a>
+                    <a href="#carte">Nantes (7)</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Plateformes</h4>
+                    <div class="footer-platforms">
+                        <svg width="80" height="32" viewBox="0 0 80 32">
+                            <rect width="80" height="32" rx="6" fill="rgba(255,255,255,0.1)" /><text x="40" y="20"
+                                text-anchor="middle" fill="#95a5a6" font-family="Poppins" font-weight="700"
+                                font-size="10">Uber Eats</text>
+                        </svg>
+                        <svg width="80" height="32" viewBox="0 0 80 32">
+                            <rect width="80" height="32" rx="6" fill="rgba(255,255,255,0.1)" /><text x="40" y="20"
+                                text-anchor="middle" fill="#95a5a6" font-family="Poppins" font-weight="700"
+                                font-size="10">Deliveroo</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="mailto:hello@factoryeat.fr">hello@factoryeat.fr</a>
+                    <a href="tel:+33600000000">06 00 00 00 00</a>
+                    <a href="https://wa.me/33600000000">WhatsApp</a>
+                    <p style="margin-top:8px; font-size:0.82rem;">Aureilhan, France</p>
                 </div>
             </div>
-            <div class="footer-bottom" style="border-top:1px solid #222; margin-top:40px; padding-top:20px;">
-                © 2026 Factory Eat — Tous droits réservés
+            <div class="footer-bottom">
+                © 2026 Factory Eat — Tous droits réservés | <a href="#">Mentions légales</a> | <a href="#">CGV</a> |
+                Conforme RGPD
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
+    <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Main JS -->
+    <script src="script.js"></script>
 </body>
 
 </html>
