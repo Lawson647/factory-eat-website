@@ -1,27 +1,19 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact — Factory Eat | Devenir Partenaire</title>
+    <title>Contact Négociation — Factory Eat</title>
     <meta name="description"
-        content="Contactez Factory Eat pour devenir partenaire. Formulaire, email, téléphone. Rejoignez Biba's Come et 100+ restaurants partenaires.">
-    <meta name="theme-color" content="#FF6B35">
+        content="Contactez Factory Eat pour booster votre restaurant ou foodtruck, et négocier vos commissions Uber Eats & Deliveroo.">
     <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>">
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📞</text></svg>">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 
 <body>
-
-    <!-- PROMO BANNER -->
-    <div class="promo-banner" id="promo-banner">
-        🚀 <strong>Multi Uber + Deliveroo</strong> | Départ 25-30% → Objectif 25% après volume. On négocie pour vous !
-        <a href="offre-restaurants.html" style="color:white;text-decoration:underline;margin-left:5px;">En savoir
-            plus</a>
-        <button class="banner-close" id="banner-close" aria-label="Fermer">✕</button>
-    </div>
 
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
@@ -31,226 +23,123 @@
                 <a href="index.html">Accueil</a>
                 <a href="partenaires.html">Partenaires</a>
                 <a href="comment-ca-marche.html">Comment Ça Marche</a>
-                <a href="tarifs.html">Tarifs</a>
                 <a href="offre-restaurants.html">Solution Restos</a>
+                <a href="foodtrucks.html">Foodtrucks</a>
                 <a href="contact.html" class="active">Contact</a>
                 <a href="blog.html">Blog</a>
-                <button id="dark-toggle" class="dark-toggle" aria-label="Dark mode">🌙</button>
-                <a href="offre-restaurants.html" class="btn btn-primary">Multi-Plateformes</a>
+                <a href="contact.html" class="btn btn-primary" style="padding:10px 20px;">Contact Négo</a>
             </div>
             <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
-
     <div class="mobile-menu">
         <a href="index.html">Accueil</a>
         <a href="partenaires.html">Partenaires</a>
         <a href="comment-ca-marche.html">Comment Ça Marche</a>
-        <a href="tarifs.html">Tarifs</a>
         <a href="offre-restaurants.html">Solution Restos</a>
+        <a href="foodtrucks.html">Foodtrucks</a>
         <a href="contact.html" class="active">Contact</a>
         <a href="blog.html">Blog</a>
-        <a href="offre-restaurants.html" class="btn btn-primary" style="text-align:center;">Multi-Plateformes</a>
+        <a href="contact.html" class="btn btn-primary" style="text-align:center;">Contact Négo</a>
     </div>
 
-    <!-- PAGE HERO -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="badge">📬 Contact</div>
-            <h1>Devenez Partenaire</h1>
-            <p class="lead">Intéressé par un partenariat comme Biba's Come à La Réole ? Contactez-nous et
-                on s'occupe du reste.</p>
+    <!-- HERO -->
+    <section class="hero-dark-overlay"
+        style="min-height:50vh; display:flex; align-items:center; background-image: url('https://images.unsplash.com/photo-1544025162-d76690b6d029?auto=format&fit=crop&w=1600&q=80');">
+        <div class="container text-center">
+            <h1 class="text-shadow-strong" style="margin-bottom:20px;">Contact & Négociation</h1>
+            <p class="text-white text-shadow-md">Prêt à doubler votre volume et baisser vos commissions ?</p>
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section class="section" style="background:var(--bg);">
+    <!-- FORM & MAP -->
+    <section class="section" style="background:#1A1A1A; color:white;">
         <div class="container">
-            <div class="contact-grid fade-up">
-                <!-- Form -->
-                <div class="contact-form-box">
-                    <h3 style="margin-bottom:20px;">Formulaire de contact</h3>
+            <div class="two-col-grid reverse-mobile">
+
+                <!-- Contact Form -->
+                <div class="contact-form-box fade-up" style="background:#222; border:1px solid #333; box-shadow:none;">
+                    <h3>Parlez-nous de votre projet</h3>
+                    <p style="color:#aaa; font-size:0.9rem; margin-bottom:20px;">Réponse en 24h.</p>
                     <form class="contact-form" id="contact-form">
                         <div class="form-group">
-                            <label for="contact-name">Nom</label>
-                            <input type="text" id="contact-name" name="name" placeholder="Votre nom complet" required>
+                            <label style="color:#ccc;">Nom du Restaurant / Foodtruck</label>
+                            <input type="text" id="contact-name" placeholder="Ex: Burger King..." required
+                                style="background:#333; border-color:#444; color:white;">
                         </div>
                         <div class="form-group">
-                            <label for="contact-email">Email</label>
-                            <input type="email" id="contact-email" name="email" placeholder="votre@email.fr" required>
+                            <label style="color:#ccc;">Email</label>
+                            <input type="email" id="contact-email" placeholder="votre@email.com" required
+                                style="background:#333; border-color:#444; color:white;">
                         </div>
                         <div class="form-group">
-                            <label for="contact-city">Ville</label>
-                            <input type="text" id="contact-city" name="city" placeholder="ex: La Réole, Bordeaux..."
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contact-phone">Téléphone</label>
-                            <input type="tel" id="contact-phone" name="phone" placeholder="06 XX XX XX XX">
+                            <label style="color:#ccc;">Type</label>
+                            <select id="contact-type" style="background:#333; border-color:#444; color:white;">
+                                <option value="Restaurant">Restaurant Physique</option>
+                                <option value="Foodtruck">Foodtruck Mobile</option>
+                                <option value="Traiteur">Traiteur / Autre</option>
+                            </select>
                         </div>
                         <div class="form-group full">
-                            <label for="contact-message">Message</label>
-                            <textarea id="contact-message" name="message"
-                                placeholder="Décrivez votre activité, votre cuisine, vos attentes... Ex: 'Intéressé par un partenariat type La Réole'"
-                                rows="5"></textarea>
+                            <label style="color:#ccc;">Message</label>
+                            <textarea id="contact-message" rows="4"
+                                placeholder="Bonjour, je souhaite doubler mes ventes..."
+                                style="background:#333; border-color:#444; color:white;"></textarea>
                         </div>
                         <div class="form-group full">
-                            <button type="submit" class="btn btn-primary"
-                                style="width:100%;justify-content:center;">Envoyer ma demande <span
+                            <button type="submit" class="btn btn-primary" style="width:100%;">Envoyer <span
                                     class="btn-arrow">→</span></button>
                         </div>
                     </form>
+                    <div id="form-feedback" style="margin-top:15px; text-align:center; display:none;"></div>
                 </div>
 
-                <!-- Info + Map -->
-                <div>
-                    <div class="contact-info-box" style="margin-bottom:32px;">
-                        <div class="contact-info-item">
-                            <div class="icon-box">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path
-                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                    <polyline points="22,6 12,13 2,6" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Email</h4>
-                                <a href="mailto:hello@factoryeat.fr">hello@factoryeat.fr</a>
-                            </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <div class="icon-box">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path
-                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Téléphone</h4>
-                                <a href="tel:+33600000000">06 00 00 00 00</a>
-                            </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <div class="icon-box">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                    <circle cx="12" cy="10" r="3" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Adresse</h4>
-                                <p>Aureilhan, Hautes-Pyrénées<br>France</p>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Info Box & Map Link -->
+                <div class="fade-up delay-100" style="display:flex; flex-direction:column; justify-content:center;">
+                    <div class="advantage-card"
+                        style="padding:40px; background:#222; border-color:#333; text-align:center;">
+                        <h3 style="color:white; margin-bottom:20px;">Siège Social</h3>
+                        <p style="color:#ccc; margin-bottom:30px;">
+                            Factory Eat France<br>
+                            Aureilhan, France<br>
+                            <a href="mailto:hello@factoryeat.fr"
+                                style="color:var(--primary); font-weight:bold;">hello@factoryeat.fr</a>
+                        </p>
+                        <h4 style="color:white; margin-bottom:15px;">Horaires Négo</h4>
+                        <p style="color:#ccc;">Lundi - Vendredi<br>9h00 - 18h00</p>
 
-                    <!-- Google Maps Embed -->
-                    <div class="map-embed">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d200000!2d0.5!3d46.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sFrance!5e0!3m2!1sfr!2sfr!4v1"
-                            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div style="margin-top:40px;">
+                            <a href="partenaires.html" class="btn btn-outline-white">Voir la Carte des Partenaires</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- TEASER PARTNER -->
-    <section class="section" style="background:var(--bg-alt);">
-        <div class="container" style="max-width:700px;">
-            <div class="text-center fade-up" style="margin-bottom:32px;">
-                <div class="badge">⭐ Partenaire actuel</div>
-                <h2>Ils nous font déjà confiance</h2>
-            </div>
-            <div class="partner-card fade-up" style="max-width:400px;margin:0 auto;">
-                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=400&fit=crop&q=80"
-                    alt="Biba's Come - Crédit Facebook" class="partner-card-img">
-                <div class="partner-card-body">
-                    <h3>Biba's Come</h3>
-                    <p class="partner-meta">📍 La Réole · Grillades & Rôtisserie</p>
-                    <div class="partner-stats">
-                        <span class="partner-stat">+30% CA</span>
-                        <span class="partner-stat">Commission 15%</span>
-                    </div>
-                    <a href="partenaires.html" class="btn btn-primary" style="padding:10px 20px;font-size:0.85rem;">Voir
-                        la fiche <span class="btn-arrow">→</span></a>
-                    <p class="partner-credit">Photos : <a href="https://www.facebook.com/profile.php?id=61581283250102"
-                            target="_blank" rel="noopener">Facebook</a></p>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer">
+    <footer class="footer" style="background:#0f1117; color:#888; border-top:1px solid #222;">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div class="footer-brand">Factory Eat</div>
-                    <p>Restaurant virtuel nouvelle génération. Nous boostons la visibilité de votre cuisine physique
-                        dans toute la France via Uber Eats & Deliveroo.</p>
-                    <div class="footer-socials">
-                        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                            </svg></a>
-                        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
-                                <rect x="2" y="9" width="4" height="12" />
-                                <circle cx="4" cy="4" r="2" />
-                            </svg></a>
-                    </div>
+                    <div class="footer-brand text-white">Factory Eat</div>
+                    <p>Accélérateur de revenus pour Restaurants & Foodtrucks.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Services</h4>
-                    <a href="comment-ca-marche.html">Comment ça marche</a>
-                    <a href="partenaires.html">Nos partenaires</a>
-                    <a href="tarifs.html">Tarifs</a>
-                    <a href="offre-restaurants.html">Offre Restaurants</a>
-                    <a href="contact.html">Devenir partenaire</a>
+                    <h4 class="text-white">Services</h4>
+                    <a href="index.html">Accueil</a>
+                    <a href="offre-restaurants.html">Solution Restos</a>
+                    <a href="foodtrucks.html">Foodtrucks</a>
+                    <a href="partenaires.html">Partenaires</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Inscription & Négo</h4>
-                    <a href="offre-restaurants.html">Inscription Uber + Deliveroo</a>
-                    <a href="offre-restaurants.html">Négo commissions volume</a>
-                    <a href="offre-restaurants.html">-5% via Factory Eat</a>
-                    <a href="offre-restaurants.html">30 commandes/semaine</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Top Villes</h4>
-                    <a href="partenaires.html">Paris (15)</a>
-                    <a href="partenaires.html">Marseille (12)</a>
-                    <a href="partenaires.html">Toulouse (9)</a>
-                    <a href="partenaires.html">Lyon (8)</a>
-                    <a href="partenaires.html">La Réole ★</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Plateformes</h4>
-                    <div class="footer-platforms">
-                        <svg width="80" height="32" viewBox="0 0 80 32">
-                            <rect width="80" height="32" rx="6" fill="rgba(255,255,255,0.1)" /><text x="40" y="20"
-                                text-anchor="middle" fill="#95a5a6" font-family="Poppins" font-weight="700"
-                                font-size="10">Uber Eats</text>
-                        </svg>
-                        <svg width="80" height="32" viewBox="0 0 80 32">
-                            <rect width="80" height="32" rx="6" fill="rgba(255,255,255,0.1)" /><text x="40" y="20"
-                                text-anchor="middle" fill="#95a5a6" font-family="Poppins" font-weight="700"
-                                font-size="10">Deliveroo</text>
-                        </svg>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
+                    <h4 class="text-white">Contact</h4>
                     <a href="mailto:hello@factoryeat.fr">hello@factoryeat.fr</a>
-                    <a href="tel:+33600000000">06 00 00 00 00</a>
-                    <a href="https://wa.me/33600000000">WhatsApp</a>
-                    <p style="margin-top:8px; font-size:0.82rem;">Aureilhan, France</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                © 2026 Factory Eat — Tous droits réservés | <a href="#">Mentions légales</a> | <a href="#">CGV</a> |
-                Conforme RGPD
+            <div class="footer-bottom" style="border-top:1px solid #222; margin-top:40px; padding-top:20px;">
+                © 2026 Factory Eat — Tous droits réservés
             </div>
         </div>
     </footer>
