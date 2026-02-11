@@ -4,208 +4,319 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Factory Eat - Comment ça marche ?</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/home.css"> <!-- Reusing V2 utilities -->
-
-    <!-- GA4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCCSTJZ2DP"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-VCCSTJZ2DP');
-    </script>
+    <title>Comment Ça Marche — Factory Eat | Processus & FAQ</title>
+    <meta name="description"
+        content="Découvrez comment Factory Eat booste votre restaurant : éligibilité, commissions négociables 10-20%, onboarding rapide. FAQ complète.">
+    <meta name="theme-color" content="#FF6B35">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-dark">
+<body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-dark">
-        <div class="container navbar-container">
-            <a href="index.html" class="navbar-logo">
-                <span class="text-primary">🍽️</span> Factory Eat
-            </a>
-            <ul class="navbar-menu">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="comment-ca-marche.html" class="active">Comment ça marche</a></li>
-                <li><a href="services.html">Le Concept</a></li>
-                <li><a href="contact.html">Devenir Partenaire</a></li>
-            </ul>
-            <div class="flex items-center gap-sm">
-                <button id="theme-toggle" class="btn btn-ghost text-xl" aria-label="Toggle Dark Mode">🌙</button>
-                <a href="contact.html" class="btn btn-primary">Devenir partenaire</a>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">Factory Eat</a>
+            <div class="navbar-menu">
+                <a href="index.html">Accueil</a>
+                <a href="partenaires.html">Partenaires</a>
+                <a href="comment-ca-marche.html" class="active">Comment Ça Marche</a>
+                <a href="tarifs.html">Tarifs</a>
+                <a href="contact.html">Contact</a>
+                <a href="blog.html">Blog</a>
+                <button id="dark-toggle" class="dark-toggle" aria-label="Dark mode">🌙</button>
+                <a href="contact.html" class="btn btn-primary">Devenir Partenaire</a>
             </div>
+            <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
-    <!-- Header -->
-    <header class="section section-dark text-center pt-3xl pb-xl relative overflow-hidden">
-        <div class="container relative z-10">
-            <div class="badge badge-primary mb-md">Onboarding Simple & Rapide</div>
-            <h1 class="mb-md">Lancez votre marque virtuelle en <span class="text-gradient">15 jours</span></h1>
-            <p class="text-muted-light max-w-2xl mx-auto text-xl">
-                Une méthodologie éprouvée pour transformer votre cuisine sans perturber votre activité actuelle.
+    <div class="mobile-menu">
+        <a href="index.html">Accueil</a>
+        <a href="partenaires.html">Partenaires</a>
+        <a href="comment-ca-marche.html" class="active">Comment Ça Marche</a>
+        <a href="tarifs.html">Tarifs</a>
+        <a href="contact.html">Contact</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html" class="btn btn-primary" style="text-align:center;">Devenir Partenaire</a>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="badge">📋 Processus</div>
+            <h1>Comment Ça Marche ?</h1>
+            <p class="lead">De la vérification d'éligibilité au premier boost de ventes, tout est simple et transparent.
             </p>
         </div>
-        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-gray-900 to-transparent z-0"></div>
-    </header>
+    </section>
 
-    <!-- Steps Section -->
-    <section class="section bg-white">
-        <div class="container">
-            <div class="timeline interactive-timeline">
-
-                <!-- Step 1 -->
-                <div class="timeline-item reversed">
-                    <div class="timeline-content card glass-card p-xl fade-up">
-                        <div class="flex items-center gap-md mb-md">
-                            <div
-                                class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl">
-                                1</div>
-                            <h3 class="mb-0 text-primary">Audit & Validation</h3>
-                        </div>
-                        <p class="text-muted mb-md">Nous analysons votre zone de chalandise (Uber Eats/Deliveroo) et
-                            votre équipement de cuisine actuel. Si vous avez une plancha et une friteuse, vous êtes
-                            éligible.</p>
-                        <div class="text-sm font-bold text-dark">⏳ Durée : 48h</div>
-                    </div>
+    <!-- SECTION 1: ÉLIGIBILITÉ -->
+    <section class="section" style="background:var(--bg);">
+        <div class="container" style="max-width:900px;">
+            <div class="fade-up" style="margin-bottom:48px;">
+                <div class="badge">1️⃣ Éligibilité</div>
+                <h2>Uber Eats ou Deliveroo dans votre ville ?</h2>
+                <p style="color:var(--text-light);margin-top:12px;line-height:1.7;">Si l'une de ces plateformes livre
+                    dans votre zone, vous êtes éligible. Factory Eat est disponible dans <strong>toutes les villes de
+                        France</strong> desservies. Toutes cuisines acceptées : burgers, pizzas, rôtisseries, sushi,
+                    poke bowls, foodtrucks...</p>
+                <div
+                    style="margin-top:24px;padding:20px;background:rgba(39,174,96,0.06);border:2px solid rgba(39,174,96,0.15);border-radius:var(--radius-sm);">
+                    <strong style="color:var(--green);">✓ Vérification rapide :</strong> Contactez-nous avec votre ville
+                    et nous confirmons votre éligibilité en 24h.
                 </div>
+            </div>
 
-                <!-- Step 2 -->
-                <div class="timeline-item">
-                    <div class="timeline-content card glass-card p-xl fade-up delay-100">
-                        <div class="flex items-center gap-md mb-md">
-                            <div
-                                class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl">
-                                2</div>
-                            <h3 class="mb-0 text-primary">Formation & Setup</h3>
-                        </div>
-                        <p class="text-muted mb-md">Envoi du Pack de Démarrage (Tablette, Packaging, PLV). Formation de
-                            votre équipe en visio (1h30) aux process d'assemblage Factory Eat.</p>
-                        <div class="text-sm font-bold text-dark">⏳ Durée : 7 jours</div>
-                    </div>
+            <!-- SECTION 2: COMMISSIONS -->
+            <div class="fade-up" style="margin-bottom:48px;">
+                <div class="badge">2️⃣ Commissions</div>
+                <h2>Négociez vos commissions 10-20%</h2>
+                <p style="color:var(--text-light);margin-top:12px;margin-bottom:24px;line-height:1.7;">Nos commissions
+                    sont flexibles et s'adaptent à votre volume de ventes. Plus vous vendez, plus vous gagnez.</p>
+
+                <div style="overflow-x:auto;">
+                    <table class="commission-table">
+                        <thead>
+                            <tr>
+                                <th>Ventes/mois</th>
+                                <th>Commission 10%</th>
+                                <th>Commission 15%</th>
+                                <th>Commission 20%</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>500€</td>
+                                <td>50€ gain</td>
+                                <td>75€ gain</td>
+                                <td>100€ gain</td>
+                            </tr>
+                            <tr>
+                                <td>1 000€</td>
+                                <td>100€ gain</td>
+                                <td>150€ gain</td>
+                                <td>200€ gain</td>
+                            </tr>
+                            <tr>
+                                <td>2 000€</td>
+                                <td>200€ gain</td>
+                                <td>300€ gain</td>
+                                <td>400€ gain</td>
+                            </tr>
+                            <tr>
+                                <td>5 000€</td>
+                                <td>500€ gain</td>
+                                <td>750€ gain</td>
+                                <td>1 000€ gain</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+            </div>
 
-                <!-- Step 3 -->
-                <div class="timeline-item reversed">
-                    <div class="timeline-content card glass-card p-xl fade-up delay-200">
-                        <div class="flex items-center gap-md mb-md">
-                            <div
-                                class="w-12 h-12 bg-success text-white rounded-full flex items-center justify-center font-bold text-xl">
-                                3</div>
-                            <h3 class="mb-0 text-success">Lancement Officiel 🚀</h3>
+            <!-- SECTION 3: ONBOARDING -->
+            <div class="fade-up" style="margin-bottom:48px;">
+                <div class="badge">3️⃣ Onboarding</div>
+                <h2>Mise en place rapide</h2>
+                <p style="color:var(--text-light);margin-top:12px;margin-bottom:20px;line-height:1.7;">Notre équipe
+                    prend en charge tout le processus d'optimisation de votre présence sur les plateformes.</p>
+
+                <ul class="checklist">
+                    <li>Création de votre identité optimisée sur Uber Eats / Deliveroo</li>
+                    <li>Menu tremplin conçu pour maximiser les commandes</li>
+                    <li>Photos professionnelles de vos plats</li>
+                    <li>SEO et référencement optimisé sur les plateformes</li>
+                    <li>Suivi des performances et ajustements continus</li>
+                    <li>Support dédié 7j/7</li>
+                </ul>
+            </div>
+
+            <!-- SECTION 4: CAS LA RÉOLE -->
+            <div class="fade-up" style="margin-bottom:48px;">
+                <div class="badge">🏆 Cas concret</div>
+                <h2>Cas La Réole : Biba's Come</h2>
+                <div
+                    style="margin-top:20px;padding:28px;background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);">
+                    <p style="font-size:1.05rem;line-height:1.8;color:var(--text);">
+                        <strong>Biba's Come</strong>, foodtruck grillades et rôtisserie à La Réole
+                        (Gironde),
+                        a rejoint Factory Eat avec une commission de <strong style="color:var(--primary);">15%</strong>.
+                        En seulement <strong>2 semaines</strong> :
+                    </p>
+                    <div style="display:flex;gap:20px;flex-wrap:wrap;margin:20px 0;">
+                        <div class="partner-stat" style="padding:12px 20px;font-size:0.9rem;">+30% de chiffre d'affaires
                         </div>
-                        <p class="text-muted mb-md">Activation de la marque sur les plateformes. Nous lançons une
-                            campagne "1 offert = 1 acheté" pour propulser votre restaurant en haut des résultats.</p>
-                        <div class="text-sm font-bold text-dark">⏳ Jour J</div>
-                    </div>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="timeline-item">
-                    <div class="timeline-content card glass-card p-xl fade-up delay-300">
-                        <div class="flex items-center gap-md mb-md">
-                            <div
-                                class="w-12 h-12 bg-dark text-white rounded-full flex items-center justify-center font-bold text-xl">
-                                4</div>
-                            <h3 class="mb-0 text-dark">Pilotage & Croissance</h3>
+                        <div class="partner-stat" style="padding:12px 20px;font-size:0.9rem;">+45 commandes/semaine
                         </div>
-                        <p class="text-muted mb-md">Suivi hebdomadaire de vos performances. Optimisation des prix et des
-                            promotions. Vous recevez vos virements tous les 15 jours.</p>
-                        <div class="text-sm font-bold text-dark">📈 En continu</div>
+                        <div class="partner-stat" style="padding:12px 20px;font-size:0.9rem;">ROI positif dès le 1er
+                            mois</div>
                     </div>
+                    <div class="partner-featured-quote">
+                        <p>"Un tremplin idéal pour nos viandes locales ! Les commandes ont explosé."</p>
+                        <span class="author">— Propriétaire, Biba's Come</span>
+                    </div>
+                    <a href="partenaires.html" style="color:var(--primary);font-weight:600;">Voir la fiche complète
+                        →</a>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section (V2 style) -->
-    <section class="section bg-subtle">
-        <div class="container max-w-4xl">
-            <h2 class="text-center mb-xl">Questions Fréquentes</h2>
-
-            <div class="card p-lg mb-md">
-                <h3 class="text-lg font-bold mb-xs text-primary">Dois-je embaucher du personnel ?</h3>
-                <p class="text-muted">Non. Le concept est conçu pour être géré par votre équipe actuelle lors des temps
-                    morts.</p>
+    <!-- FAQ -->
+    <section class="section" style="background:var(--bg-alt);">
+        <div class="container">
+            <div class="text-center fade-up" style="margin-bottom:40px;">
+                <div class="badge">❓ FAQ</div>
+                <h2>Questions Fréquentes</h2>
             </div>
-
-            <div class="card p-lg mb-md">
-                <h3 class="text-lg font-bold mb-xs text-primary">Quel est le coût d'entrée ?</h3>
-                <p class="text-muted">Il n'y a pas de droit d'entrée. Nous prenons une commission uniquement sur les
-                    ventes générées. Modèle Gagnant-Gagnant.</p>
-            </div>
-
-            <div class="card p-lg mb-md">
-                <h3 class="text-lg font-bold mb-xs text-primary">Et les ingrédients ?</h3>
-                <p class="text-muted">Nous vous référençons chez nos fournisseurs partenaires (Metro, Transgourmet) avec
-                    nos tarifs négociés.</p>
+            <div class="faq-list fade-up">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Toutes les cuisines sont-elles éligibles ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">Oui ! Burgers, pizzas, rôtisseries, foodtrucks, sushi, poke bowls, cuisine
+                        traditionnelle… Si vous avez une cuisine physique, vous êtes éligible.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Combien coûte Factory Eat ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">Zéro investissement initial ! Nous fonctionnons uniquement sur commission
+                        (10-20% négociable) sur les ventes générées. Pas de frais fixes.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Dois-je modifier mes recettes ou mon menu ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">Non, zéro menus Factory Eat imposés. Nous créons un menu tremplin basé sur
+                        VOS plats existants pour maximiser les commandes.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Combien de temps pour voir des résultats ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">En moyenne, nos partenaires voient une augmentation des commandes dès la
+                        première semaine. Biba's Come à La Réole a vu +30% en 2 semaines.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Factory Eat fonctionne-t-il partout en France ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">Oui, dans toutes les villes desservies par Uber Eats ou Deliveroo. Nous
+                        couvrons déjà 50+ villes et nous étendons rapidement.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Puis-je négocier ma commission ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">Absolument ! Les commissions sont flexibles entre 10% et 20%. Nous discutons
+                        ensemble du taux le plus adapté à votre activité et votre volume.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Que se passe-t-il si je veux arrêter ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">Aucun engagement longue durée. Vous pouvez mettre fin au partenariat à tout
+                        moment, sans frais de résiliation.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Comment est calculé mon gain ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">Votre gain = Ventes générées par Factory Eat × Votre commission négociée.
+                        Tout est transparent et suivi en temps réel via notre tableau de bord.</div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
-    <section class="section section-dark text-center py-3xl">
-        <div class="container">
-            <h2 class="text-white mb-lg">Prêt à démarrer l'audit ?</h2>
-            <a href="contact.html" class="btn btn-primary btn-lg shadow-xl">Contactez l'équipe d'expansion</a>
+    <section class="cta-section section">
+        <div class="container fade-up">
+            <h2>Prêt à booster vos ventes ?</h2>
+            <p>Vérifiez votre éligibilité et commencez à recevoir plus de commandes dès cette semaine.</p>
+            <a href="contact.html" class="btn btn-white">Vérifier mon éligibilité <span class="btn-arrow">→</span></a>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-darker py-xl text-white border-t border-gray-800">
+    <!-- FOOTER -->
+    <footer class="footer">
         <div class="container">
-            <div class="grid grid-4 gap-xl">
-                <div>
-                    <div class="text-xl font-bold mb-md flex items-center gap-xs">
-                        <span class="text-primary">🍽️</span> Factory Eat
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">Factory Eat</div>
+                    <p>Restaurant virtuel nouvelle génération. Nous boostons la visibilité de votre cuisine physique
+                        dans toute la France via Uber Eats & Deliveroo.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg></a>
+                        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg></a>
                     </div>
-                    <p class="text-sm text-muted-light">Restaurant virtuel nouvelle génération.</p>
                 </div>
-
-                <div>
-                    <h4 class="text-sm font-bold uppercase mb-md text-muted-light">Navigation</h4>
-                    <ul class="space-y-sm text-sm">
-                        <li><a href="index.html" class="text-white hover:text-primary">Accueil</a></li>
-                        <li><a href="services.html" class="text-white hover:text-primary">Le Concept</a></li>
-                        <li><a href="contact.html" class="text-white hover:text-primary">Devenir Partenaire</a></li>
-                    </ul>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="comment-ca-marche.html">Comment ça marche</a>
+                    <a href="partenaires.html">Nos partenaires</a>
+                    <a href="tarifs.html">Tarifs</a>
+                    <a href="contact.html">Devenir partenaire</a>
                 </div>
-
-                <div>
-                    <h4 class="text-sm font-bold uppercase mb-md text-muted-light">Légal</h4>
-                    <ul class="space-y-sm text-sm">
-                        <li><a href="#" class="text-white hover:text-primary">CGV</a></li>
-                        <li><a href="#" class="text-white hover:text-primary">Mentions Légales</a></li>
-                    </ul>
+                <div class="footer-col">
+                    <h4>Top Villes</h4>
+                    <a href="partenaires.html">Paris (15)</a>
+                    <a href="partenaires.html">Marseille (12)</a>
+                    <a href="partenaires.html">Toulouse (9)</a>
+                    <a href="partenaires.html">Lyon (8)</a>
+                    <a href="partenaires.html">La Réole ★</a>
                 </div>
-
-                <div>
-                    <h4 class="text-sm font-bold uppercase mb-md text-muted-light">Contact B2B</h4>
-                    <div class="text-sm space-y-sm">
-                        <p>📧 franchise@factory-eat.fr</p>
-                        <p>📱 +33 6 00 00 00 00</p>
+                <div class="footer-col">
+                    <h4>Plateformes</h4>
+                    <div class="footer-platforms">
+                        <svg width="80" height="32" viewBox="0 0 80 32">
+                            <rect width="80" height="32" rx="6" fill="rgba(255,255,255,0.1)" /><text x="40" y="20"
+                                text-anchor="middle" fill="#95a5a6" font-family="Poppins" font-weight="700"
+                                font-size="10">Uber Eats</text>
+                        </svg>
+                        <svg width="80" height="32" viewBox="0 0 80 32">
+                            <rect width="80" height="32" rx="6" fill="rgba(255,255,255,0.1)" /><text x="40" y="20"
+                                text-anchor="middle" fill="#95a5a6" font-family="Poppins" font-weight="700"
+                                font-size="10">Deliveroo</text>
+                        </svg>
                     </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="mailto:hello@factoryeat.fr">hello@factoryeat.fr</a>
+                    <a href="tel:+33600000000">06 00 00 00 00</a>
+                    <a href="https://wa.me/33600000000">WhatsApp</a>
+                    <p style="margin-top:8px; font-size:0.82rem;">Aureilhan, France</p>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-xl pt-lg text-center text-sm text-muted-light">
-                &copy; 2026 Factory Eat. Tous droits réservés.
+            <div class="footer-bottom">
+                © 2026 Factory Eat — Tous droits réservés | <a href="#">Mentions légales</a> | <a href="#">CGV</a> |
+                Conforme RGPD
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

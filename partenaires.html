@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Partenaires — Factory Eat | Restaurants Partenaires France</title>
+    <meta name="description"
+        content="Découvrez nos restaurants partenaires Factory Eat partout en France. Biba's Come à La Réole, premier partenaire ! Rejoignez le réseau.">
+    <meta name="theme-color" content="#FF6B35">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">Factory Eat</a>
+            <div class="navbar-menu">
+                <a href="index.html">Accueil</a>
+                <a href="partenaires.html" class="active">Partenaires</a>
+                <a href="comment-ca-marche.html">Comment Ça Marche</a>
+                <a href="tarifs.html">Tarifs</a>
+                <a href="contact.html">Contact</a>
+                <a href="blog.html">Blog</a>
+                <button id="dark-toggle" class="dark-toggle" aria-label="Dark mode">🌙</button>
+                <a href="contact.html" class="btn btn-primary">Devenir Partenaire</a>
+            </div>
+            <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <a href="index.html">Accueil</a>
+        <a href="partenaires.html" class="active">Partenaires</a>
+        <a href="comment-ca-marche.html">Comment Ça Marche</a>
+        <a href="tarifs.html">Tarifs</a>
+        <a href="contact.html">Contact</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html" class="btn btn-primary" style="text-align:center;">Devenir Partenaire</a>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="badge">🤝 Réseau</div>
+            <h1>Nos Partenaires</h1>
+            <p class="lead">Restaurants, foodtrucks et cuisines physiques qui boostent leur CA avec Factory Eat partout
+                en France.</p>
+        </div>
+    </section>
+
+    <!-- CARTE ÉTENDUE -->
+    <section class="section" style="background:var(--bg);">
+        <div class="container">
+            <div id="france-map" style="height:70vh;min-height:450px;" class="fade-up"></div>
+            <div class="map-legend" style="margin-top:16px;">
+                <span><span class="dot"></span> Ville active</span>
+                <span><span class="dot" style="background:var(--green);"></span> Premier partenaire — La Réole</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED PARTNER -->
+    <section class="section" style="background:var(--bg-alt);">
+        <div class="container">
+            <div class="text-center fade-up" style="margin-bottom:40px;">
+                <div class="badge">⭐ Premier Partenaire</div>
+                <h2>Biba's Come</h2>
+            </div>
+            <div class="partner-featured fade-up">
+                <div class="partner-featured-inner">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&h=600&fit=crop&q=80"
+                        alt="Grillades rôtisserie Biba's Come - Crédit Facebook" class="partner-featured-img">
+                    <div class="partner-featured-body">
+                        <h2>Biba's Come</h2>
+                        <div class="partner-location">📍 La Réole, Gironde (44.58°N, 0.03°W)</div>
+                        <p>Foodtruck spécialisé en grillades et rôtisserie du sud-ouest. Viandes locales de qualité,
+                            cuisson au feu de bois. Premier restaurants à faire confiance à Factory Eat pour booster sa
+                            visibilité sur les plateformes de livraison.</p>
+                        <div class="partner-featured-stats">
+                            <span class="partner-stat">+30% CA depuis partenariat</span>
+                            <span class="partner-stat">Commission 15%</span>
+                            <span class="partner-stat">+45 commandes/semaine</span>
+                        </div>
+                        <div class="partner-featured-quote">
+                            <p>"Factory Eat a été le tremplin idéal pour nos viandes locales ! En 2 semaines, nos
+                                commandes sur Uber Eats ont explosé. Le meilleur investissement qu'on ait fait."</p>
+                            <span class="author">— Propriétaire, Biba's Come</span>
+                        </div>
+                        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+                            <a href="contact.html" class="btn btn-primary">Contact via Factory Eat <span
+                                    class="btn-arrow">→</span></a>
+                            <a href="https://www.facebook.com/profile.php?id=61581283250102" target="_blank"
+                                rel="noopener" class="btn btn-outline"
+                                style="border-color:var(--blue);color:var(--blue);">Page Facebook</a>
+                        </div>
+                        <p class="partner-credit">Photos : <a
+                                href="https://www.facebook.com/profile.php?id=61581283250102" target="_blank"
+                                rel="noopener">Facebook Biba's Come</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Maps Embed La Réole -->
+            <div class="map-embed fade-up" style="margin-top:32px;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45000!2d-0.03!3d44.58!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd552c5f9a9a9a9%3A0x0!2sLa+R%C3%A9ole!5e0!3m2!1sfr!2sfr!4v1"
+                    allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILTRE + GRILLE PARTENAIRES -->
+    <section class="section" style="background:var(--bg);">
+        <div class="container">
+            <div class="text-center fade-up" style="margin-bottom:32px;">
+                <div class="badge">📍 Tous les partenaires</div>
+                <h2>Explorez notre réseau</h2>
+            </div>
+
+            <div class="filters-bar fade-up">
+                <select class="filter-select" id="filter-city">
+                    <option value="all">Toutes les villes</option>
+                    <option value="la-reole">La Réole</option>
+                    <option value="lyon">Lyon</option>
+                    <option value="marseille">Marseille</option>
+                </select>
+                <select class="filter-select" id="filter-cuisine">
+                    <option value="all">Toutes cuisines</option>
+                    <option value="grillades">Grillades & Rôtisserie</option>
+                    <option value="pizza">Pizza</option>
+                    <option value="poke">Poke Bowl</option>
+                </select>
+            </div>
+
+            <div class="partner-grid fade-up-group">
+                <!-- La Réole -->
+                <div class="partner-card" data-city="la-reole" data-cuisine="grillades">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=400&fit=crop&q=80"
+                        alt="Biba's Come" class="partner-card-img">
+                    <div class="partner-card-body">
+                        <h3>Biba's Come</h3>
+                        <p class="partner-meta">📍 La Réole · Grillades & Rôtisserie</p>
+                        <div class="partner-stats">
+                            <span class="partner-stat">+45 commandes</span>
+                            <span class="partner-stat">+30% CA</span>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary"
+                            style="padding:10px 20px;font-size:0.85rem;">Contact via Factory Eat</a>
+                    </div>
+                </div>
+
+                <!-- Placeholder Lyon -->
+                <div class="partner-card" data-city="lyon" data-cuisine="pizza">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=400&fit=crop&q=80"
+                        alt="Pizza Express Lyon" class="partner-card-img">
+                    <div class="partner-card-body">
+                        <h3>Pizza Express</h3>
+                        <p class="partner-meta">📍 Lyon · Pizza artisanale</p>
+                        <div class="partner-stats">
+                            <span class="partner-stat">+32 commandes</span>
+                            <span class="partner-stat">+25% CA</span>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary"
+                            style="padding:10px 20px;font-size:0.85rem;">Contact via Factory Eat</a>
+                    </div>
+                </div>
+
+                <!-- Placeholder Marseille -->
+                <div class="partner-card" data-city="marseille" data-cuisine="poke">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop&q=80"
+                        alt="Poke Bowl Marseille" class="partner-card-img">
+                    <div class="partner-card-body">
+                        <h3>Poke Bowl Marseille</h3>
+                        <p class="partner-meta">📍 Marseille · Poke bowls frais</p>
+                        <div class="partner-stats">
+                            <span class="partner-stat">+28 commandes</span>
+                            <span class="partner-stat">+22% CA</span>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary"
+                            style="padding:10px 20px;font-size:0.85rem;">Contact via Factory Eat</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center fade-up" style="margin-top:48px;">
+                <h3 style="margin-bottom:12px;">Vous aussi, rejoignez le réseau !</h3>
+                <a href="contact.html" class="btn btn-primary">Devenir Partenaire <span class="btn-arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">Factory Eat</div>
+                    <p>Restaurant virtuel nouvelle génération. Nous boostons la visibilité de votre cuisine physique
+                        dans toute la France via Uber Eats & Deliveroo.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg></a>
+                        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="comment-ca-marche.html">Comment ça marche</a>
+                    <a href="partenaires.html">Nos partenaires</a>
+                    <a href="tarifs.html">Tarifs</a>
+                    <a href="contact.html">Devenir partenaire</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Top Villes</h4>
+                    <a href="partenaires.html">Paris (15)</a>
+                    <a href="partenaires.html">Marseille (12)</a>
+                    <a href="partenaires.html">Toulouse (9)</a>
+                    <a href="partenaires.html">Lyon (8)</a>
+                    <a href="partenaires.html">La Réole ★</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Plateformes</h4>
+                    <div class="footer-platforms">
+                        <svg width="80" height="32" viewBox="0 0 80 32">
+                            <rect width="80" height="32" rx="6" fill="rgba(255,255,255,0.1)" /><text x="40" y="20"
+                                text-anchor="middle" fill="#95a5a6" font-family="Poppins" font-weight="700"
+                                font-size="10">Uber Eats</text>
+                        </svg>
+                        <svg width="80" height="32" viewBox="0 0 80 32">
+                            <rect width="80" height="32" rx="6" fill="rgba(255,255,255,0.1)" /><text x="40" y="20"
+                                text-anchor="middle" fill="#95a5a6" font-family="Poppins" font-weight="700"
+                                font-size="10">Deliveroo</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="mailto:hello@factoryeat.fr">hello@factoryeat.fr</a>
+                    <a href="tel:+33600000000">06 00 00 00 00</a>
+                    <a href="https://wa.me/33600000000">WhatsApp</a>
+                    <p style="margin-top:8px; font-size:0.82rem;">Aureilhan, France</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 Factory Eat — Tous droits réservés | <a href="#">Mentions légales</a> | <a href="#">CGV</a> |
+                Conforme RGPD
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

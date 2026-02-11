@@ -193,6 +193,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 .addTo(map)
                 .bindPopup(`<strong>${c.name}</strong><br>${c.count} partenaire${c.count > 1 ? 's' : ''} actif${c.count > 1 ? 's' : ''}<br><em>Contactez pour rejoindre !</em>`);
         });
+
+        // ---- La Réole — Premier Partenaire (pulsing pin) ----
+        const laReoleIcon = L.divIcon({
+            html: '<div style="width:24px;height:24px;background:#FF6B35;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 0 rgba(255,107,53,0.6);animation:pulse-pin 2s ease infinite;"></div><style>@keyframes pulse-pin{0%,100%{box-shadow:0 0 0 0 rgba(255,107,53,0.6)}50%{box-shadow:0 0 0 12px rgba(255,107,53,0)}}</style>',
+            iconSize: [24, 24],
+            className: ''
+        });
+
+        L.marker([44.58, -0.03], { icon: laReoleIcon })
+            .addTo(map)
+            .bindPopup('<strong style="color:#FF6B35;">★ Premier partenaire !</strong><br><strong>Biba\'s Come</strong><br>Grillades & Rôtisserie<br>La Réole (Gironde)<br><a href="partenaires.html" style="color:#FF6B35;font-weight:600;">Voir la page Partenaires →</a>')
+            .openPopup();
     }
 
     // ---- Simulation Calculator ----
@@ -256,6 +268,124 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.style.color = '';
             ctaForm.reset();
         }, 3000);
+    });
+
+    // ---- Active Nav Link ----
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.navbar-menu a, .mobile-menu a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (!href) return;
+        const hrefPage = href.split('/').pop();
+        if (hrefPage === currentPage || (currentPage === '' && hrefPage === 'index.html') ||
+            (currentPage === 'index.html' && href.startsWith('#'))) {
+            // Don't mark hash links as active on inner pages
+        } else if (hrefPage === currentPage) {
+            a.classList.add('active');
+        }
+    });
+
+    // ---- FAQ Accordion ----
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.closest('.faq-item');
+            const wasActive = item.classList.contains('active');
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+            if (!wasActive) item.classList.add('active');
+        });
+    });
+
+    // ---- Partner Filters ----
+    const filterCity = document.getElementById('filter-city');
+    const filterCuisine = document.getElementById('filter-cuisine');
+    const partnerCards = document.querySelectorAll('.partner-card[data-city]');
+
+    function applyFilters() {
+        if (!filterCity || !partnerCards.length) return;
+        const city = filterCity.value;
+        const cuisine = filterCuisine?.value || 'all';
+        partnerCards.forEach(card => {
+            const matchCity = city === 'all' || card.dataset.city === city;
+            const matchCuisine = cuisine === 'all' || card.dataset.cuisine === cuisine;
+            card.style.display = (matchCity && matchCuisine) ? '' : 'none';
+        });
+    }
+
+    filterCity?.addEventListener('change', applyFilters);
+    filterCuisine?.addEventListener('change', applyFilters);
+
+    // ---- Chart.js Pricing ----
+    const chartCanvas = document.getElementById('pricing-chart');
+    if (chartCanvas && typeof Chart !== 'undefined') {
+        const ctx = chartCanvas.getContext('2d');
+        const simSalesChart = document.getElementById('chart-sales');
+        const simCommChart = document.getElementById('chart-commission');
+
+        function updateChart() {
+            const sales = parseFloat(simSalesChart?.value) || 30;
+            const comm = parseFloat(simCommChart?.value) || 15;
+            const monthlyData = [];
+            for (let m = 1; m <= 12; m++) {
+                // Growth: +5% per month compound
+                const growth = Math.pow(1.05, m - 1);
+                monthlyData.push(Math.round(sales * 12 * (comm / 100) * 22 * growth));
+            }
+
+            if (window._pricingChart) window._pricingChart.destroy();
+            window._pricingChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Jun', 'Jul', 'Aoû', 'Sep', 'Oct', 'Nov', 'Déc'],
+                    datasets: [{
+                        label: 'Gain mensuel (€)',
+                        data: monthlyData,
+                        borderColor: '#FF6B35',
+                        backgroundColor: 'rgba(255,107,53,0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: '#FF6B35',
+                        pointRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, ticks: { callback: v => v + '€' } }
+                    }
+                }
+            });
+        }
+
+        simSalesChart?.addEventListener('input', updateChart);
+        simCommChart?.addEventListener('input', updateChart);
+        updateChart();
+    }
+
+    // ---- Contact Form ----
+    const contactForm = document.getElementById('contact-form');
+    contactForm?.addEventListener('submit', e => {
+        e.preventDefault();
+        const btn = contactForm.querySelector('button[type="submit"]');
+        const origText = btn.textContent;
+        btn.textContent = '✓ Message envoyé !';
+        btn.style.background = '#27AE60';
+        btn.style.color = '#fff';
+        setTimeout(() => {
+            btn.textContent = origText;
+            btn.style.background = '';
+            btn.style.color = '';
+            contactForm.reset();
+        }, 3000);
+    });
+
+    // ---- Newsletter Form ----
+    const nlForm = document.getElementById('newsletter-form');
+    nlForm?.addEventListener('submit', e => {
+        e.preventDefault();
+        const btn = nlForm.querySelector('button');
+        btn.textContent = '✓ Inscrit !';
+        setTimeout(() => { btn.textContent = "S'inscrire"; nlForm.reset(); }, 2500);
     });
 
 });

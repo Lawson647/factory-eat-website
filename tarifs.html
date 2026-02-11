@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifs — Factory Eat | Commissions Transparentes & Négociables</title>
+    <meta name="description"
+        content="Tarifs Factory Eat : commissions de 10 à 20% négociables. 3 packs (Starter, Pro, Premium). Simulez votre gain avec notre calculateur interactif.">
+    <meta name="theme-color" content="#FF6B35">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">Factory Eat</a>
+            <div class="navbar-menu">
+                <a href="index.html">Accueil</a>
+                <a href="partenaires.html">Partenaires</a>
+                <a href="comment-ca-marche.html">Comment Ça Marche</a>
+                <a href="tarifs.html" class="active">Tarifs</a>
+                <a href="contact.html">Contact</a>
+                <a href="blog.html">Blog</a>
+                <button id="dark-toggle" class="dark-toggle" aria-label="Dark mode">🌙</button>
+                <a href="contact.html" class="btn btn-primary">Devenir Partenaire</a>
+            </div>
+            <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <a href="index.html">Accueil</a>
+        <a href="partenaires.html">Partenaires</a>
+        <a href="comment-ca-marche.html">Comment Ça Marche</a>
+        <a href="tarifs.html" class="active">Tarifs</a>
+        <a href="contact.html">Contact</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html" class="btn btn-primary" style="text-align:center;">Devenir Partenaire</a>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="badge">💰 Pricing</div>
+            <h1>Tarifs Transparents & Négociables</h1>
+            <p class="lead">Zéro frais fixes. Commissions uniquement sur les ventes générées. Choisissez le pack adapté
+                à votre activité.</p>
+        </div>
+    </section>
+
+    <!-- PRICING CARDS -->
+    <section class="section" style="background:var(--bg);">
+        <div class="container">
+            <div class="pricing-grid fade-up-group">
+                <!-- Starter -->
+                <div class="pricing-card">
+                    <span class="pricing-badge starter">Starter</span>
+                    <h3>Essentiel</h3>
+                    <div class="pricing-rate">10%<span class="suffix"> commission</span></div>
+                    <p class="pricing-desc">Parfait pour démarrer et tester Factory Eat sans risque.</p>
+                    <ul class="pricing-features">
+                        <li>Menu basic optimisé</li>
+                        <li>SEO light sur plateformes</li>
+                        <li>Suivi mensuel des ventes</li>
+                        <li>Support par email</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;">Choisir
+                        Starter</a>
+                    <div class="pricing-example">
+                        <strong>Exemple :</strong> 1 000€ ventes/mois → <strong style="color:var(--green);">100€
+                            gain</strong>
+                    </div>
+                </div>
+
+                <!-- Pro (Featured) -->
+                <div class="pricing-card featured">
+                    <span class="pricing-badge pro">Pro</span>
+                    <h3>Performance</h3>
+                    <div class="pricing-rate">15%<span class="suffix"> commission</span></div>
+                    <p class="pricing-desc">Le choix de Biba's Come à La Réole. Optimisation complète.</p>
+                    <ul class="pricing-features">
+                        <li>Photos professionnelles</li>
+                        <li>Optimisation menu complète</li>
+                        <li>SEO avancé plateformes</li>
+                        <li>Suivi hebdomadaire</li>
+                        <li>Support prioritaire 7j/7</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Choisir
+                        Pro <span class="btn-arrow">→</span></a>
+                    <div class="pricing-example">
+                        <strong>Exemple La Réole :</strong> 500€ ventes/mois → <strong style="color:var(--green);">75€
+                            gain partagé</strong>
+                    </div>
+                </div>
+
+                <!-- Premium -->
+                <div class="pricing-card">
+                    <span class="pricing-badge premium">Premium</span>
+                    <h3>Maximum</h3>
+                    <div class="pricing-rate">20%<span class="suffix"> commission</span></div>
+                    <p class="pricing-desc">Service all-inclusive avec publicité ciblée pour chaînes et gros volumes.
+                    </p>
+                    <ul class="pricing-features">
+                        <li>Tout le pack Pro inclus</li>
+                        <li>Publicité ciblée Uber/Deliveroo</li>
+                        <li>Campagnes promotionnelles</li>
+                        <li>Account manager dédié</li>
+                        <li>Rapports analytics avancés</li>
+                        <li>Formations équipe</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;">Choisir
+                        Premium</a>
+                    <div class="pricing-example">
+                        <strong>Exemple :</strong> 5 000€ ventes/mois → <strong style="color:var(--green);">1 000€
+                            gain</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULATEUR AVANCÉ (Chart.js) -->
+    <section class="section" style="background:var(--bg-alt);">
+        <div class="container" style="max-width:800px;">
+            <div class="text-center fade-up" style="margin-bottom:32px;">
+                <div class="badge">📊 Simulateur</div>
+                <h2>Projetez votre gain sur 12 mois</h2>
+                <p style="color:var(--text-light);margin-top:8px;">Ajustez les paramètres pour voir l'évolution de votre
+                    chiffre d'affaires.</p>
+            </div>
+
+            <div class="sim-box fade-up">
+                <div class="sim-inputs" style="grid-template-columns:1fr 1fr;">
+                    <div class="sim-field">
+                        <label for="chart-sales">Ventes/jour (quantité)</label>
+                        <input type="number" id="chart-sales" value="30" min="1" max="500">
+                    </div>
+                    <div class="sim-field">
+                        <label for="chart-commission">Commission (%)</label>
+                        <input type="number" id="chart-commission" value="15" min="10" max="20">
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-container fade-up">
+                <canvas id="pricing-chart" height="300"></canvas>
+            </div>
+
+            <div class="text-center fade-up" style="margin-top:32px;">
+                <a href="contact.html" class="btn btn-primary">Négocier mon tarif <span class="btn-arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section section">
+        <div class="container fade-up">
+            <h2>Prêt à négocier vos commissions ?</h2>
+            <p>Contactez-nous pour un tarif personnalisé adapté à votre activité et votre volume.</p>
+            <a href="contact.html" class="btn btn-white">Discuter avec notre équipe <span class="btn-arrow">→</span></a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">Factory Eat</div>
+                    <p>Restaurant virtuel nouvelle génération. Nous boostons la visibilité de votre cuisine physique
+                        dans toute la France via Uber Eats & Deliveroo.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg></a>
+                        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="comment-ca-marche.html">Comment ça marche</a>
+                    <a href="partenaires.html">Nos partenaires</a>
+                    <a href="tarifs.html">Tarifs</a>
+                    <a href="contact.html">Devenir partenaire</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Top Villes</h4>
+                    <a href="partenaires.html">Paris (15)</a>
+                    <a href="partenaires.html">Marseille (12)</a>
+                    <a href="partenaires.html">Toulouse (9)</a>
+                    <a href="partenaires.html">Lyon (8)</a>
+                    <a href="partenaires.html">La Réole ★</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Plateformes</h4>
+                    <div class="footer-platforms">
+                        <svg width="80" height="32" viewBox="0 0 80 32">
+                            <rect width="80" height="32" rx="6" fill="rgba(255,255,255,0.1)" /><text x="40" y="20"
+                                text-anchor="middle" fill="#95a5a6" font-family="Poppins" font-weight="700"
+                                font-size="10">Uber Eats</text>
+                        </svg>
+                        <svg width="80" height="32" viewBox="0 0 80 32">
+                            <rect width="80" height="32" rx="6" fill="rgba(255,255,255,0.1)" /><text x="40" y="20"
+                                text-anchor="middle" fill="#95a5a6" font-family="Poppins" font-weight="700"
+                                font-size="10">Deliveroo</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="mailto:hello@factoryeat.fr">hello@factoryeat.fr</a>
+                    <a href="tel:+33600000000">06 00 00 00 00</a>
+                    <a href="https://wa.me/33600000000">WhatsApp</a>
+                    <p style="margin-top:8px; font-size:0.82rem;">Aureilhan, France</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 Factory Eat — Tous droits réservés | <a href="#">Mentions légales</a> | <a href="#">CGV</a> |
+                Conforme RGPD
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

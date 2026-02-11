@@ -45,27 +45,29 @@
      ============================================ -->
     <nav class="navbar" id="navbar">
         <div class="container">
-            <a href="#accueil" class="navbar-brand">Factory Eat</a>
+            <a href="index.html" class="navbar-brand">Factory Eat</a>
             <div class="navbar-menu">
-                <a href="#accueil">Accueil</a>
-                <a href="#carte">Carte</a>
-                <a href="#etapes">Étapes</a>
-                <a href="#avantages">Avantages</a>
-                <a href="#simulation">Simulation</a>
+                <a href="index.html" class="active">Accueil</a>
+                <a href="partenaires.html">Partenaires</a>
+                <a href="comment-ca-marche.html">Comment Ça Marche</a>
+                <a href="tarifs.html">Tarifs</a>
+                <a href="contact.html">Contact</a>
+                <a href="blog.html">Blog</a>
                 <button id="dark-toggle" class="dark-toggle" aria-label="Dark mode">🌙</button>
-                <a href="#contact" class="btn btn-primary">Vérifier éligibilité</a>
+                <a href="contact.html" class="btn btn-primary">Devenir Partenaire</a>
             </div>
             <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
     <div class="mobile-menu">
-        <a href="#accueil">Accueil</a>
-        <a href="#carte">Carte</a>
-        <a href="#etapes">Étapes</a>
-        <a href="#avantages">Avantages</a>
-        <a href="#simulation">Simulation</a>
-        <a href="#contact" class="btn btn-primary" style="text-align:center;">Vérifier éligibilité</a>
+        <a href="index.html" class="active">Accueil</a>
+        <a href="partenaires.html">Partenaires</a>
+        <a href="comment-ca-marche.html">Comment Ça Marche</a>
+        <a href="tarifs.html">Tarifs</a>
+        <a href="contact.html">Contact</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html" class="btn btn-primary" style="text-align:center;">Devenir Partenaire</a>
     </div>
 
     <!-- ============================================
@@ -145,6 +147,9 @@
                 <div class="city-item"><span>Nice</span> <span class="count">4 restos</span></div>
                 <div class="city-item"><span>Rennes</span> <span class="count">4 restos</span></div>
                 <div class="city-item"><span>Strasbourg</span> <span class="count">3 restos</span></div>
+                <div class="city-item" style="border-color:var(--primary);background:rgba(255,107,53,0.05);"><span>🔥 La
+                        Réole</span> <span class="count" style="color:var(--primary);font-weight:900;">★ 1er
+                        partenaire</span></div>
             </div>
             <div class="text-center" style="margin-top:24px;">
                 <a href="#contact" class="btn btn-primary">Ajouter votre ville <span class="btn-arrow">→</span></a>
@@ -417,6 +422,50 @@
     </section>
 
     <!-- ============================================
+     NOS PREMIERS PARTENAIRES (Teaser)
+     ============================================ -->
+    <section class="section" style="background:var(--bg);">
+        <div class="container">
+            <div class="text-center fade-up" style="margin-bottom:40px;">
+                <div class="badge">🤝 Partenaires</div>
+                <h2>Nos Premiers Partenaires</h2>
+                <p style="color:var(--text-light);max-width:600px;margin:12px auto 0;">Ils nous font confiance pour
+                    booster leurs ventes via les plateformes de livraison.</p>
+            </div>
+            <div class="partner-featured fade-up">
+                <div class="partner-featured-inner">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&h=600&fit=crop&q=80"
+                        alt="Grillades rôtisserie Biba's Come - Crédit Facebook" class="partner-featured-img">
+                    <div class="partner-featured-body">
+                        <h2>Biba's Come</h2>
+                        <div class="partner-location">📍 La Réole (Gironde)</div>
+                        <p>Foodtruck spécialisé en grillades et rôtisserie du sud-ouest. Viandes locales de qualité,
+                            cuisson au feu de bois. Premier partenaire Factory Eat !</p>
+                        <div class="partner-featured-stats">
+                            <span class="partner-stat">+30% CA</span>
+                            <span class="partner-stat">Commission 15%</span>
+                            <span class="partner-stat">Grillades & Rôtisserie</span>
+                        </div>
+                        <div class="partner-featured-quote">
+                            <p>"Factory Eat a été le tremplin idéal pour nos viandes locales ! En 2 semaines, nos
+                                commandes ont explosé."</p>
+                            <span class="author">— Propriétaire, Biba's Come</span>
+                        </div>
+                        <a href="partenaires.html" class="btn btn-primary">Découvrir nos partenaires <span
+                                class="btn-arrow">→</span></a>
+                        <p class="partner-credit">Photos : <a
+                                href="https://www.facebook.com/profile.php?id=61581283250102" target="_blank"
+                                rel="noopener">Facebook Biba's Come</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="partenaires.html" class="btn btn-outline">Voir tous les partenaires <span
+                        class="btn-arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+    <!-- ============================================
      CTA + FORM
      ============================================ -->
     <section class="cta-section section" id="contact">
@@ -463,10 +512,10 @@
                 </div>
                 <div class="footer-col">
                     <h4>Services</h4>
-                    <a href="#etapes">Comment ça marche</a>
-                    <a href="#avantages">Avantages</a>
-                    <a href="#simulation">Simulation CA</a>
-                    <a href="#contact">Devenir partenaire</a>
+                    <a href="comment-ca-marche.html">Comment ça marche</a>
+                    <a href="partenaires.html">Nos partenaires</a>
+                    <a href="tarifs.html">Tarifs</a>
+                    <a href="contact.html">Devenir partenaire</a>
                 </div>
                 <div class="footer-col">
                     <h4>Top Villes</h4>
