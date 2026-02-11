@@ -2552,7 +2552,143 @@ body.has-banner .mobile-menu {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .blog-grid {
-        grid-template-columns: repeat(1, 1fr);
+}
+
+/* ============================================
+   CUISINE CAROUSEL
+   ============================================ */
+.cuisines-gallery {
+    overflow: hidden;
+}
+
+.cuisine-carousel-wrapper {
+    overflow-x: auto;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+}
+
+.cuisine-scroller {
+    display: flex;
+    gap: 16px;
+    padding: 0 20px;
+    width: max-content;
+    margin: 0 auto;
+}
+
+.cuisine-card {
+    flex: 0 0 160px;
+    scroll-snap-align: center;
+    text-align: center;
+    transition: transform var(--transition);
+}
+
+.cuisine-card:hover {
+    transform: translateY(-5px);
+}
+
+.cuisine-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 3px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cuisine-card span {
+    display: block;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+/* ============================================
+   ASIAN FOCUS GRID
+   ============================================ */
+.asian-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+    .asian-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.asian-card {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: transform var(--transition);
+}
+
+.asian-card:hover {
+    transform: translateY(-5px);
+}
+
+.asian-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.asian-card:hover img {
+    transform: scale(1.05);
+}
+
+.asian-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    padding: 24px 16px 16px;
+    color: white;
+}
+
+.asian-overlay h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-family: var(--font-heading);
+}
+
+.asian-overlay p {
+    margin: 4px 0 0;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ============================================
+   FOODTRUCK TEASER
+   ============================================ */
+.ft-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.ft-list li {
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.ft-image {
+    position: relative;
+}
+
+@media (max-width: 767px) {
+    .foodtruck-teaser .two-col-grid {
+        display: flex;
+        flex-direction: column-reverse;
     }
 }

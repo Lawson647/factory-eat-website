@@ -167,44 +167,64 @@ document.addEventListener('DOMContentLoaded', () => {
             maxZoom: 12
         }).addTo(map);
 
+        // Icons
         const orangeIcon = L.divIcon({
             html: '<div style="width:18px;height:18px;background:#FF6B35;border-radius:50%;border:3px solid #fff;box-shadow:0 0 8px rgba(255,107,53,0.5);"></div>',
             iconSize: [18, 18],
             className: ''
         });
 
-        const cities = [
-            { lat: 48.8566, lng: 2.3522, name: 'Paris', count: 15 },
-            { lat: 45.764, lng: 4.8357, name: 'Lyon', count: 8 },
-            { lat: 43.2965, lng: 5.3698, name: 'Marseille', count: 12 },
-            { lat: 44.8378, lng: -0.5792, name: 'Bordeaux', count: 6 },
-            { lat: 43.6047, lng: 1.4442, name: 'Toulouse', count: 9 },
-            { lat: 50.6292, lng: 3.0573, name: 'Lille', count: 5 },
-            { lat: 43.7102, lng: 7.2620, name: 'Nice', count: 4 },
-            { lat: 47.2184, lng: -1.5536, name: 'Nantes', count: 7 },
-            { lat: 48.5734, lng: 7.7521, name: 'Strasbourg', count: 3 },
-            { lat: 48.1173, lng: -1.6778, name: 'Rennes', count: 4 },
-            { lat: 43.1242, lng: -0.0014, name: 'Tarbes', count: 2 },
-            { lat: 43.2333, lng: 0.0833, name: 'Aureilhan', count: 1 }
-        ];
-
-        cities.forEach(c => {
-            L.marker([c.lat, c.lng], { icon: orangeIcon })
-                .addTo(map)
-                .bindPopup(`<strong>${c.name}</strong><br>${c.count} partenaire${c.count > 1 ? 's' : ''} actif${c.count > 1 ? 's' : ''}<br><em>Contactez pour rejoindre !</em>`);
-        });
-
-        // ---- La Réole — Premier Partenaire (pulsing pin) ----
-        const laReoleIcon = L.divIcon({
-            html: '<div style="width:24px;height:24px;background:#FF6B35;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 0 rgba(255,107,53,0.6);animation:pulse-pin 2s ease infinite;"></div><style>@keyframes pulse-pin{0%,100%{box-shadow:0 0 0 0 rgba(255,107,53,0.6)}50%{box-shadow:0 0 0 12px rgba(255,107,53,0)}}</style>',
+        const truckIcon = L.divIcon({
+            html: '<div style="font-size:24px; text-shadow:0 2px 5px rgba(0,0,0,0.2);">🚚</div>',
             iconSize: [24, 24],
             className: ''
         });
 
-        L.marker([44.58, -0.03], { icon: laReoleIcon })
-            .addTo(map)
-            .bindPopup('<strong style="color:#FF6B35;">★ Premier partenaire !</strong><br><strong>Biba\'s Come</strong><br>Grillades & Rôtisserie<br>La Réole (Gironde)<br><a href="partenaires.html" style="color:#FF6B35;font-weight:600;">Voir la page Partenaires →</a>')
-            .openPopup();
+        const sushiIcon = L.divIcon({
+            html: '<div style="font-size:24px; text-shadow:0 2px 5px rgba(0,0,0,0.2);">🍣</div>',
+            iconSize: [24, 24],
+            className: ''
+        });
+
+        const cities = [
+            { lat: 48.8566, lng: 2.3522, name: 'Paris', count: 15, type: 'sushi' },
+            { lat: 45.764, lng: 4.8357, name: 'Lyon', count: 8, type: 'standard' },
+            { lat: 43.2965, lng: 5.3698, name: 'Marseille', count: 12, type: 'truck' },
+            { lat: 44.8378, lng: -0.5792, name: 'Bordeaux', count: 6, type: 'standard' },
+            { lat: 43.6047, lng: 1.4442, name: 'Toulouse', count: 9, type: 'standard' },
+            { lat: 50.6292, lng: 3.0573, name: 'Lille', count: 5, type: 'standard' },
+            { lat: 43.7102, lng: 7.2620, name: 'Nice', count: 4, type: 'sushi' },
+            { lat: 47.2184, lng: -1.5536, name: 'Nantes', count: 7, type: 'truck' },
+            { lat: 48.5734, lng: 7.7521, name: 'Strasbourg', count: 3, type: 'standard' },
+            { lat: 48.1173, lng: -1.6778, name: 'Rennes', count: 4, type: 'standard' },
+            { lat: 43.1242, lng: -0.0014, name: 'Tarbes', count: 2, type: 'standard' },
+            { lat: 43.2333, lng: 0.0833, name: 'Aureilhan', count: 1, type: 'standard' },
+            { lat: 44.58, lng: -0.03, name: 'La Réole', count: 1, type: 'special' }
+        ];
+
+        cities.forEach(c => {
+            let icon = orangeIcon;
+            let popupHtml = `<strong>${c.name}</strong><br>${c.count} partenaire${c.count > 1 ? 's' : ''} actif${c.count > 1 ? 's' : ''}`;
+
+            if (c.type === 'truck') {
+                icon = truckIcon;
+                popupHtml += `<br><em>Spécial Foodtrucks !</em>`;
+            } else if (c.type === 'sushi') {
+                icon = sushiIcon;
+                popupHtml += `<br><em>Spécial Asian / Sushi !</em>`;
+            } else if (c.type === 'special') { // La Réole
+                icon = L.divIcon({
+                    html: '<div style="font-size:28px; animation:pulse-emoji 2s infinite;">🚚</div><style>@keyframes pulse-emoji{0%,100%{transform:scale(1);}50%{transform:scale(1.2);}}</style>',
+                    iconSize: [28, 28],
+                    className: ''
+                });
+                popupHtml = '<strong style="color:#FF6B35;">★ Premier partenaire Truck !</strong><br><strong>Biba\'s Come</strong><br>La Réole (Gironde)<br><a href="partenaires.html" style="color:#FF6B35;font-weight:600;">Voir succès →</a>';
+            }
+
+            const marker = L.marker([c.lat, c.lng], { icon: icon }).addTo(map);
+            marker.bindPopup(popupHtml);
+            if (c.type === 'special') marker.openPopup();
+        });
     }
 
     // ---- Simulation Calculator ----
@@ -608,5 +628,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // ============================================
+    //  FOODTRUCK SIMULATOR (foodtrucks.html)
+    // ============================================
+    const truckSimForm = document.getElementById('truck-sim-form');
+    truckSimForm?.addEventListener('submit', e => {
+        e.preventDefault();
+        const days = parseInt(document.getElementById('sim-days')?.value) || 5;
+        const sales = parseInt(document.getElementById('sim-spot-sales')?.value) || 30;
+        const price = parseInt(document.getElementById('sim-truck-price')?.value) || 13;
+
+        // Logic: Avg monthly = Sales * Price * Days/week * 4.33 weeks
+        const monthlyCA = Math.round(sales * price * days * 4.33);
+        const resultDiv = document.getElementById('truck-sim-result');
+
+        if (resultDiv) {
+            resultDiv.style.opacity = '0';
+            setTimeout(() => {
+                resultDiv.innerHTML = `CA Est. : <span style="font-size:1.4rem">${monthlyCA.toLocaleString()}€</span> / mois<br><span style="font-size:0.9rem;color:#27AE60">✅ Négo Commission 25% possible dès Mois 3</span>`;
+                resultDiv.style.opacity = '1';
+                resultDiv.style.transition = 'opacity 0.5s ease';
+            }, 200);
+        }
+    });
 
 });
