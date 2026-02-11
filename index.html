@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Factory Eat — Restaurant Virtuel | Toutes Villes France Uber Eats</title>
+    <title>25% Uber Eats Restaurants Physiques | Factory Eat — Restaurant Virtuel</title>
     <meta name="description"
-        content="Factory Eat — Votre restaurant virtuel rentable. Implanté partout en France (Uber Eats, Deliveroo). Toutes cuisines éligibles. Commissions 10-20%. Zéro investissement.">
+        content="Économisez 5% commissions Uber via notre partenariat. Factory Eat — Restaurant virtuel rentable, toutes villes France. 25% au lieu de 30% solo.">
     <meta name="theme-color" content="#FF6B35">
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>">
@@ -40,6 +40,13 @@
 
 <body>
 
+    <!-- PROMO BANNER -->
+    <div class="promo-banner" id="promo-banner">
+        🚀 <strong>25% commissions Uber Eats</strong> (solo 30%) via Factory Eat —
+        <a href="offre-restaurants.html">Contactez-nous</a>
+        <button class="banner-close" id="banner-close" aria-label="Fermer">✕</button>
+    </div>
+
     <!-- ============================================
      NAVBAR (Glassmorphism)
      ============================================ -->
@@ -51,10 +58,11 @@
                 <a href="partenaires.html">Partenaires</a>
                 <a href="comment-ca-marche.html">Comment Ça Marche</a>
                 <a href="tarifs.html">Tarifs</a>
+                <a href="offre-restaurants.html">Offre Restaurants</a>
                 <a href="contact.html">Contact</a>
                 <a href="blog.html">Blog</a>
                 <button id="dark-toggle" class="dark-toggle" aria-label="Dark mode">🌙</button>
-                <a href="contact.html" class="btn btn-primary">Devenir Partenaire</a>
+                <a href="offre-restaurants.html" class="btn btn-primary">25% Uber Eats</a>
             </div>
             <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
         </div>
@@ -65,9 +73,10 @@
         <a href="partenaires.html">Partenaires</a>
         <a href="comment-ca-marche.html">Comment Ça Marche</a>
         <a href="tarifs.html">Tarifs</a>
+        <a href="offre-restaurants.html">Offre Restaurants</a>
         <a href="contact.html">Contact</a>
         <a href="blog.html">Blog</a>
-        <a href="contact.html" class="btn btn-primary" style="text-align:center;">Devenir Partenaire</a>
+        <a href="offre-restaurants.html" class="btn btn-primary" style="text-align:center;">25% Uber Eats</a>
     </div>
 
     <!-- ============================================
@@ -119,6 +128,46 @@
                         <span class="stat-label">CA moyen</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+     OFFRE UBER 25% (Inline Hero + Calculateur)
+     ============================================ -->
+    <section class="uber-offer-hero">
+        <div class="container">
+            <h2>Offre Exclusive Restaurants Physiques :<br>Uber à <span class="uber-rate">25%</span> (au lieu de 30%)
+            </h2>
+            <p class="offer-text">
+                Solo sur Uber Eats ? <strong>30% commissions</strong>. Avec Factory Eat ?
+                <strong>25% négociés</strong> via notre volume multi-villes (50+ concepts 2026).
+                On gère inscription, menu tremplin, SEO — vous cuisinez !
+                <strong>Testé La Réole : +30 commandes, -5% frais.</strong>
+            </p>
+
+            <div class="inline-calculator">
+                <div class="calc-inputs">
+                    <div class="calc-field">
+                        <label>Ventes / jour</label>
+                        <input type="range" id="home-calc-sales" min="5" max="100" value="30">
+                        <div class="range-value" id="home-calc-sales-val">30</div>
+                    </div>
+                    <div class="calc-field">
+                        <label>Prix moyen (€)</label>
+                        <input type="range" id="home-calc-price" min="5" max="30" value="12" step="0.5">
+                        <div class="range-value" id="home-calc-price-val">12€</div>
+                    </div>
+                </div>
+                <div class="calc-result" id="home-calc-result">
+                    <span class="saving-amount" id="home-saving">180€</span>
+                    <span class="saving-label">d'économie / mois (25% vs 30%)</span>
+                </div>
+            </div>
+
+            <div class="offer-cta-duo" style="margin-top:28px;">
+                <a href="offre-restaurants.html" class="btn-white-solid">📊 Calculer mon gain</a>
+                <a href="contact.html" class="btn-outline-white">📞 Contact Offre Uber</a>
             </div>
         </div>
     </section>
@@ -515,7 +564,15 @@
                     <a href="comment-ca-marche.html">Comment ça marche</a>
                     <a href="partenaires.html">Nos partenaires</a>
                     <a href="tarifs.html">Tarifs</a>
+                    <a href="offre-restaurants.html">Offre Restaurants</a>
                     <a href="contact.html">Devenir partenaire</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Avantages Uber</h4>
+                    <a href="offre-restaurants.html">25% commissions</a>
+                    <a href="offre-restaurants.html">Négo pro volume</a>
+                    <a href="offre-restaurants.html">Volume groupé 50+</a>
+                    <a href="offre-restaurants.html">-5% vs solo</a>
                 </div>
                 <div class="footer-col">
                     <h4>Top Villes</h4>

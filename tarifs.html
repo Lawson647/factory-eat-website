@@ -16,6 +16,13 @@
 
 <body>
 
+    <!-- PROMO BANNER -->
+    <div class="promo-banner" id="promo-banner">
+        🚀 <strong>25% commissions Uber Eats</strong> (solo 30%) via Factory Eat —
+        <a href="offre-restaurants.html">Contactez-nous</a>
+        <button class="banner-close" id="banner-close" aria-label="Fermer">✕</button>
+    </div>
+
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="container">
@@ -25,10 +32,11 @@
                 <a href="partenaires.html">Partenaires</a>
                 <a href="comment-ca-marche.html">Comment Ça Marche</a>
                 <a href="tarifs.html" class="active">Tarifs</a>
+                <a href="offre-restaurants.html">Offre Restaurants</a>
                 <a href="contact.html">Contact</a>
                 <a href="blog.html">Blog</a>
                 <button id="dark-toggle" class="dark-toggle" aria-label="Dark mode">🌙</button>
-                <a href="contact.html" class="btn btn-primary">Devenir Partenaire</a>
+                <a href="offre-restaurants.html" class="btn btn-primary">25% Uber Eats</a>
             </div>
             <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
         </div>
@@ -39,9 +47,10 @@
         <a href="partenaires.html">Partenaires</a>
         <a href="comment-ca-marche.html">Comment Ça Marche</a>
         <a href="tarifs.html" class="active">Tarifs</a>
+        <a href="offre-restaurants.html">Offre Restaurants</a>
         <a href="contact.html">Contact</a>
         <a href="blog.html">Blog</a>
-        <a href="contact.html" class="btn btn-primary" style="text-align:center;">Devenir Partenaire</a>
+        <a href="offre-restaurants.html" class="btn btn-primary" style="text-align:center;">25% Uber Eats</a>
     </div>
 
     <!-- PAGE HERO -->
@@ -158,6 +167,70 @@
         </div>
     </section>
 
+    <!-- UBER INCLUS -->
+    <section class="section" style="background:var(--bg);">
+        <div class="container" style="max-width:800px;">
+            <div class="text-center fade-up" style="margin-bottom:32px;">
+                <div class="badge">🚀 Uber Inclus</div>
+                <h2>Commission Uber négociée : 25%</h2>
+                <p style="color:var(--text-light);margin-top:8px;">Via Factory Eat, bénéficiez de 25% de commission Uber
+                    (au lieu de 30% solo) + votre commission interne de 10-20% sur votre marge boostée.</p>
+            </div>
+
+            <table class="uber-included-table fade-up">
+                <thead>
+                    <tr>
+                        <th>Elément</th>
+                        <th>Solo</th>
+                        <th>Via Factory Eat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Commission Uber Eats</td>
+                        <td class="strikethrough">30%</td>
+                        <td class="highlight-cell">25% ✅</td>
+                    </tr>
+                    <tr>
+                        <td>Commission Factory Eat</td>
+                        <td>—</td>
+                        <td>10-20% (négociable)</td>
+                    </tr>
+                    <tr>
+                        <td>Inscription + Menu</td>
+                        <td>Vous gérez</td>
+                        <td class="highlight-cell">On gère tout</td>
+                    </tr>
+                    <tr>
+                        <td>SEO & Visibilité</td>
+                        <td>Aucun</td>
+                        <td class="highlight-cell">Optimisé multi-plateformes</td>
+                    </tr>
+                    <tr>
+                        <td>Marge nette / plat (12€)</td>
+                        <td class="strikethrough">~4€</td>
+                        <td class="highlight-cell">~5€ (+25%)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- COMPARATIF CA 6 MOIS (Chart.js) -->
+    <section class="section" style="background:var(--bg-alt);">
+        <div class="container" style="max-width:800px;">
+            <div class="text-center fade-up" style="margin-bottom:32px;">
+                <div class="badge">📈 Projections</div>
+                <h2>CA Mois 1-6 : Solo 30% vs Factory Eat 25%</h2>
+                <p style="color:var(--text-light);margin-top:8px;">Avec 30 ventes/jour à 12€, voyez la différence sur 6
+                    mois.</p>
+            </div>
+            <div class="chart-container fade-up">
+                <canvas id="comparison-chart" height="300"></canvas>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA -->
     <section class="cta-section section">
         <div class="container fade-up">
@@ -193,7 +266,15 @@
                     <a href="comment-ca-marche.html">Comment ça marche</a>
                     <a href="partenaires.html">Nos partenaires</a>
                     <a href="tarifs.html">Tarifs</a>
+                    <a href="offre-restaurants.html">Offre Restaurants</a>
                     <a href="contact.html">Devenir partenaire</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Avantages Uber</h4>
+                    <a href="offre-restaurants.html">25% commissions</a>
+                    <a href="offre-restaurants.html">Négo pro volume</a>
+                    <a href="offre-restaurants.html">Volume groupé 50+</a>
+                    <a href="offre-restaurants.html">-5% vs solo</a>
                 </div>
                 <div class="footer-col">
                     <h4>Top Villes</h4>

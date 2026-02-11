@@ -2058,6 +2058,426 @@ h3 {
 }
 
 /* ============================================
+   PROMO BANNER (sticky top)
+   ============================================ */
+.promo-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10001;
+    background: linear-gradient(135deg, #FF6B35 0%, #e55a28 50%, #FF8A5C 100%);
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    box-shadow: 0 2px 12px rgba(255, 107, 53, 0.3);
+    transition: transform 0.4s ease;
+}
+
+.promo-banner.hidden {
+    transform: translateY(-100%);
+}
+
+.promo-banner a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.promo-banner .banner-close {
+    position: absolute;
+    right: 16px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.3rem;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    padding: 4px 8px;
+}
+
+.promo-banner .banner-close:hover {
+    opacity: 1;
+}
+
+/* Offset navbar when banner is visible */
+body.has-banner .navbar {
+    top: 42px;
+}
+
+body.has-banner .hero,
+body.has-banner .page-hero {
+    padding-top: 180px;
+}
+
+body.has-banner .mobile-menu {
+    top: 112px;
+}
+
+/* ============================================
+   UBER OFFER HERO (Homepage)
+   ============================================ */
+.uber-offer-hero {
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8A5C 40%, #fff5f0 100%);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.uber-offer-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+}
+
+.uber-offer-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.uber-offer-hero h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.uber-offer-hero h2 .uber-rate {
+    display: inline-block;
+    background: #fff;
+    color: var(--primary);
+    padding: 4px 16px;
+    border-radius: 8px;
+    font-size: 110%;
+}
+
+.uber-offer-hero .offer-text {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.92);
+    max-width: 720px;
+    margin: 0 auto 36px;
+    line-height: 1.8;
+}
+
+.uber-offer-hero .offer-text strong {
+    color: #fff;
+}
+
+/* ============================================
+   INLINE CALCULATOR
+   ============================================ */
+.inline-calculator {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: var(--radius-xl);
+    padding: 32px;
+    max-width: 680px;
+    margin: 0 auto 32px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(8px);
+}
+
+.calc-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.calc-field label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 6px;
+}
+
+.calc-field input[type="range"] {
+    width: 100%;
+    accent-color: var(--primary);
+}
+
+.calc-field .range-value {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--primary);
+    margin-top: 4px;
+}
+
+.calc-result {
+    background: linear-gradient(135deg, #27AE60, #2ecc71);
+    border-radius: var(--radius);
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.calc-result .saving-amount {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 900;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.calc-result .saving-label {
+    font-size: 0.88rem;
+    opacity: 0.9;
+}
+
+.offer-cta-duo {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.offer-cta-duo .btn {
+    min-width: 200px;
+    justify-content: center;
+}
+
+.btn-white-solid {
+    background: #fff;
+    color: var(--primary);
+    border: 2px solid #fff;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-white-solid:hover {
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn-outline-white {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-outline-white:hover {
+    background: #fff;
+    color: var(--primary);
+    border-color: #fff;
+}
+
+/* ============================================
+   COMPARISON TABLE
+   ============================================ */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 32px 0;
+    box-shadow: var(--shadow);
+}
+
+.comparison-table thead th {
+    padding: 18px 20px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.comparison-table thead th:first-child {
+    background: #e74c3c;
+    color: #fff;
+}
+
+.comparison-table thead th:last-child {
+    background: var(--green);
+    color: #fff;
+}
+
+.comparison-table tbody td {
+    padding: 16px 20px;
+    font-size: 0.92rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+}
+
+.comparison-table tbody td:first-child {
+    color: #e74c3c;
+    font-weight: 500;
+}
+
+.comparison-table tbody td:last-child {
+    color: var(--green);
+    font-weight: 600;
+}
+
+.comparison-table tbody tr:hover td {
+    background: rgba(39, 174, 96, 0.04);
+}
+
+/* ============================================
+   NEGOTIATION STEPS
+   ============================================ */
+.nego-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.nego-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 28px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: all var(--transition);
+}
+
+.nego-step:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.nego-step .step-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.nego-step h4 {
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+}
+
+.nego-step p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* ============================================
+   UBER INCLUDED TABLE (Tarifs)
+   ============================================ */
+.uber-included-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.uber-included-table th {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    padding: 16px 20px;
+    text-align: left;
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.uber-included-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.92rem;
+    background: var(--bg);
+}
+
+.uber-included-table .highlight-cell {
+    color: var(--green);
+    font-weight: 700;
+}
+
+.uber-included-table .strikethrough {
+    text-decoration: line-through;
+    color: #e74c3c;
+    opacity: 0.7;
+}
+
+/* ============================================
+   RESPONSIVE — Uber Offer (768px+)
+   ============================================ */
+@media (min-width: 768px) {
+    .nego-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .comparison-table {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .calc-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .inline-calculator {
+        padding: 20px;
+    }
+
+    .comparison-table {
+        font-size: 0.82rem;
+    }
+
+    .comparison-table thead th,
+    .comparison-table tbody td {
+        padding: 12px 14px;
+    }
+
+    .promo-banner {
+        font-size: 0.78rem;
+        padding: 8px 40px 8px 12px;
+        text-align: center;
+    }
+
+    .uber-offer-hero {
+        padding: 60px 0;
+    }
+}
+
+/* ============================================
    PAGE NAV ACTIVE
    ============================================ */
 .navbar-menu a.active,

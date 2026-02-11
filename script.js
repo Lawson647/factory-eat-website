@@ -388,4 +388,178 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => { btn.textContent = "S'inscrire"; nlForm.reset(); }, 2500);
     });
 
+    // ============================================
+    //  PROMO BANNER DISMISS
+    // ============================================
+    const promoBanner = document.getElementById('promo-banner');
+    const bannerClose = document.getElementById('banner-close');
+    if (promoBanner) {
+        if (sessionStorage.getItem('banner-dismissed') === 'true') {
+            promoBanner.classList.add('hidden');
+        } else {
+            document.body.classList.add('has-banner');
+        }
+        bannerClose?.addEventListener('click', () => {
+            promoBanner.classList.add('hidden');
+            document.body.classList.remove('has-banner');
+            sessionStorage.setItem('banner-dismissed', 'true');
+        });
+    }
+
+    // ============================================
+    //  INLINE CALCULATOR (Homepage)
+    // ============================================
+    const homeCalcSales = document.getElementById('home-calc-sales');
+    const homeCalcPrice = document.getElementById('home-calc-price');
+    const homeCalcSalesVal = document.getElementById('home-calc-sales-val');
+    const homeCalcPriceVal = document.getElementById('home-calc-price-val');
+    const homeSaving = document.getElementById('home-saving');
+
+    function updateHomeCalc() {
+        if (!homeCalcSales || !homeCalcPrice) return;
+        const sales = parseFloat(homeCalcSales.value);
+        const price = parseFloat(homeCalcPrice.value);
+        if (homeCalcSalesVal) homeCalcSalesVal.textContent = sales;
+        if (homeCalcPriceVal) homeCalcPriceVal.textContent = price + '€';
+        // Saving = sales * price * 30 days * (30% - 25%) = sales * price * 30 * 0.05
+        const saving = Math.round(sales * price * 30 * 0.05);
+        if (homeSaving) homeSaving.textContent = saving + '€';
+    }
+
+    homeCalcSales?.addEventListener('input', updateHomeCalc);
+    homeCalcPrice?.addEventListener('input', updateHomeCalc);
+    updateHomeCalc();
+
+    // ============================================
+    //  INLINE CALCULATOR (Offre Restaurants page)
+    // ============================================
+    const uberCalcSales = document.getElementById('sim-uber-sales');
+    const uberCalcPrice = document.getElementById('sim-uber-price');
+    const uberCalcSalesVal = document.getElementById('sim-uber-sales-val');
+    const uberCalcPriceVal = document.getElementById('sim-uber-price-val');
+    const uberSaving = document.getElementById('uber-saving');
+
+    function updateUberCalc() {
+        if (!uberCalcSales || !uberCalcPrice) return;
+        const sales = parseFloat(uberCalcSales.value);
+        const price = parseFloat(uberCalcPrice.value);
+        if (uberCalcSalesVal) uberCalcSalesVal.textContent = sales;
+        if (uberCalcPriceVal) uberCalcPriceVal.textContent = price + '€';
+        const saving = Math.round(sales * price * 30 * 0.05);
+        if (uberSaving) uberSaving.textContent = saving + '€';
+    }
+
+    uberCalcSales?.addEventListener('input', updateUberCalc);
+    uberCalcPrice?.addEventListener('input', updateUberCalc);
+    updateUberCalc();
+
+    // Uber simulator form
+    const uberSimForm = document.getElementById('uber-sim-form');
+    uberSimForm?.addEventListener('submit', e => {
+        e.preventDefault();
+        const ville = document.getElementById('sim-ville')?.value || 'Votre ville';
+        const ventes = parseInt(document.getElementById('sim-ventes')?.value) || 30;
+        const saving = Math.round(ventes * 12 * 30 * 0.05);
+        const btn = uberSimForm.querySelector('button');
+        btn.innerHTML = `✅ ${ville} : ~${saving}€/mois d'économie !`;
+        btn.style.background = '#27AE60';
+        setTimeout(() => {
+            btn.innerHTML = 'Recevoir mon estimation personnalisée <span class="btn-arrow">→</span>';
+            btn.style.background = '';
+        }, 4000);
+    });
+
+    // Contact Uber form
+    const contactUberForm = document.getElementById('contact-uber-form');
+    contactUberForm?.addEventListener('submit', e => {
+        e.preventDefault();
+        const btn = contactUberForm.querySelector('button');
+        btn.innerHTML = '✅ Demande envoyée ! On vous recontacte sous 24h.';
+        btn.style.background = '#27AE60';
+        setTimeout(() => {
+            btn.innerHTML = 'Je veux 25% Uber Eats <span class="btn-arrow">→</span>';
+            btn.style.background = '';
+            contactUberForm.reset();
+        }, 4000);
+    });
+
+    // ============================================
+    //  COMPARISON CHART (Tarifs page - Chart.js)
+    // ============================================
+    const compChartEl = document.getElementById('comparison-chart');
+    if (compChartEl && typeof Chart !== 'undefined') {
+        const dailySales = 30;
+        const avgPrice = 12;
+        const monthlyRevenue = dailySales * avgPrice * 30;
+
+        // Solo 30%: net revenue after commission
+        const soloData = [];
+        const factoryData = [];
+        const labels = ['Mois 1', 'Mois 2', 'Mois 3', 'Mois 4', 'Mois 5', 'Mois 6'];
+
+        for (let i = 1; i <= 6; i++) {
+            const growth = 1 + (i - 1) * 0.05; // 5% growth per month
+            const soloNet = Math.round(monthlyRevenue * growth * 0.70);
+            const factoryNet = Math.round(monthlyRevenue * growth * 0.75 * 1.10); // 25% + volume boost
+            soloData.push(soloNet);
+            factoryData.push(factoryNet);
+        }
+
+        new Chart(compChartEl, {
+            type: 'line',
+            data: {
+                labels,
+                datasets: [
+                    {
+                        label: 'Solo Uber 30%',
+                        data: soloData,
+                        borderColor: '#e74c3c',
+                        backgroundColor: 'rgba(231, 76, 60, 0.08)',
+                        fill: true,
+                        tension: 0.4,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#e74c3c',
+                        borderWidth: 3
+                    },
+                    {
+                        label: 'Factory Eat 25%',
+                        data: factoryData,
+                        borderColor: '#27AE60',
+                        backgroundColor: 'rgba(39, 174, 96, 0.08)',
+                        fill: true,
+                        tension: 0.4,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#27AE60',
+                        borderWidth: 3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top', labels: { font: { family: 'Inter', weight: '600' } } },
+                    tooltip: {
+                        callbacks: {
+                            label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString('fr-FR') + '€'
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        ticks: {
+                            callback: v => v.toLocaleString('fr-FR') + '€',
+                            font: { family: 'Inter' }
+                        },
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    x: {
+                        ticks: { font: { family: 'Inter' } },
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+    }
+
 });
