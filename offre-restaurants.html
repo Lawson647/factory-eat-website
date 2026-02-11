@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Offre Restaurants Physiques — 25% Uber Eats | Factory Eat</title>
+    <title>Solution Multi-Plateformes Restoss — Factory Eat | Uber Eats + Deliveroo</title>
     <meta name="description"
-        content="Économisez 5% sur vos commissions Uber Eats grâce au volume Factory Eat. 25% au lieu de 30% solo. Inscription, menu, SEO — on gère tout.">
+        content="Boostez votre restaurant avec la stratégie Multi-Plateformes Factory Eat. Soyez présent sur Uber Eats ET Deliveroo, doublez votre volume, et négociez des commissions à 25%.">
     <meta name="theme-color" content="#FF6B35">
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,8 +17,7 @@
 
     <!-- PROMO BANNER -->
     <div class="promo-banner" id="promo-banner">
-        🚀 <strong>25% commissions Uber Eats</strong> (solo 30%) via Factory Eat —
-        <a href="contact.html">Contactez-nous</a>
+        🚀 <strong>Multi Uber + Deliveroo</strong> | Départ 25-30% → Objectif 25% après volume. On négocie pour vous !
         <button class="banner-close" id="banner-close" aria-label="Fermer">✕</button>
     </div>
 
@@ -32,11 +30,11 @@
                 <a href="partenaires.html">Partenaires</a>
                 <a href="comment-ca-marche.html">Comment Ça Marche</a>
                 <a href="tarifs.html">Tarifs</a>
-                <a href="offre-restaurants.html" class="active">Offre Restaurants</a>
+                <a href="offre-restaurants.html" class="active">Solution Restos</a>
                 <a href="contact.html">Contact</a>
                 <a href="blog.html">Blog</a>
                 <button id="dark-toggle" class="dark-toggle" aria-label="Dark mode">🌙</button>
-                <a href="contact.html" class="btn btn-primary">25% Uber Eats</a>
+                <a href="offre-restaurants.html" class="btn btn-primary">Multi-Plateformes</a>
             </div>
             <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
         </div>
@@ -47,250 +45,174 @@
         <a href="partenaires.html">Partenaires</a>
         <a href="comment-ca-marche.html">Comment Ça Marche</a>
         <a href="tarifs.html">Tarifs</a>
-        <a href="offre-restaurants.html" class="active">Offre Restaurants</a>
+        <a href="offre-restaurants.html" class="active">Solution Restos</a>
         <a href="contact.html">Contact</a>
         <a href="blog.html">Blog</a>
-        <a href="contact.html" class="btn btn-primary" style="text-align:center;">25% Uber Eats</a>
+        <a href="offre-restaurants.html" class="btn btn-primary" style="text-align:center;">Multi-Plateformes</a>
     </div>
 
-    <!-- HERO -->
-    <section class="uber-offer-hero">
-        <div class="container">
-            <div class="badge" style="background:rgba(255,255,255,0.2);color:#fff;">🍽️ Restaurants Physiques</div>
-            <h2>
-                Passez à <span class="uber-rate">25%</span> Uber Eats<br>
-                avec Factory Eat
-            </h2>
-            <p class="offer-text">
-                Seul sur Uber Eats ? Vous payez <strong>30% de commission</strong>.
-                Avec Factory Eat, on négocie <strong>25%</strong> grâce à notre volume multi-villes
-                (50+ concepts en 2026). On gère inscription, menu tremplin, SEO — vous cuisinez !
-                <strong>Testé à La Réole : +30 commandes, -5% frais.</strong>
+    <!-- HERO SECTION -->
+    <section class="uber-offer-hero" style="padding-top:100px; padding-bottom:80px;">
+        <div class="container text-center">
+            <div class="badge bg-gradient-multi" style="margin:0 auto 20px;">🚀 Stratégie Volume</div>
+            <div class="platform-logos fade-up">
+                <!-- Simple SVG placeholders for logos -->
+                <svg height="50" viewBox="0 0 100 30" style="vertical-align:middle; margin-right:20px;"><text y="20"
+                        font-family="Arial" font-weight="bold" fill="#06C167" font-size="20">Uber Eats</text></svg>
+                <span style="font-size:2rem; vertical-align:middle;">+</span>
+                <svg height="50" viewBox="0 0 100 30" style="vertical-align:middle; margin-left:20px;"><text y="20"
+                        font-family="Arial" font-weight="bold" fill="#00CCBC" font-size="20">deliveroo</text></svg>
+            </div>
+            <h1 class="fade-up delay-100" style="max-width:900px; margin:20px auto;">Présents sur Uber Eats ET Deliveroo
+                <br>= <span class="text-gradient-multi">+50% CA potentiel</span></h1>
+            <p class="lead fade-up delay-200" style="max-width:700px; margin:0 auto 40px;">
+                En solo sur Uber, vous êtes limité et payez 30%. Avec Factory Eat, on vous lance sur <strong>les deux
+                    plateformes</strong> simultanément. Plus de volume = levier de négociation pour viser <strong>25% de
+                    commission</strong>.
             </p>
-            <div class="offer-cta-duo">
-                <a href="#simulateur" class="btn-white-solid">📊 Calculer mon gain</a>
-                <a href="#contact-uber" class="btn-outline-white">📞 Contact Offre Uber</a>
+            <div class="hero-cta fade-up delay-300">
+                <a href="#simulator" class="btn btn-primary">Simuler mon potentiel <span class="btn-arrow">→</span></a>
+                <a href="#timeline" class="btn btn-outline">Voir le parcours</a>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 1: COMPARATIF -->
-    <section class="section" style="background:var(--bg);">
-        <div class="container" style="max-width:900px;">
-            <div class="text-center fade-up" style="margin-bottom:32px;">
-                <div class="badge">⚖️ Comparatif</div>
-                <h2>Solo vs Factory Eat : la différence</h2>
-                <p style="color:var(--text-light);margin-top:8px;">Pourquoi payer 30% quand vous pouvez payer 25% ?</p>
+    <!-- SECTION 1: COMPARISON -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center fade-up" style="margin-bottom:40px;">
+                <h2>Multi-Plateformes : Votre Arme #1</h2>
+                <p>Pourquoi se contenter d'une seule source de revenus ?</p>
             </div>
-
             <table class="comparison-table fade-up">
                 <thead>
                     <tr>
-                        <th>❌ Solo Uber Eats</th>
-                        <th>✅ Avec Factory Eat</th>
+                        <th>Stratégie</th>
+                        <th>Visibilité</th>
+                        <th>Volume Commandes</th>
+                        <th>Commissions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>30% commissions</td>
-                        <td>25% négociés (volume groupé)</td>
+                        <td><strong>Solo Uber</strong></td>
+                        <td>1 Plateforme</td>
+                        <td>Moyen (limité)</td>
+                        <td class="strikethrough">30% (fixe)</td>
                     </tr>
-                    <tr>
-                        <td>Inscription seul, galère admin</td>
-                        <td>On gère tout (virtuel + physique)</td>
-                    </tr>
-                    <tr>
-                        <td>0 boost volume, pas de levier</td>
-                        <td>+30 commandes/semaine (ex: La Réole)</td>
-                    </tr>
-                    <tr>
-                        <td>Marge nette ~4€/plat</td>
-                        <td>~5€/plat post-négociation</td>
-                    </tr>
-                    <tr>
-                        <td>Aucune visibilité SEO</td>
-                        <td>SEO optimisé multi-plateformes</td>
-                    </tr>
-                    <tr>
-                        <td>Pas de photos pro</td>
-                        <td>Photos & menu optimisés inclus</td>
+                    <tr class="highlight-row">
+                        <td><strong>Factory Eat Multi</strong></td>
+                        <td><strong>Uber + Deliveroo</strong></td>
+                        <td><strong>Double (x2)</strong></td>
+                        <td><strong>25-30% → Obj. 25%</strong></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </section>
 
-    <!-- SECTION 2: COMMENT ON NÉGOCIE -->
-    <section class="section" style="background:var(--bg-alt);">
-        <div class="container" style="max-width:900px;">
-            <div class="text-center fade-up" style="margin-bottom:32px;">
-                <div class="badge">🤝 Négociation</div>
-                <h2>Comment on obtient 25% pour vous</h2>
+    <!-- SECTION 2: TIMELINE -->
+    <section class="section" id="timeline" style="background:var(--bg-alt);">
+        <div class="container">
+            <div class="text-center fade-up" style="margin-bottom:50px;">
+                <h2>Votre Parcours vers les 25%</h2>
+                <p>Une stratégie réaliste basée sur la performance.</p>
             </div>
 
-            <div class="nego-steps fade-up-group">
-                <div class="nego-step fade-up">
-                    <div class="step-icon">🧪</div>
-                    <div>
-                        <h4>1. Tests Pilotes Validés</h4>
-                        <p>La Réole : Biba's Come a prouvé le modèle. +30% CA, +45 commandes/semaine.
-                            Des données concrètes pour négocier.</p>
-                    </div>
+            <div class="step-nego-grid">
+                <!-- Step 1 -->
+                <div class="step-card fade-up">
+                    <div class="step-icon">1</div>
+                    <h4>J1 : Inscription Duo</h4>
+                    <p>On vous lance sur Uber Eats et Deliveroo. Taux standard de démarrage (25-30%). Configuration
+                        menus optimisés.</p>
                 </div>
-                <div class="nego-step fade-up">
-                    <div class="step-icon">📊</div>
-                    <div>
-                        <h4>2. Pitch Uber : Volume Garanti</h4>
-                        <p>On présente à Uber un volume cumulé de 100k€/mois sur 50+ concepts.
-                            Argument massue pour baisser les commissions.</p>
-                    </div>
+                <!-- Step 2 -->
+                <div class="step-card fade-up delay-100">
+                    <div class="step-icon">2</div>
+                    <h4>Mois 1 : Optimisation</h4>
+                    <p>On booste votre visibilité (photos HD, descriptions, promos d'ouverture). Les ventes décollent.
+                    </p>
                 </div>
-                <div class="nego-step fade-up">
-                    <div class="step-icon">📋</div>
-                    <div>
-                        <h4>3. Forfait Pro 25% Multi-Sites</h4>
-                        <p>Uber accepte un forfait groupé à 25% pour tous les restaurants
-                            du réseau Factory Eat. Vous en bénéficiez automatiquement.</p>
-                    </div>
+                <!-- Step 3 -->
+                <div class="step-card fade-up delay-200">
+                    <div class="step-icon">3</div>
+                    <h4>Mois 3 : Volume Roi</h4>
+                    <p>Vous atteignez le palier critique (+30 commandes/semaine). C'est le moment d'activer le levier.
+                    </p>
                 </div>
-                <div class="nego-step fade-up">
-                    <div class="step-icon">💰</div>
-                    <div>
-                        <h4>4. Vos Gains Immédiats</h4>
-                        <p>Dès l'activation, vous économisez 5% sur chaque commande.
-                            Sur 30 ventes/jour à 12€, c'est 180€/mois dans votre poche.</p>
-                    </div>
+                <!-- Step 4 -->
+                <div class="step-card fade-up delay-300">
+                    <div class="step-icon">4</div>
+                    <h4>Négo 25%</h4>
+                    <p>Nous contactons les account managers avec vos chiffres. Objectif : obtenir le taux chaîne (25%)
+                        ou l'exclusivité.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- SECTION 3: CASE LA RÉOLE -->
-    <section class="section" style="background:var(--bg);">
-        <div class="container" style="max-width:900px;">
-            <div class="text-center fade-up" style="margin-bottom:32px;">
-                <div class="badge">🏆 Cas Concret</div>
-                <h2>La Réole : Biba's Come — Premier Partenaire</h2>
-            </div>
-
-            <div class="partner-featured fade-up">
-                <div class="partner-featured-inner">
-                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&h=600&fit=crop&q=80"
-                        alt="Biba's Come La Réole - Crédit Facebook" class="partner-featured-img">
-                    <div class="partner-featured-body">
-                        <h2>Biba's Come</h2>
-                        <div class="partner-location">📍 La Réole, Gironde</div>
-                        <p>Foodtruck grillades et rôtisserie. Premier partenaire Factory Eat à bénéficier
-                            du tarif négocié Uber Eats à 25%.</p>
-                        <div class="partner-featured-stats">
-                            <span class="partner-stat">+30% CA</span>
-                            <span class="partner-stat">25% Uber</span>
-                            <span class="partner-stat">+45 cmd/sem</span>
-                            <span class="partner-stat">-5% frais vs solo</span>
-                        </div>
-                        <div class="partner-featured-quote">
-                            <p>"On payait 30% solo. Avec Factory Eat, on est passé à 25%. Sur nos volumes,
-                                ça fait une vraie différence à la fin du mois."</p>
-                            <span class="author">— Propriétaire, Biba's Come</span>
-                        </div>
-                        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
-                            <a href="contact.html" class="btn btn-primary">Rejoindre le réseau <span
-                                    class="btn-arrow">→</span></a>
-                            <a href="https://www.facebook.com/profile.php?id=61581283250102" target="_blank"
-                                rel="noopener" class="btn btn-outline"
-                                style="border-color:var(--blue);color:var(--blue);">Page Facebook</a>
-                        </div>
+            <!-- Citation -->
+            <div class="partner-card fade-up" style="max-width:600px; margin:50px auto 0; text-align:center;">
+                <div class="partner-card-body">
+                    <p class="partner-quote" style="font-size:1.1rem; font-style:italic;">"Avec Factory Eat, j'ai eu +30
+                        commandes dès le premier mois grâce à Deliveroo en plus d'Uber. Là on attaque la négo pour
+                        passer à 25%."</p>
+                    <div class="partner-meta" style="margin-top:15px; font-weight:bold;">— Biba's Come, La Réole (33)
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 4: SIMULATEUR -->
-    <section class="section" id="simulateur" style="background:var(--bg-alt);">
-        <div class="container" style="max-width:700px;">
-            <div class="text-center fade-up" style="margin-bottom:32px;">
-                <div class="badge">📊 Simulateur</div>
-                <h2>Calculez votre économie Uber</h2>
-                <p style="color:var(--text-light);margin-top:8px;">Combien économisez-vous avec 25% vs 30% ?</p>
-            </div>
+    <!-- SECTION 3: SIMULATOR & GRAPH -->
+    <section class="section" id="simulator">
+        <div class="container">
+            <div class="two-col-grid reverse-mobile">
 
-            <div class="inline-calculator fade-up">
-                <div class="calc-inputs">
-                    <div class="calc-field">
-                        <label for="sim-uber-sales">Ventes / jour</label>
-                        <input type="range" id="sim-uber-sales" min="5" max="100" value="30">
-                        <div class="range-value" id="sim-uber-sales-val">30</div>
+                <!-- Graph -->
+                <div class="fade-up">
+                    <h3>Projection CA Mois 1-6</h3>
+                    <p style="margin-bottom:20px;">Impact du Multi-plateformes + Baisse commission.</p>
+                    <div class="chart-container"
+                        style="background:white; padding:20px; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.05);">
+                        <canvas id="multi-chart" height="250"></canvas>
                     </div>
-                    <div class="calc-field">
-                        <label for="sim-uber-price">Prix moyen (€)</label>
-                        <input type="range" id="sim-uber-price" min="5" max="30" value="12" step="0.5">
-                        <div class="range-value" id="sim-uber-price-val">12€</div>
+                    <div class="testimonial-box"
+                        style="margin-top:30px; border-left:4px solid #00CCBC; padding-left:15px;">
+                        <p style="font-size:0.95rem;"><em>"Grâce à Factory Eat, je suis passé de 28% sur Deliveroo à 25%
+                                en exclusivité Uber après avoir prouvé mon volume. Ça change tout sur la marge."</em>
+                        </p>
+                        <strong>— Restaurant Partenaire (Anonyme)</strong>
                     </div>
                 </div>
-                <div class="calc-result" id="uber-calc-result">
-                    <span class="saving-amount" id="uber-saving">180€</span>
-                    <span class="saving-label">d'économie / mois (25% vs 30%)</span>
+
+                <!-- Form Simulator -->
+                <div class="contact-form-box fade-up delay-100">
+                    <h3>Calculez votre potentiel négo</h3>
+                    <p style="font-size:0.9rem; margin-bottom:20px;">On analyse votre ville et votre potentiel de
+                        volume.</p>
+                    <form class="contact-form" id="multi-sim-form">
+                        <div class="form-group">
+                            <label>Votre Ville</label>
+                            <input type="text" id="sim-ville" placeholder="Ex: Bordeaux" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Ventes estimées / jour</label>
+                            <select id="sim-ventes">
+                                <option value="15">Débutant (10-20)</option>
+                                <option value="30" selected>Intermédiaire (20-40)</option>
+                                <option value="50">Pro (50+)</option>
+                            </select>
+                        </div>
+                        <div class="form-group full">
+                            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+                                Analyser mon potentiel <span class="btn-arrow">→</span>
+                            </button>
+                        </div>
+                        <p style="font-size:0.75rem; color:#888; margin-top:10px; text-align:center;">Réponse indicative
+                            immédiate.</p>
+                    </form>
                 </div>
-            </div>
 
-            <!-- Contact form -->
-            <div class="sim-box fade-up" style="margin-top:32px;padding:28px;">
-                <h3 style="margin-bottom:16px;text-align:center;">📍 Votre ville, vos ventes estimées</h3>
-                <form class="contact-form" id="uber-sim-form">
-                    <div class="form-group">
-                        <label for="sim-ville">Votre ville</label>
-                        <input type="text" id="sim-ville" name="ville" placeholder="Ex: Bordeaux" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="sim-ventes">Ventes estimées / jour</label>
-                        <input type="number" id="sim-ventes" name="ventes" value="30" min="1">
-                    </div>
-                    <div class="form-group full">
-                        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
-                            Recevoir mon estimation personnalisée <span class="btn-arrow">→</span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA FINAL: CONTACT NÉGO UBER -->
-    <section class="cta-section section" id="contact-uber">
-        <div class="container" style="max-width:700px;">
-            <div class="fade-up" style="text-align:center;margin-bottom:32px;">
-                <h2 style="color:#fff;">Intéressé par 25% Uber Eats ?</h2>
-                <p style="color:rgba(255,255,255,0.85);margin-top:8px;">
-                    Remplissez ce formulaire et on vous recontacte sous 24h pour discuter de votre négociation.
-                </p>
-            </div>
-
-            <div class="contact-form-box fade-up" style="background:rgba(255,255,255,0.95);border:none;">
-                <form class="contact-form" id="contact-uber-form">
-                    <div class="form-group">
-                        <label for="uber-name">Nom / Restaurant</label>
-                        <input type="text" id="uber-name" name="name" placeholder="Votre nom ou restaurant" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="uber-ville">Ville</label>
-                        <input type="text" id="uber-ville" name="ville" placeholder="Votre ville" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="uber-tel">Téléphone</label>
-                        <input type="tel" id="uber-tel" name="tel" placeholder="06 XX XX XX XX" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="uber-email">Email</label>
-                        <input type="email" id="uber-email" name="email" placeholder="vous@restaurant.fr">
-                    </div>
-                    <div class="form-group full">
-                        <button type="submit" class="btn btn-primary"
-                            style="width:100%;justify-content:center;padding:14px 24px;">
-                            Je veux 25% Uber Eats <span class="btn-arrow">→</span>
-                        </button>
-                    </div>
-                </form>
             </div>
         </div>
     </section>
@@ -321,15 +243,23 @@
                     <a href="comment-ca-marche.html">Comment ça marche</a>
                     <a href="partenaires.html">Nos partenaires</a>
                     <a href="tarifs.html">Tarifs</a>
-                    <a href="offre-restaurants.html">Offre Restaurants</a>
+                    <a href="offre-restaurants.html">Solution Restos</a>
                     <a href="contact.html">Devenir partenaire</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Avantages Uber</h4>
-                    <a href="offre-restaurants.html">25% commissions</a>
-                    <a href="offre-restaurants.html">Négo pro volume</a>
-                    <a href="offre-restaurants.html">Volume groupé 50+</a>
-                    <a href="offre-restaurants.html">-5% vs solo</a>
+                    <h4>Inscription & Négo</h4>
+                    <a href="offre-restaurants.html">Inscription Uber + Deliveroo</a>
+                    <a href="offre-restaurants.html">Négo commissions volume</a>
+                    <a href="offre-restaurants.html">-5% via Factory Eat</a>
+                    <a href="offre-restaurants.html">30 commandes/semaine</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Top Villes</h4>
+                    <a href="partenaires.html">Paris (15)</a>
+                    <a href="partenaires.html">Marseille (12)</a>
+                    <a href="partenaires.html">Toulouse (9)</a>
+                    <a href="partenaires.html">Lyon (8)</a>
+                    <a href="partenaires.html">La Réole ★</a>
                 </div>
                 <div class="footer-col">
                     <h4>Plateformes</h4>
@@ -361,6 +291,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 </body>
 

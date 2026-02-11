@@ -421,9 +421,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const price = parseFloat(homeCalcPrice.value);
         if (homeCalcSalesVal) homeCalcSalesVal.textContent = sales;
         if (homeCalcPriceVal) homeCalcPriceVal.textContent = price + '€';
-        // Saving = sales * price * 30 days * (30% - 25%) = sales * price * 30 * 0.05
-        const saving = Math.round(sales * price * 30 * 0.05);
-        if (homeSaving) homeSaving.textContent = saving + '€';
+
+        // Logic: 
+        // Solo = Sales * Price * 30 * 0.70 (30% comm)
+        // Multi = (Sales * 2) * Price * 30 * 0.75 (Volume x2, 25% comm)
+
+        const revenue = sales * price * 30;
+        const soloNet = Math.round(revenue * 0.70);
+        const multiNet = Math.round((revenue * 2) * 0.75); // Volume x2
+        const saving = multiNet - soloNet;
+
+        // Update UI if elements exist (custom logic for your specific HTML structure)
+        const soloEl = document.querySelector('.calc-res-row:first-child strong');
+        const multiEl = document.querySelector('.calc-res-row.highlight strong');
+
+        if (soloEl) soloEl.textContent = soloNet.toLocaleString('fr-FR') + ' €';
+        if (multiEl) multiEl.textContent = multiNet.toLocaleString('fr-FR') + ' €';
+        if (homeSaving) homeSaving.textContent = saving.toLocaleString('fr-FR') + '€';
     }
 
     homeCalcSales?.addEventListener('input', updateHomeCalc);
@@ -454,19 +468,28 @@ document.addEventListener('DOMContentLoaded', () => {
     updateUberCalc();
 
     // Uber simulator form
-    const uberSimForm = document.getElementById('uber-sim-form');
-    uberSimForm?.addEventListener('submit', e => {
+    const uberSimForm = document.getElementById('uber-sim-form'); // Kept for legacy if present
+
+    // Multi Simulator Form (offre-restaurants.html)
+    const multiSimForm = document.getElementById('multi-sim-form');
+    multiSimForm?.addEventListener('submit', e => {
         e.preventDefault();
         const ville = document.getElementById('sim-ville')?.value || 'Votre ville';
         const ventes = parseInt(document.getElementById('sim-ventes')?.value) || 30;
-        const saving = Math.round(ventes * 12 * 30 * 0.05);
-        const btn = uberSimForm.querySelector('button');
-        btn.innerHTML = `✅ ${ville} : ~${saving}€/mois d'économie !`;
+
+        // Visual feedback
+        const btn = multiSimForm.querySelector('button');
+        const originalText = btn.innerHTML;
+
+        btn.innerHTML = `✅ Analyse en cours pour ${ville}...`;
         btn.style.background = '#27AE60';
+
         setTimeout(() => {
-            btn.innerHTML = 'Recevoir mon estimation personnalisée <span class="btn-arrow">→</span>';
+            alert(`Potentiel à ${ville} : \n\n🚀 Volume estimé : +${Math.round(ventes * 0.8)} commandes/semaine\n💰 Gain potentiel : ~${Math.round(ventes * 15 * 30 * 0.2)}€/mois\n\nUn expert va vous contacter pour valider ce potentiel.`);
+            btn.innerHTML = originalText;
             btn.style.background = '';
-        }, 4000);
+            multiSimForm.reset();
+        }, 1500);
     });
 
     // Contact Uber form
@@ -486,50 +509,50 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     //  COMPARISON CHART (Tarifs page - Chart.js)
     // ============================================
-    const compChartEl = document.getElementById('comparison-chart');
-    if (compChartEl && typeof Chart !== 'undefined') {
-        const dailySales = 30;
-        const avgPrice = 12;
-        const monthlyRevenue = dailySales * avgPrice * 30;
-
-        // Solo 30%: net revenue after commission
-        const soloData = [];
-        const factoryData = [];
+    // ============================================
+    //  MULTI-CHART (Offre Restaurants)
+    // ============================================
+    const multiChartEl = document.getElementById('multi-chart');
+    if (multiChartEl && typeof Chart !== 'undefined') {
         const labels = ['Mois 1', 'Mois 2', 'Mois 3', 'Mois 4', 'Mois 5', 'Mois 6'];
 
-        for (let i = 1; i <= 6; i++) {
-            const growth = 1 + (i - 1) * 0.05; // 5% growth per month
-            const soloNet = Math.round(monthlyRevenue * growth * 0.70);
-            const factoryNet = Math.round(monthlyRevenue * growth * 0.75 * 1.10); // 25% + volume boost
-            soloData.push(soloNet);
-            factoryData.push(factoryNet);
-        }
+        // Scenario: 
+        // Solo: Growth 5% per month. 30% comm.
+        // Multi: Growth 5% M1-M2. Jump 50% M3 (Volume). Comm drops to 25% M4.
 
-        new Chart(compChartEl, {
+        const baseRev = 5000; // Base revenue
+        const soloData = labels.map((_, i) => Math.round(baseRev * (1 + i * 0.05) * 0.70));
+
+        const multiData = labels.map((_, i) => {
+            let volume = 1 + i * 0.05;
+            let comm = 0.70; // 30%
+
+            if (i >= 2) volume *= 1.5; // +50% volume from M3
+            if (i >= 3) comm = 0.75;   // 25% comm from M4 (Nego)
+
+            return Math.round(baseRev * volume * comm);
+        });
+
+        new Chart(multiChartEl, {
             type: 'line',
             data: {
                 labels,
                 datasets: [
                     {
-                        label: 'Solo Uber 30%',
+                        label: 'Solo (Uber seul)',
                         data: soloData,
-                        borderColor: '#e74c3c',
-                        backgroundColor: 'rgba(231, 76, 60, 0.08)',
-                        fill: true,
+                        borderColor: '#95a5a6',
+                        borderDash: [5, 5],
                         tension: 0.4,
-                        pointRadius: 5,
-                        pointBackgroundColor: '#e74c3c',
-                        borderWidth: 3
+                        fill: false
                     },
                     {
-                        label: 'Factory Eat 25%',
-                        data: factoryData,
-                        borderColor: '#27AE60',
-                        backgroundColor: 'rgba(39, 174, 96, 0.08)',
+                        label: 'Factory Multi-Plateformes',
+                        data: multiData,
+                        borderColor: '#FF6B35',
+                        backgroundColor: 'rgba(255, 107, 53, 0.1)',
                         fill: true,
                         tension: 0.4,
-                        pointRadius: 5,
-                        pointBackgroundColor: '#27AE60',
                         borderWidth: 3
                     }
                 ]
@@ -537,26 +560,50 @@ document.addEventListener('DOMContentLoaded', () => {
             options: {
                 responsive: true,
                 plugins: {
-                    legend: { position: 'top', labels: { font: { family: 'Inter', weight: '600' } } },
-                    tooltip: {
-                        callbacks: {
-                            label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString('fr-FR') + '€'
-                        }
+                    legend: { position: 'bottom' },
+                    tooltip: { callbacks: { label: c => c.formattedValue + ' €' } }
+                }
+            }
+        });
+    }
+
+    // ============================================
+    //  COMPARISON CHART (Tarifs page - Chart.js)
+    // ============================================
+    const compChartEl = document.getElementById('comparison-chart');
+    if (compChartEl && typeof Chart !== 'undefined') {
+        const labels = ['Mois 1', 'Mois 2', 'Mois 3', 'Mois 4', 'Mois 5', 'Mois 6'];
+        // Comparison: Standard vs Multi Strategy
+
+        const soloData = [2100, 2150, 2200, 2250, 2300, 2350]; // ~Flat growth
+        const factoryData = [2100, 2200, 3100, 3500, 3600, 3700]; // Jump M3 + Nego M4
+
+        new Chart(compChartEl, {
+            type: 'bar',
+            data: {
+                labels,
+                datasets: [
+                    {
+                        label: 'Solo (1 plateforme)',
+                        data: soloData,
+                        backgroundColor: '#bdc3c7',
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Factory Eat (Multi + Négo)',
+                        data: factoryData,
+                        backgroundColor: '#00CCBC', // Deliveroo Teal inspired
+                        borderRadius: 4
                     }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' }
                 },
                 scales: {
-                    y: {
-                        beginAtZero: false,
-                        ticks: {
-                            callback: v => v.toLocaleString('fr-FR') + '€',
-                            font: { family: 'Inter' }
-                        },
-                        grid: { color: 'rgba(0,0,0,0.05)' }
-                    },
-                    x: {
-                        ticks: { font: { family: 'Inter' } },
-                        grid: { display: false }
-                    }
+                    y: { beginAtZero: true }
                 }
             }
         });
