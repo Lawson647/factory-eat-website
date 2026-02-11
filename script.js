@@ -72,24 +72,31 @@ document.addEventListener('DOMContentLoaded', () => {
     // ---- Simulation Slider ----
     const slider = document.getElementById('sim-slider');
     const sliderValue = document.getElementById('sim-slider-value');
+    const marginSlider = document.getElementById('sim-margin');
+    const marginValue = document.getElementById('sim-margin-value');
+    const marginDisplay = document.getElementById('sim-margin-display');
     const dailyRevenue = document.getElementById('sim-daily');
     const monthlyRevenue = document.getElementById('sim-monthly');
 
     function updateSimulation() {
         if (!slider) return;
         const qty = parseInt(slider.value, 10);
-        const margin = 2.30;
+        const margin = parseFloat(marginSlider?.value || 2.30);
         const workDays = 22;
 
         sliderValue.textContent = qty;
+        if (marginValue) marginValue.textContent = margin.toFixed(2).replace('.', ',');
+        if (marginDisplay) marginDisplay.textContent = margin.toFixed(2).replace('.', ',') + '€';
+
         const daily = (qty * margin).toFixed(0);
         const monthly = (qty * margin * workDays).toFixed(0);
 
         dailyRevenue.textContent = daily + '€/j';
-        monthlyRevenue.textContent = '+' + monthly + '€/mois';
+        monthlyRevenue.textContent = '+' + Number(monthly).toLocaleString('fr-FR') + '€/mois';
     }
 
     slider?.addEventListener('input', updateSimulation);
+    marginSlider?.addEventListener('input', updateSimulation);
     updateSimulation();
 
     // ---- Testimonials Carousel ----

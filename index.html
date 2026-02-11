@@ -220,6 +220,13 @@
                     </label>
                     <input type="range" id="sim-slider" min="5" max="60" value="25" step="1">
                 </div>
+                <div class="slider-group">
+                    <label>
+                        Marge nette par burger :
+                        <span id="sim-margin-value">2,30</span>€
+                    </label>
+                    <input type="range" id="sim-margin" min="1.00" max="5.00" value="2.30" step="0.10">
+                </div>
                 <table class="sim-table">
                     <thead>
                         <tr>
@@ -234,7 +241,7 @@
                         </tr>
                         <tr>
                             <td>Coût ingrédients</td>
-                            <td>4€</td>
+                            <td>≈ 4€</td>
                         </tr>
                         <tr>
                             <td>Commission plateforme</td>
@@ -242,11 +249,12 @@
                         </tr>
                         <tr>
                             <td>Marge nette / burger</td>
-                            <td><strong style="color:var(--secondary);">2,30€</strong> (votre part 50/50)</td>
+                            <td><strong id="sim-margin-display" style="color:var(--secondary);">2,30€</strong> (votre
+                                part 50/50)</td>
                         </tr>
                         <tr class="sim-result">
                             <td>💰 Votre revenu</td>
-                            <td><strong id="sim-daily">58€/j</strong> → <strong id="sim-monthly">+1265€/mois</strong>
+                            <td><strong id="sim-daily">58€/j</strong> → <strong id="sim-monthly">+1 265€/mois</strong>
                             </td>
                         </tr>
                     </tbody>
