@@ -17,6 +17,8 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/effects.css">
     <link rel="stylesheet" href="css/home.css">
 
     <!-- GA4 -->
@@ -51,62 +53,79 @@
         </div>
     </nav>
 
-    <!-- Hero Section (Dark + Glass Card) -->
-    <section class="section section-dark hero-v2">
-        <div class="container">
+    <!-- Hero Section (Dark + Glass Card + Premium Effects) -->
+    <section class="section section-dark hero-v2" style="position: relative; overflow: hidden;">
+        <!-- Gradient Mesh Background -->
+        <div class="gradient-mesh" style="position: absolute; inset: 0; opacity: 0.4;"></div>
+
+        <!-- Animated Background Glow -->
+        <div class="hero-bg-glow glow-pulse"
+            style="position: absolute; top: 20%; right: 10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(255, 107, 53, 0.3), transparent); border-radius: 50%; filter: blur(80px);">
+        </div>
+        <div class="hero-bg-glow"
+            style="position: absolute; bottom: 10%; left: 5%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255, 138, 92, 0.2), transparent); border-radius: 50%; filter: blur(60px);">
+        </div>
+
+        <div class="container" style="position: relative; z-index: 2;">
             <div class="grid grid-2" style="align-items: center;">
 
                 <!-- Left: Text -->
                 <div class="hero-content fade-up">
-                    <div class="badge badge-primary mb-md">🚀 Vendez les produits de nos restaurants physiques</div>
-                    <h1>Rejoignez <span class="text-gradient">Factory Eat.</span><br>La Franchise Virtuelle n°1.</h1>
+                    <div class="badge badge-primary mb-md shimmer">🚀 Vendez les produits de nos restaurants physiques
+                    </div>
+                    <h1 class="text-shadow-soft">Rejoignez <span class="text-gradient-animated">Factory
+                            Eat.</span><br>La Franchise Virtuelle n°1.</h1>
                     <p class="text-muted-light mb-lg" style="font-size: 1.25rem;">
                         Ne perdez plus de temps à créer une marque.
-                        <strong>Exploitez la puissance marketing de Factory Eat</strong> et vendez nos Best-Sellers
+                        <strong style="color: var(--color-text-light);">Exploitez la puissance marketing de Factory
+                            Eat</strong> et vendez nos Best-Sellers
                         (Burgers, Poutines) dans votre cuisine existante.
                         Zéro investissement initial.
                     </p>
                     <div class="flex gap-md">
-                        <a href="contact.html" class="btn btn-primary btn-lg">Devenir partenaire</a>
-                        <a href="services.html" class="btn btn-secondary btn-lg">Voir le menu</a>
+                        <a href="contact.html" class="btn btn-primary btn-lg glow-hover">Devenir partenaire</a>
+                        <a href="services.html" class="btn btn-secondary btn-lg glass">Voir le menu</a>
                     </div>
 
-                    <div class="mt-lg flex gap-md text-sm text-muted-light">
-                        <span>✅ 0€ d'investissement</span>
-                        <span>✅ Formation incluse</span>
-                        <span>✅ Contrat test 1 mois</span>
+                    <div class="mt-lg flex gap-md text-sm text-muted-light" style="flex-wrap: wrap;">
+                        <span class="flex items-center gap-xs">✅ 0€ d'investissement</span>
+                        <span class="flex items-center gap-xs">✅ Formation incluse</span>
+                        <span class="flex items-center gap-xs">✅ Contrat test 1 mois</span>
                     </div>
                 </div>
 
-                <!-- Right: Glass Card Stats -->
+                <!-- Right: Glass Card Stats with 3D Effects -->
                 <div class="hero-stats fade-up delay-200">
-                    <div class="glass-card p-xl">
-                        <div class="grid grid-2 text-center mb-xl">
-                            <div>
-                                <div class="text-primary text-4xl font-bold">12</div>
+                    <div class="glass-card p-xl hover-lift" style="border-radius: var(--radius-xl);">
+                        <div class="grid grid-2 text-center mb-xl" style="gap: var(--space-lg);">
+                            <div class="stat-item">
+                                <div class="text-primary text-4xl font-bold stat-number text-glow">12</div>
                                 <div class="text-muted text-sm">Villes actives</div>
                             </div>
-                            <div>
-                                <div class="text-primary text-4xl font-bold">50</div>
+                            <div class="stat-item">
+                                <div class="text-primary text-4xl font-bold stat-number text-glow">50</div>
                                 <div class="text-muted text-sm">Partenaires</div>
                             </div>
-                            <div>
-                                <div class="text-primary text-4xl font-bold">13k€</div>
+                            <div class="stat-item">
+                                <div class="text-primary text-4xl font-bold stat-number text-glow">13k€</div>
                                 <div class="text-muted text-sm">CA moyen/mois</div>
                             </div>
-                            <div>
-                                <div class="text-primary text-4xl font-bold">85/15</div>
+                            <div class="stat-item">
+                                <div class="text-primary text-4xl font-bold stat-number text-glow">85/15</div>
                                 <div class="text-muted text-sm">Partage marges</div>
                             </div>
                         </div>
 
-                        <div class="glass-panel p-md flex items-center gap-md">
+                        <div class="glass-panel p-md flex items-center gap-md" style="border-radius: var(--radius-lg);">
                             <div class="flex -space-x-4">
-                                <div class="w-10 h-10 rounded-full bg-gray-300 border-2 border-white"></div>
-                                <div class="w-10 h-10 rounded-full bg-gray-400 border-2 border-white"
-                                    style="margin-left: -10px;"></div>
-                                <div class="w-10 h-10 rounded-full bg-gray-500 border-2 border-white"
-                                    style="margin-left: -10px;"></div>
+                                <div class="w-10 h-10 rounded-full bg-gradient-animated border-2 border-white"
+                                    style="width: 40px; height: 40px; border-radius: 50%;"></div>
+                                <div class="w-10 h-10 rounded-full border-2 border-white"
+                                    style="width: 40px; height: 40px; border-radius: 50%; margin-left: -10px; background: linear-gradient(135deg, #FF8A5C, #FFA07A);">
+                                </div>
+                                <div class="w-10 h-10 rounded-full border-2 border-white"
+                                    style="width: 40px; height: 40px; border-radius: 50%; margin-left: -10px; background: linear-gradient(135deg, #FFA07A, #FF6B35);">
+                                </div>
                             </div>
                             <div class="text-sm">
                                 <span class="text-white font-bold">+12 partenaires</span> nous font confiance ce mois-ci
@@ -117,9 +136,6 @@
 
             </div>
         </div>
-
-        <!-- Background Elements -->
-        <div class="hero-bg-glow"></div>
     </section>
 
     <!-- Story Section (Dark Transition) -->
@@ -301,23 +317,115 @@
             <h2 class="mb-xl">Ce qui nous guide</h2>
 
             <div class="grid grid-3">
-                <div class="card p-xl border-none shadow-none bg-white">
-                    <div class="text-4xl mb-md">💎</div>
+                <div class="card p-xl border-none shadow-none bg-white hover-lift">
+                    <div class="text-4xl mb-md" style="transition: transform 0.3s;">💎</div>
                     <h3>Qualité d'abord</h3>
                     <p class="text-muted text-sm">Des recettes standardisées, des ingrédients frais, un packaging
                         soigné.</p>
+                    <div class="progress mt-md">
+                        <div class="progress-bar" data-progress="95" style="width: 0%;"></div>
+                    </div>
+                    <div class="text-xs text-muted mt-xs">95% de satisfaction client</div>
                 </div>
-                <div class="card p-xl border-none shadow-none bg-white">
-                    <div class="text-4xl mb-md">🤝</div>
+                <div class="card p-xl border-none shadow-none bg-white hover-lift">
+                    <div class="text-4xl mb-md" style="transition: transform 0.3s;">🤝</div>
                     <h3>Simplicité</h3>
                     <p class="text-muted text-sm">Pas de jargon, pas de process compliqué. On signe, on lance, vous
                         cuisinez.</p>
+                    <div class="progress mt-md">
+                        <div class="progress-bar" data-progress="100"
+                            style="width: 0%; background: var(--gradient-primary);"></div>
+                    </div>
+                    <div class="text-xs text-muted mt-xs">100% clé en main</div>
                 </div>
-                <div class="card p-xl border-none shadow-none bg-white">
-                    <div class="text-4xl mb-md">🪙</div>
+                <div class="card p-xl border-none shadow-none bg-white hover-lift">
+                    <div class="text-4xl mb-md" style="transition: transform 0.3s;">🪙</div>
                     <h3>Rentabilité partagée</h3>
                     <p class="text-muted text-sm">50/50 sur les marges. Si vous gagnez, on gagne. Pas de frais cachés.
                     </p>
+                    <div class="progress mt-md">
+                        <div class="progress-bar" data-progress="85"
+                            style="width: 0%; background: linear-gradient(90deg, var(--color-success), #34D399);"></div>
+                    </div>
+                    <div class="text-xs text-muted mt-xs">85% de marge moyenne</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="text-center mb-xl">
+                <div class="badge badge-light bg-primary text-white mb-md">Questions fréquentes</div>
+                <h2>Tout ce que vous devez savoir</h2>
+                <p class="text-muted">Des réponses claires à vos questions</p>
+            </div>
+
+            <div class="accordion" style="max-width: 800px; margin: 0 auto;">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Quel est l'investissement initial requis ?</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Absolument aucun ! Factory Eat ne demande aucun frais d'entrée, aucun investissement en
+                            équipement spécifique. Vous utilisez votre cuisine existante et vos équipements actuels.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Comment fonctionne le partage des revenus ?</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Le modèle est simple : vous gardez 85% des marges, Factory Eat prend 15%. Pas de frais
+                            cachés, pas de commissions supplémentaires.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Quelle formation est fournie ?</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Formation complète : recettes détaillées, techniques de préparation, packaging, gestion Uber
+                            Eats. Durée 1 journée, à distance ou sur site.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Puis-je tester avant de m'engager ?</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Oui ! Contrat test d'1 mois sans engagement pour évaluer le concept et la rentabilité.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Combien de commandes puis-je espérer ?</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>En moyenne 15-30 commandes/jour selon la ville. CA moyen mensuel de 13 000€. Résultats
+                            visibles dès la première semaine.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Dois-je être exclusif à Factory Eat ?</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Non, vous pouvez continuer votre propre marque en parallèle. Factory Eat complète votre
+                            activité existante.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -385,6 +493,7 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/interactions.js"></script>
     <script src="js/animations.js"></script>
 </body>
 

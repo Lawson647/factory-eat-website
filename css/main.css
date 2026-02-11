@@ -20,6 +20,12 @@
   /* Vibrant Orange */
   --color-primary-dark: #E85A2D;
   --color-primary-light: #FF8A5C;
+  --color-primary-lighter: #FFA07A;
+
+  --color-secondary: #4F46E5;
+  /* Indigo */
+  --color-accent: #EC4899;
+  /* Pink */
 
   --color-text-dark: #1E293B;
   /* Slate 800 */
@@ -32,8 +38,21 @@
 
   --color-success: #10B981;
   /* Emerald 500 */
+  --color-warning: #F59E0B;
+  /* Amber 500 */
+  --color-error: #EF4444;
+  /* Red 500 */
+  --color-info: #3B82F6;
+  /* Blue 500 */
+
   --color-border: #E2E8F0;
   --color-border-dark: #334155;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #FF6B35 0%, #FF8A5C 100%);
+  --gradient-sunset: linear-gradient(135deg, #FF6B35 0%, #EC4899 50%, #4F46E5 100%);
+  --gradient-warm: linear-gradient(135deg, #FFA07A 0%, #FF6B35 100%);
+  --gradient-dark: linear-gradient(135deg, #1A1F2C 0%, #0F172A 100%);
 
   /* Glassmorphism */
   --glass-bg: rgba(255, 255, 255, 0.1);
@@ -99,7 +118,18 @@
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+  /* Glow Shadows */
   --shadow-glow: 0 0 20px rgba(255, 107, 53, 0.3);
+  --shadow-glow-lg: 0 0 40px rgba(255, 107, 53, 0.4);
+  --shadow-glow-primary: 0 0 30px rgba(255, 107, 53, 0.5), 0 0 60px rgba(255, 107, 53, 0.3);
+  --shadow-glow-success: 0 0 20px rgba(16, 185, 129, 0.4);
+
+  /* Colored Shadows */
+  --shadow-primary: 0 10px 30px rgba(255, 107, 53, 0.3);
+  --shadow-secondary: 0 10px 30px rgba(79, 70, 229, 0.3);
 
   /* Transitions */
   --transition-fast: 150ms ease-in-out;
