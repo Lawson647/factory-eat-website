@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Découvrez nos 50+ restaurants partenaires partout en France qui ont boosté leurs ventes Uber Eats avec Factory Eat.">
+    <title>Nos Partenaires - Factory Eat</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/partners.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                🍽️ Factory Eat
+            </a>
+            <button class="navbar-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="comment-ca-marche.html">Comment ça marche</a></li>
+                <li><a href="nos-partenaires.html" class="active">Nos Partenaires</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" class="btn btn-primary btn-sm">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Nos Restaurants Partenaires</h1>
+            <p>Plus de 50 restaurants partout en France nous font confiance</p>
+        </div>
+    </section>
+
+    <!-- Map Controls -->
+    <section class="map-controls">
+        <div class="container">
+            <div class="controls-wrapper">
+                <div class="control-group">
+                    <label for="city-filter">Filtrer par ville :</label>
+                    <select id="city-filter" class="form-select">
+                        <option value="all">Toutes les villes</option>
+                        <option value="paris">Paris</option>
+                        <option value="lyon">Lyon</option>
+                        <option value="marseille">Marseille</option>
+                        <option value="lille">Lille</option>
+                        <option value="bordeaux">Bordeaux</option>
+                        <option value="toulouse">Toulouse</option>
+                        <option value="nantes">Nantes</option>
+                        <option value="strasbourg">Strasbourg</option>
+                        <option value="nice">Nice</option>
+                        <option value="tarbes">Tarbes</option>
+                    </select>
+                </div>
+                <div class="partners-count">
+                    <strong id="visible-count">12</strong> restaurants affichés
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Map -->
+    <section class="map-section">
+        <div id="map"></div>
+    </section>
+
+    <!-- Partners List -->
+    <section class="section partners-list">
+        <div class="container">
+            <h2 class="text-center mb-xl">Témoignages de nos partenaires</h2>
+            <div class="grid grid-3">
+                <div class="partner-card card">
+                    <div class="partner-header">
+                        <h3>Le Gourmet Parisien</h3>
+                        <span class="partner-location">📍 Paris</span>
+                    </div>
+                    <div class="partner-stats">
+                        <div class="stat">
+                            <span class="stat-value">+45%</span>
+                            <span class="stat-label">Ventes Uber Eats</span>
+                        </div>
+                    </div>
+                    <p class="partner-quote">
+                        "Factory Eat a transformé notre présence sur Uber Eats. Les résultats sont impressionnants !"
+                    </p>
+                </div>
+
+                <div class="partner-card card">
+                    <div class="partner-header">
+                        <h3>Pizzeria Bella Lyon</h3>
+                        <span class="partner-location">📍 Lyon</span>
+                    </div>
+                    <div class="partner-stats">
+                        <div class="stat">
+                            <span class="stat-value">+52%</span>
+                            <span class="stat-label">Ventes Uber Eats</span>
+                        </div>
+                    </div>
+                    <p class="partner-quote">
+                        "Un service professionnel qui tient ses promesses. Nos heures creuses sont maintenant
+                        rentables."
+                    </p>
+                </div>
+
+                <div class="partner-card card">
+                    <div class="partner-header">
+                        <h3>Burger House Marseille</h3>
+                        <span class="partner-location">📍 Marseille</span>
+                    </div>
+                    <div class="partner-stats">
+                        <div class="stat">
+                            <span class="stat-value">+38%</span>
+                            <span class="stat-label">Ventes Uber Eats</span>
+                        </div>
+                    </div>
+                    <p class="partner-quote">
+                        "L'optimisation de l'algorithme fonctionne vraiment. Je recommande vivement !"
+                    </p>
+                </div>
+
+                <div class="partner-card card">
+                    <div class="partner-header">
+                        <h3>Sushi Master Lille</h3>
+                        <span class="partner-location">📍 Lille</span>
+                    </div>
+                    <div class="partner-stats">
+                        <div class="stat">
+                            <span class="stat-value">+41%</span>
+                            <span class="stat-label">Ventes Uber Eats</span>
+                        </div>
+                    </div>
+                    <p class="partner-quote">
+                        "Les photos professionnelles ont fait toute la différence. Merci Factory Eat !"
+                    </p>
+                </div>
+
+                <div class="partner-card card">
+                    <div class="partner-header">
+                        <h3>Brasserie du Sud-Ouest</h3>
+                        <span class="partner-location">📍 Tarbes</span>
+                    </div>
+                    <div class="partner-stats">
+                        <div class="stat">
+                            <span class="stat-value">+35%</span>
+                            <span class="stat-label">Ventes Uber Eats</span>
+                        </div>
+                    </div>
+                    <p class="partner-quote">
+                        "Excellent accompagnement et résultats au rendez-vous dès le premier mois."
+                    </p>
+                </div>
+
+                <div class="partner-card card">
+                    <div class="partner-header">
+                        <h3>Cuisine du Monde</h3>
+                        <span class="partner-location">📍 Bordeaux</span>
+                    </div>
+                    <div class="partner-stats">
+                        <div class="stat">
+                            <span class="stat-value">+48%</span>
+                            <span class="stat-label">Ventes Uber Eats</span>
+                        </div>
+                    </div>
+                    <p class="partner-quote">
+                        "Une équipe réactive et des stratégies qui marchent. Très satisfait du partenariat."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section bg-primary cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Rejoignez nos partenaires à succès</h2>
+                <p>Devenez le prochain restaurant à booster ses ventes Uber Eats</p>
+                <a href="contact.html" class="btn btn-success btn-lg">Devenir partenaire</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Factory Eat</h4>
+                    <p>Optimisation de visibilité Uber Eats pour restaurants physiques</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="comment-ca-marche.html">Comment ça marche</a></li>
+                        <li><a href="nos-partenaires.html">Nos Partenaires</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: contact@factory-eat.fr</p>
+                    <p>Tél: +33 1 XX XX XX XX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Factory Eat. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/map.js"></script>
+
+    <!-- Google Maps API -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYqOQL6-hoEbjUl_P0371Tfd8IY0xT_eI&callback=initMap">
+        </script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCCSTJZ2DP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VCCSTJZ2DP');
+    </script>
+</body>
+
+</html>

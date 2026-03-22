@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factory Eat - Le Concept Culinaire</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/home.css">
+
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCCSTJZ2DP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VCCSTJZ2DP');
+    </script>
+</head>
+
+<body class="bg-dark">
+
+    <!-- Navigation (V2) -->
+    <nav class="navbar navbar-dark">
+        <div class="container navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <span class="text-primary">🍽️</span> Factory Eat
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="comment-ca-marche.html">Comment ça marche</a></li>
+                <li><a href="services.html" class="active">Le Concept</a></li>
+                <li><a href="contact.html">Devenir Partenaire</a></li>
+            </ul>
+            <div class="flex items-center gap-sm">
+                <button id="theme-toggle" class="btn btn-ghost text-xl" aria-label="Toggle Dark Mode">🌙</button>
+                <a href="contact.html" class="btn btn-primary">Devenir partenaire</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header (Brand Licensing Focus) -->
+    <header class="section section-dark text-center pt-3xl pb-xl relative overflow-hidden">
+        <div class="container relative z-10">
+            <div class="badge badge-success mb-md">Validé par +50 000 clients</div>
+            <h1 class="mb-md">Vendez nos <span class="text-gradient">Best-Sellers</span></h1>
+            <p class="text-muted-light max-w-2xl mx-auto text-xl">
+                N'inventez rien. Répliquez ce qui marche déjà. <br>
+                Nos recettes cartonnent dans nos restaurants physiques. Profitez de notre image de marque.
+            </p>
+            <div class="mt-xl flex flex-wrap justify-center gap-sm filter-buttons">
+                <button class="btn btn-primary" data-filter="all">Tout le concept</button>
+                <button class="btn btn-secondary" data-filter="burger">🍔 Burgers (Marge ++)</button>
+                <button class="btn btn-secondary" data-filter="side">🍟 Sides (Vente Add.)</button>
+            </div>
+        </div>
+
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-gray-900 to-transparent z-0"></div>
+    </header>
+
+    <!-- Menu Grid (Showcase) -->
+    <section class="section bg-white" id="menu-grid">
+        <div class="container">
+            <div class="grid grid-3 gap-xl">
+
+                <!-- Burger 1 -->
+                <div class="menu-item card p-0 overflow-hidden" data-category="burger">
+                    <div class="relative h-64">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+                            alt="Smash Classic" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 badge badge-primary">Best-seller</div>
+                        <div class="absolute bottom-0 left-0 w-full bg-dark/80 p-sm text-white backdrop-blur-sm">
+                            <div class="flex justify-between text-sm">
+                                <span>Prep: 3 min</span>
+                                <span class="text-success font-bold">Marge: ~72%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-lg">
+                        <h3 class="mb-xs">Smash Classic</h3>
+                        <p class="text-sm text-muted mb-sm">Le classique indémodable. Pain brioché, steak smashé.
+                            Assemblage ultra-rapide.</p>
+                        <div class="p-sm bg-subtle rounded-md border border-border mt-md">
+                            <div class="flex justify-between text-sm mb-xs">
+                                <span class="text-muted">Prix conseillé :</span>
+                                <span class="font-bold text-dark">12,90€</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-muted">Coût matière :</span>
+                                <span class="font-bold text-success">~3,60€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Burger 2 -->
+                <div class="menu-item card p-0 overflow-hidden" data-category="burger">
+                    <div class="relative h-64">
+                        <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=800&q=80"
+                            alt="Smash Bacon" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 badge badge-primary">Panier Moyen ++</div>
+                        <div class="absolute bottom-0 left-0 w-full bg-dark/80 p-sm text-white backdrop-blur-sm">
+                            <div class="flex justify-between text-sm">
+                                <span>Prep: 4 min</span>
+                                <span class="text-success font-bold">Marge: ~68%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-lg">
+                        <h3 class="mb-xs">Smash Bacon</h3>
+                        <p class="text-sm text-muted mb-sm">Version premium pour augmenter le ticket moyen. Bacon
+                            croustillant & Sauce BBQ.</p>
+                        <div class="p-sm bg-subtle rounded-md border border-border mt-md">
+                            <div class="flex justify-between text-sm mb-xs">
+                                <span class="text-muted">Prix conseillé :</span>
+                                <span class="font-bold text-dark">14,90€</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-muted">Coût matière :</span>
+                                <span class="font-bold text-success">~4,80€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fries -->
+                <div class="menu-item card p-0 overflow-hidden" data-category="side">
+                    <div class="relative h-64">
+                        <img src="https://images.unsplash.com/photo-1630384060421-cb20d0e0649e?auto=format&fit=crop&w=800&q=80"
+                            alt="Frites" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 badge badge-success">Marge Max</div>
+                        <div class="absolute bottom-0 left-0 w-full bg-dark/80 p-sm text-white backdrop-blur-sm">
+                            <div class="flex justify-between text-sm">
+                                <span>Prep: 2 min</span>
+                                <span class="text-success font-bold">Marge: ~85%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-lg">
+                        <h3 class="mb-xs">Frites Classiques</h3>
+                        <p class="text-sm text-muted mb-sm">Le complément indispensable. Frites 9/9 allumettes. Cuisson
+                            rapide.</p>
+                        <div class="p-sm bg-subtle rounded-md border border-border mt-md">
+                            <div class="flex justify-between text-sm mb-xs">
+                                <span class="text-muted">Prix conseillé :</span>
+                                <span class="font-bold text-dark">4,50€</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-muted">Coût matière :</span>
+                                <span class="font-bold text-success">~0,60€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-xl">
+                <p class="text-muted text-lg mb-md">Et bien plus encore (Nuggets, Desserts, Boissons)...</p>
+                <a href="contact.html" class="btn btn-outline-primary">Télécharger la fiche technique complète</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operational Benefits (B2B) -->
+    <section class="section bg-subtle text-center">
+        <div class="container">
+            <h2 class="mb-xl">Pourquoi les restaurateurs adorent ce menu ?</h2>
+            <div class="grid grid-3 gap-xl">
+                <div>
+                    <div
+                        class="w-20 h-20 bg-white shadow-lg rounded-full flex items-center justify-center text-4xl text-primary mx-auto mb-md">
+                        ⚡</div>
+                    <h3>Zéro complexité</h3>
+                    <p class="text-sm text-muted">Pas de chef requis. N'importe quel commis peut assembler un Smash
+                        Burger en 3 minutes après formation.</p>
+                </div>
+                <div>
+                    <div
+                        class="w-20 h-20 bg-white shadow-lg rounded-full flex items-center justify-center text-4xl text-primary mx-auto mb-md">
+                        📉</div>
+                    <h3>Pertes minimales</h3>
+                    <p class="text-sm text-muted">Ingrédients surgelés haute qualité (pains, steaks) ou longue
+                        conservation. Gestion de stock ultra-simple.</p>
+                </div>
+                <div>
+                    <div
+                        class="w-20 h-20 bg-white shadow-lg rounded-full flex items-center justify-center text-4xl text-primary mx-auto mb-md">
+                        📦</div>
+                    <h3>Packaging Optimisé</h3>
+                    <p class="text-sm text-muted">Tout est pensé pour le transport. Le burger arrive chaud, les frites
+                        croustillantes. Note Uber Eats : 4.8/5.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA B2B -->
+    <section class="section section-dark text-center py-3xl">
+        <div class="container">
+            <h2 class="mb-lg text-white">Ce concept vous intéresse ?</h2>
+            <p class="text-muted-light mb-xl max-w-2xl mx-auto">Vérifiez si votre zone de livraison est éligible à
+                l'implantation d'une franchise Factory Eat.</p>
+            <a href="contact.html" class="btn btn-primary btn-lg shadow-xl">
+                Vérifier mon éligibilité
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darker py-xl text-white border-t border-gray-800">
+        <!-- (Same footer as index but omitted for brevity in tool call, will include full footer) -->
+        <div class="container">
+            <div class="grid grid-4 gap-xl">
+                <div>
+                    <div class="text-xl font-bold mb-md flex items-center gap-xs">
+                        <span class="text-primary">🍽️</span> Factory Eat
+                    </div>
+                    <p class="text-sm text-muted-light">Restaurant virtuel nouvelle génération. Boostez votre CA sans
+                        travaux.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold uppercase mb-md text-muted-light">Navigation</h4>
+                    <ul class="space-y-sm text-sm">
+                        <li><a href="index.html" class="text-white hover:text-primary">Accueil</a></li>
+                        <li><a href="services.html" class="text-white hover:text-primary">Le Concept</a></li>
+                        <li><a href="contact.html" class="text-white hover:text-primary">Devenir Partenaire</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold uppercase mb-md text-muted-light">Légal</h4>
+                    <ul class="space-y-sm text-sm">
+                        <li><a href="#" class="text-white hover:text-primary">CGV</a></li>
+                        <li><a href="#" class="text-white hover:text-primary">Mentions Légales</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold uppercase mb-md text-muted-light">Contact B2B</h4>
+                    <div class="text-sm space-y-sm">
+                        <p>📧 franchise@factory-eat.fr</p>
+                        <p>📱 +33 6 00 00 00 00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-xl pt-lg text-center text-sm text-muted-light">
+                &copy; 2026 Factory Eat. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

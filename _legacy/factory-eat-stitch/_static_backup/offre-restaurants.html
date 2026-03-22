@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution Multi-Plateformes Restoss — Factory Eat | Uber Eats + Deliveroo</title>
+    <meta name="description"
+        content="Boostez votre restaurant avec la stratégie Multi-Plateformes Factory Eat. Soyez présent sur Uber Eats ET Deliveroo, doublez votre volume, et négociez des commissions à 25%.">
+    <meta name="theme-color" content="#FF6B35">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- PROMO BANNER -->
+    <div class="promo-banner" id="promo-banner">
+        🚀 <strong>Multi Uber + Deliveroo</strong> | Départ 25-30% → Objectif 25% après volume. On négocie pour vous !
+        <button class="banner-close" id="banner-close" aria-label="Fermer">✕</button>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">Factory Eat</a>
+            <div class="navbar-menu">
+                <a href="index.html">Accueil</a>
+                <a href="partenaires.html">Partenaires</a>
+                <a href="comment-ca-marche.html">Comment Ça Marche</a>
+                <a href="tarifs.html">Tarifs</a>
+                <a href="offre-restaurants.html" class="active">Solution Restos</a>
+                <a href="contact.html">Contact</a>
+                <a href="blog.html">Blog</a>
+                <button id="dark-toggle" class="dark-toggle" aria-label="Dark mode">🌙</button>
+                <a href="offre-restaurants.html" class="btn btn-primary">Multi-Plateformes</a>
+            </div>
+            <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <a href="index.html">Accueil</a>
+        <a href="partenaires.html">Partenaires</a>
+        <a href="comment-ca-marche.html">Comment Ça Marche</a>
+        <a href="tarifs.html">Tarifs</a>
+        <a href="offre-restaurants.html" class="active">Solution Restos</a>
+        <a href="contact.html">Contact</a>
+        <a href="blog.html">Blog</a>
+        <a href="offre-restaurants.html" class="btn btn-primary" style="text-align:center;">Multi-Plateformes</a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="uber-offer-hero" style="padding-top:100px; padding-bottom:80px;">
+        <div class="container text-center">
+            <div class="badge bg-gradient-multi" style="margin:0 auto 20px;">🚀 Stratégie Volume</div>
+            <div class="platform-logos fade-up">
+                <!-- Simple SVG placeholders for logos -->
+                <svg height="50" viewBox="0 0 100 30" style="vertical-align:middle; margin-right:20px;"><text y="20"
+                        font-family="Arial" font-weight="bold" fill="#06C167" font-size="20">Uber Eats</text></svg>
+                <span style="font-size:2rem; vertical-align:middle;">+</span>
+                <svg height="50" viewBox="0 0 100 30" style="vertical-align:middle; margin-left:20px;"><text y="20"
+                        font-family="Arial" font-weight="bold" fill="#00CCBC" font-size="20">deliveroo</text></svg>
+            </div>
+            <h1 class="fade-up delay-100" style="max-width:900px; margin:20px auto;">Présents sur Uber Eats ET Deliveroo
+                <br>= <span class="text-gradient-multi">+50% CA potentiel</span></h1>
+            <p class="lead fade-up delay-200" style="max-width:700px; margin:0 auto 40px;">
+                En solo sur Uber, vous êtes limité et payez 30%. Avec Factory Eat, on vous lance sur <strong>les deux
+                    plateformes</strong> simultanément. Plus de volume = levier de négociation pour viser <strong>25% de
+                    commission</strong>.
+            </p>
+            <div class="hero-cta fade-up delay-300">
+                <a href="#simulator" class="btn btn-primary">Simuler mon potentiel <span class="btn-arrow">→</span></a>
+                <a href="#timeline" class="btn btn-outline">Voir le parcours</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: COMPARISON -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center fade-up" style="margin-bottom:40px;">
+                <h2>Multi-Plateformes : Votre Arme #1</h2>
+                <p>Pourquoi se contenter d'une seule source de revenus ?</p>
+            </div>
+            <table class="comparison-table fade-up">
+                <thead>
+                    <tr>
+                        <th>Stratégie</th>
+                        <th>Visibilité</th>
+                        <th>Volume Commandes</th>
+                        <th>Commissions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Solo Uber</strong></td>
+                        <td>1 Plateforme</td>
+                        <td>Moyen (limité)</td>
+                        <td class="strikethrough">30% (fixe)</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td><strong>Factory Eat Multi</strong></td>
+                        <td><strong>Uber + Deliveroo</strong></td>
+                        <td><strong>Double (x2)</strong></td>
+                        <td><strong>25-30% → Obj. 25%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- SECTION 2: TIMELINE -->
+    <section class="section" id="timeline" style="background:var(--bg-alt);">
+        <div class="container">
+            <div class="text-center fade-up" style="margin-bottom:50px;">
+                <h2>Votre Parcours vers les 25%</h2>
+                <p>Une stratégie réaliste basée sur la performance.</p>
+            </div>
+
+            <div class="step-nego-grid">
+                <!-- Step 1 -->
+                <div class="step-card fade-up">
+                    <div class="step-icon">1</div>
+                    <h4>J1 : Inscription Duo</h4>
+                    <p>On vous lance sur Uber Eats et Deliveroo. Taux standard de démarrage (25-30%). Configuration
+                        menus optimisés.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="step-card fade-up delay-100">
+                    <div class="step-icon">2</div>
+                    <h4>Mois 1 : Optimisation</h4>
+                    <p>On booste votre visibilité (photos HD, descriptions, promos d'ouverture). Les ventes décollent.
+                    </p>
+                </div>
+                <!-- Step 3 -->
+                <div class="step-card fade-up delay-200">
+                    <div class="step-icon">3</div>
+                    <h4>Mois 3 : Volume Roi</h4>
+                    <p>Vous atteignez le palier critique (+30 commandes/semaine). C'est le moment d'activer le levier.
+                    </p>
+                </div>
+                <!-- Step 4 -->
+                <div class="step-card fade-up delay-300">
+                    <div class="step-icon">4</div>
+                    <h4>Négo 25%</h4>
+                    <p>Nous contactons les account managers avec vos chiffres. Objectif : obtenir le taux chaîne (25%)
+                        ou l'exclusivité.</p>
+                </div>
+            </div>
+
+            <!-- Citation -->
+            <div class="partner-card fade-up" style="max-width:600px; margin:50px auto 0; text-align:center;">
+                <div class="partner-card-body">
+                    <p class="partner-quote" style="font-size:1.1rem; font-style:italic;">"Avec Factory Eat, j'ai eu +30
+                        commandes dès le premier mois grâce à Deliveroo en plus d'Uber. Là on attaque la négo pour
+                        passer à 25%."</p>
+                    <div class="partner-meta" style="margin-top:15px; font-weight:bold;">— Biba's Come, La Réole (33)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: SIMULATOR & GRAPH -->
+    <section class="section" id="simulator">
+        <div class="container">
+            <div class="two-col-grid reverse-mobile">
+
+                <!-- Graph -->
+                <div class="fade-up">
+                    <h3>Projection CA Mois 1-6</h3>
+                    <p style="margin-bottom:20px;">Impact du Multi-plateformes + Baisse commission.</p>
+                    <div class="chart-container"
+                        style="background:white; padding:20px; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.05);">
+                        <canvas id="multi-chart" height="250"></canvas>
+                    </div>
+                    <div class="testimonial-box"
+                        style="margin-top:30px; border-left:4px solid #00CCBC; padding-left:15px;">
+                        <p style="font-size:0.95rem;"><em>"Grâce à Factory Eat, je suis passé de 28% sur Deliveroo à 25%
+                                en exclusivité Uber après avoir prouvé mon volume. Ça change tout sur la marge."</em>
+                        </p>
+                        <strong>— Restaurant Partenaire (Anonyme)</strong>
+                    </div>
+                </div>
+
+                <!-- Form Simulator -->
+                <div class="contact-form-box fade-up delay-100">
+                    <h3>Calculez votre potentiel négo</h3>
+                    <p style="font-size:0.9rem; margin-bottom:20px;">On analyse votre ville et votre potentiel de
+                        volume.</p>
+                    <form class="contact-form" id="multi-sim-form">
+                        <div class="form-group">
+                            <label>Votre Ville</label>
+                            <input type="text" id="sim-ville" placeholder="Ex: Bordeaux" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Ventes estimées / jour</label>
+                            <select id="sim-ventes">
+                                <option value="15">Débutant (10-20)</option>
+                                <option value="30" selected>Intermédiaire (20-40)</option>
+                                <option value="50">Pro (50+)</option>
+                            </select>
+                        </div>
+                        <div class="form-group full">
+                            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+                                Analyser mon potentiel <span class="btn-arrow">→</span>
+                            </button>
+                        </div>
+                        <p style="font-size:0.75rem; color:#888; margin-top:10px; text-align:center;">Réponse indicative
+                            immédiate.</p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">Factory Eat</div>
+                    <p>Restaurant virtuel nouvelle génération. Nous boostons la visibilité de votre cuisine physique
+                        dans toute la France via Uber Eats & Deliveroo.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg></a>
+                        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="comment-ca-marche.html">Comment ça marche</a>
+                    <a href="partenaires.html">Nos partenaires</a>
+                    <a href="tarifs.html">Tarifs</a>
+                    <a href="offre-restaurants.html">Solution Restos</a>
+                    <a href="contact.html">Devenir partenaire</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Inscription & Négo</h4>
+                    <a href="offre-restaurants.html">Inscription Uber + Deliveroo</a>
+                    <a href="offre-restaurants.html">Négo commissions volume</a>
+                    <a href="offre-restaurants.html">-5% via Factory Eat</a>
+                    <a href="offre-restaurants.html">30 commandes/semaine</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Top Villes</h4>
+                    <a href="partenaires.html">Paris (15)</a>
+                    <a href="partenaires.html">Marseille (12)</a>
+                    <a href="partenaires.html">Toulouse (9)</a>
+                    <a href="partenaires.html">Lyon (8)</a>
+                    <a href="partenaires.html">La Réole ★</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Plateformes</h4>
+                    <div class="footer-platforms">
+                        <svg width="80" height="32" viewBox="0 0 80 32">
+                            <rect width="80" height="32" rx="6" fill="rgba(255,255,255,0.1)" /><text x="40" y="20"
+                                text-anchor="middle" fill="#95a5a6" font-family="Poppins" font-weight="700"
+                                font-size="10">Uber Eats</text>
+                        </svg>
+                        <svg width="80" height="32" viewBox="0 0 80 32">
+                            <rect width="80" height="32" rx="6" fill="rgba(255,255,255,0.1)" /><text x="40" y="20"
+                                text-anchor="middle" fill="#95a5a6" font-family="Poppins" font-weight="700"
+                                font-size="10">Deliveroo</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="mailto:hello@factoryeat.fr">hello@factoryeat.fr</a>
+                    <a href="tel:+33600000000">06 00 00 00 00</a>
+                    <a href="https://wa.me/33600000000">WhatsApp</a>
+                    <p style="margin-top:8px; font-size:0.82rem;">Aureilhan, France</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 Factory Eat — Tous droits réservés | <a href="#">Mentions légales</a> | <a href="#">CGV</a> |
+                Conforme RGPD
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
