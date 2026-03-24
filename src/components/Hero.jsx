@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Hero = () => {
+const Hero = ({ setPage }) => {
     const [sales, setSales] = useState(30);
     const [price, setPrice] = useState(12);
 
@@ -68,8 +68,8 @@ const Hero = () => {
                     </div>
                 </div>
                 <div style={{ marginTop: '2rem' }}>
-                    <button className="btn btn-primary" style={{ marginRight: '1rem' }}>Simuler Maintenant</button>
-                    <button className="btn" style={{ border: '1px solid white', color: 'white' }}>Contacter l'équipe</button>
+                    <button className="btn btn-primary" style={{ marginRight: '1rem' }} onClick={() => setPage('offre-restos')}>Voir l'offre en détail</button>
+                    <button className="btn" style={{ border: '1px solid white', color: 'white' }} onClick={() => setPage('contact')}>Contacter l'équipe</button>
                 </div>
             </div>
         </section>

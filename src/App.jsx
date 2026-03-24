@@ -66,14 +66,14 @@ function App() {
 
       {page === 'home' && (
         <>
-          <Hero />
+          <Hero setPage={setPage} />
           <Partners />
           <Timeline />
-          <Cuisines />
+          <Cuisines setPage={setPage} />
         </>
       )}
 
-      {page === 'offre-restos' && <OffreRestos />}
+      {page === 'offre-restos' && <OffreRestos setPage={setPage} />}
       {page === 'foodtrucks' && <Foodtrucks />}
       {page === 'partenaires' && <PartnersPage />}
       {page === 'comment' && <CommentPage />}

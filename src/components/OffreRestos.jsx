@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OffreRestos = () => {
+const OffreRestos = ({ setPage }) => {
     return (
         <div className="animate-fade-up">
             <section className="hero-overlay" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070')" }}>
@@ -16,7 +16,7 @@ const OffreRestos = () => {
                         </p>
                     </div><br/>
 
-                    <button className="btn btn-primary" style={{ marginTop: '2.5rem' }}>Démarrer le Boost</button>
+                    <button className="btn btn-primary" style={{ marginTop: '2.5rem' }} onClick={() => setPage('contact')}>Démarrer le Boost</button>
                 </div>
             </section>
 

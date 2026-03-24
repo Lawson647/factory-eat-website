@@ -9,7 +9,7 @@ const cuisines = [
     { name: 'Rôtisserie', img: 'https://images.unsplash.com/photo-1532597327993-277df9313b35?q=80&w=1500' },
 ];
 
-const Cuisines = () => {
+const Cuisines = ({ setPage }) => {
     return (
         <section className="container my-10 animate-fade-up">
             <h2 className="text-center" style={{ fontSize: '2.5rem', marginBottom: '2rem' }}>Toutes nos Cuisines</h2>
@@ -30,7 +30,7 @@ const Cuisines = () => {
             </div>
             <div style={{ textAlign: 'center', marginTop: '2rem' }}>
                 <h3>Rejoignez nos tops ! Multi-plateformes = négo commissions.</h3>
-                <button className="btn btn-primary" style={{ marginTop: '1rem' }}>Je Me Lance</button>
+                <button className="btn btn-primary" style={{ marginTop: '1rem' }} onClick={() => setPage('contact')}>Je Me Lance</button>
             </div>
         </section>
     );
