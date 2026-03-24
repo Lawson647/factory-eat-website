@@ -49,21 +49,21 @@ const Hero = () => {
                         <div style={{ marginTop: '1.5rem', padding: '10px', background: 'rgba(255,255,255,0.05)', borderRadius: '8px' }}>
                             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '5px' }}>
                                 <small>CA Généré en ligne (Prix majoré)</small>
-                                <strong>{Math.round(grossRevenueOnline).toLocaleString()} €</strong>
+                                <strong><span translate="no">{Math.round(grossRevenueOnline).toLocaleString()}</span> €</strong>
                             </div>
                             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '5px', color: '#aaa' }}>
                                 <small>Commission Uber (30%)</small>
-                                <span>- {uberCommission.toLocaleString()} €</span>
+                                <span>- <span translate="no">{uberCommission.toLocaleString()}</span> €</span>
                             </div>
                             <div style={{ display: 'flex', justifyContent: 'space-between', color: '#aaa' }}>
                                 <small>Frais Factory Eat (10%)</small>
-                                <span>- {factoryFee.toLocaleString()} €</span>
+                                <span>- <span translate="no">{factoryFee.toLocaleString()}</span> €</span>
                             </div>
                         </div>
 
                         <div style={{ marginTop: '1rem', padding: '15px', background: 'rgba(39, 174, 96, 0.2)', border: '1px solid #27AE60', borderRadius: '8px', textAlign: 'center' }}>
                             <small style={{ color: '#fff', fontWeight: 'bold' }}>Revenu net direct dans votre poche 🚀</small>
-                            <h2 style={{ color: '#27AE60', margin: '5px 0 0 0' }}>{netRevenue.toLocaleString()} € / mois</h2>
+                            <h2 style={{ color: '#27AE60', margin: '5px 0 0 0' }}><span translate="no">{netRevenue.toLocaleString()}</span> € / mois</h2>
                         </div>
                     </div>
                 </div>
