@@ -58,27 +58,33 @@ const Partners = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="card" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?q=80&w=1974')", backgroundSize: 'cover', position: 'relative' }}>
+                    <div className="card" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1606333664324-4ba20ec26e79?q=80&w=2070')", backgroundSize: 'cover', position: 'relative' }}>
                         <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.7)', borderRadius: '12px' }}></div>
                         <div style={{ position: 'relative', zIndex: 1, color: '#fff' }}>
-                            <h4>Sushi Tokyo</h4>
-                            <p style={{fontStyle: 'italic'}}>"Seulement +10% Factory Eat, multi-plateformes, CA x2 en 3 mois !"</p>
+                            <h4>Nems Marseille</h4>
+                            <p style={{fontStyle: 'italic', marginBottom: '8px'}}>"Le multi-plateformes a doublé notre zone de chalandise. Les nems partent comme des petits pains !"</p>
+                            <div style={{display: 'flex', gap: '5px', flexWrap: 'wrap'}}>
+                                <span style={{background: 'rgba(39, 174, 96, 0.2)', border: '1px solid #27AE60', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', color: '#27AE60'}}>+65% CA</span>
+                                <span style={{background: 'rgba(39, 174, 96, 0.2)', border: '1px solid #27AE60', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', color: '#27AE60'}}>Optimisé SEO</span>
+                            </div>
                         </div>
                     </div>
                     <div className="card" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2070')", backgroundSize: 'cover', position: 'relative' }}>
                         <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.7)', borderRadius: '12px' }}></div>
                         <div style={{ position: 'relative', zIndex: 1, color: '#fff' }}>
                             <h4>Pizzeria (Bordeaux)</h4>
-                            <p style={{fontStyle: 'italic'}}>"En tant que pizzeria, je ne pensais pas être éligible. Factory Eat a optimisé mon profil et mon CA a bondi de 35% le premier mois !"</p>
-                            <p style={{marginTop: '10px', fontSize: '0.9rem', color: '#ccc'}}>— Marco R.</p>
+                            <p style={{fontStyle: 'italic'}}>"CA qui bondit de 35% le premier mois !"</p>
                         </div>
                     </div>
-                    <div className="card" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2070')", backgroundSize: 'cover', position: 'relative' }}>
+                    <div className="card" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1598103442097-8b74394b95c6?q=80&w=2070')", backgroundSize: 'cover', position: 'relative' }}>
                         <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.7)', borderRadius: '12px' }}></div>
                         <div style={{ position: 'relative', zIndex: 1, color: '#fff' }}>
-                            <h4>Rôtisserie (Lyon)</h4>
-                            <p style={{fontStyle: 'italic'}}>"+40 commandes/semaine ! Factory Eat a boosté notre visibilité sans rien changer à nos recettes. Commission à 12%, top !"</p>
-                            <p style={{marginTop: '10px', fontSize: '0.9rem', color: '#ccc'}}>— Pierre L.</p>
+                            <h4>Grande Rôtisserie</h4>
+                            <p style={{fontStyle: 'italic', marginBottom: '8px'}}>"+40 commandes/semaine ! Visibilité boostée sans rien changer."</p>
+                            <div style={{display: 'flex', gap: '5px', flexWrap: 'wrap'}}>
+                                <span style={{background: '#FF6B35', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', color: '#fff'}}>Top Seller</span>
+                                <span style={{background: 'rgba(255, 107, 53, 0.2)', border: '1px solid #FF6B35', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', color: '#FF6B35'}}>Marge 100%</span>
+                            </div>
                         </div>
                     </div>
                 </div>
