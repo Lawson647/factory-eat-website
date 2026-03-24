@@ -178,6 +178,9 @@ h4 {
   cursor: pointer;
   color: #fff;
   transition: color 0.2s;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 .nav-links li:hover {
   color: var(--primary);
