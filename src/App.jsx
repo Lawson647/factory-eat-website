@@ -48,10 +48,10 @@ const CommentPage = () => (
 const Footer = () => (
   <footer style={{ background: '#000', padding: '3rem 0', marginTop: '4rem', borderTop: '1px solid #333' }}>
     <div className="container" style={{ textAlign: 'center', color: '#888' }}>
-      <h3>Factory Eat</h3>
+      <h3 translate="no" style={{ color: '#FF6B35' }}>Factory Eat</h3>
       <p>Boostez votre cuisine sur Uber Eats & Deliveroo.</p>
       <div style={{ marginTop: '2rem' }}>
-        &copy; 2026 Factory Eat. Tous droits réservés.
+        &copy; 2026 <span translate="no">Factory Eat</span>. Tous droits réservés.
       </div>
     </div>
   </footer>
