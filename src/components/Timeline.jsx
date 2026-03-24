@@ -5,7 +5,6 @@ const Timeline = () => {
         <section className="container my-10 animate-fade-up" style={{ textAlign: 'center' }}>
             <h2>Comment Ça Marche ?</h2>
             <div className="timeline-container" style={{ position: 'relative', marginTop: '2rem' }}>
-                <div style={{ position: 'absolute', width: '4px', height: '100%', background: '#FF6B35', left: '50%', transform: 'translateX(-50%)', opacity: 0.3 }}></div>
                 <div className="timeline-item" style={{ marginBottom: '2rem', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <div className="card" style={{ width: '300px', background: '#2C2C2C', borderLeft: '4px solid #FF6B35' }}>
                         <h3>1. Inscription Multi-Plateforme</h3>
