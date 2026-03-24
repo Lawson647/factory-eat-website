@@ -24,17 +24,23 @@ const Hero = () => {
                         <h3>Simulateur de Revenus</h3>
                         <p style={{ fontSize: '0.9rem', color: '#aaa', marginBottom: '1rem' }}>Basé sur le prix de votre carte en restaurant.</p>
                         <label style={{ display: 'block', margin: '10px 0' }}>
-                            Ventes / jour: {sales}
+                            <div style={{ marginBottom: '8px', display: 'flex', justifyContent: 'space-between' }}>
+                                <span>Ventes / jour:</span>
+                                <strong translate="no">{sales}</strong>
+                            </div>
                             <input
-                                type="range" min="10" max="100" value={sales}
+                                type="range" min="1" max="500" value={sales}
                                 onChange={(e) => setSales(Number(e.target.value))}
                                 style={{ width: '100%', accentColor: '#FF6B35' }}
                             />
                         </label>
                         <label style={{ display: 'block', margin: '10px 0' }}>
-                            Ticket Moyen (en salle): {price}€
+                            <div style={{ marginBottom: '8px', display: 'flex', justifyContent: 'space-between' }}>
+                                <span>Ticket Moyen (en salle):</span>
+                                <strong translate="no">{price} €</strong>
+                            </div>
                             <input
-                                type="range" min="8" max="30" value={price}
+                                type="range" min="5" max="50" value={price}
                                 onChange={(e) => setPrice(Number(e.target.value))}
                                 style={{ width: '100%', accentColor: '#FF6B35' }}
                             />
