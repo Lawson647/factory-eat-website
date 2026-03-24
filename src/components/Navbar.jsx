@@ -20,7 +20,7 @@ const Navbar = ({ setPage }) => {
             alignItems: 'center',
             borderBottom: '1px solid rgba(255,255,255,0.05)'
         }}>
-            <div style={{ fontWeight: 'bold', fontSize: '1.5rem', color: '#fff', cursor: 'pointer', zIndex: 1001 }} onClick={() => handleNav('home')}>
+            <div translate="no" style={{ fontWeight: 'bold', fontSize: '1.5rem', color: '#fff', cursor: 'pointer', zIndex: 1001 }} onClick={() => handleNav('home')}>
                 Factory Eat <span style={{ color: '#FF6B35' }}>Multi</span>
             </div>
             
