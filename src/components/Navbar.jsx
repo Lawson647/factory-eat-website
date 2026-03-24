@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Navbar = ({ setPage }) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleNav = (page) => {
+        setPage(page);
+        setIsOpen(false);
+    };
+
     return (
         <nav style={{
             background: 'var(--dark)',
@@ -13,23 +20,25 @@ const Navbar = ({ setPage }) => {
             alignItems: 'center',
             borderBottom: '1px solid rgba(255,255,255,0.05)'
         }}>
-            <div style={{ fontWeight: 'bold', fontSize: '1.5rem', color: '#fff', cursor: 'pointer' }} onClick={() => setPage('home')}>
+            <div style={{ fontWeight: 'bold', fontSize: '1.5rem', color: '#fff', cursor: 'pointer', zIndex: 1001 }} onClick={() => handleNav('home')}>
                 Factory Eat <span style={{ color: '#FF6B35' }}>Multi</span>
             </div>
-            <ul style={{ display: 'flex', gap: '2rem', listStyle: 'none', margin: 0 }}>
-                <li onClick={() => setPage('home')} style={{ cursor: 'pointer', color: '#fff' }}>Accueil</li>
-                <li onClick={() => setPage('offre-restos')} style={{ cursor: 'pointer', color: '#fff' }}>Offre Restos</li>
-                <li onClick={() => setPage('foodtrucks')} style={{ cursor: 'pointer', color: '#fff' }}>Foodtrucks</li>
-                <li onClick={() => setPage('partenaires')} style={{ cursor: 'pointer', color: '#fff' }}>Partenaires</li>
-                <li onClick={() => setPage('comment')} style={{ cursor: 'pointer', color: '#fff' }}>Comment ça marche</li>
-                <li onClick={() => setPage('blog')} style={{ cursor: 'pointer', color: '#fff' }}>Blog</li>
-                <li onClick={() => setPage('contact')} style={{
-                    background: '#FF6B35',
-                    padding: '0.5rem 1rem',
-                    borderRadius: '4px',
-                    cursor: 'pointer',
-                    color: '#fff'
-                }}>
+            
+            {/* Hamburger icon for mobile */}
+            <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
+                <span className={isOpen ? 'line open' : 'line'}></span>
+                <span className={isOpen ? 'line open' : 'line'}></span>
+                <span className={isOpen ? 'line open' : 'line'}></span>
+            </div>
+            
+            <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
+                <li onClick={() => handleNav('home')}>Accueil</li>
+                <li onClick={() => handleNav('offre-restos')}>Offre Restos</li>
+                <li onClick={() => handleNav('foodtrucks')}>Foodtrucks</li>
+                <li onClick={() => handleNav('partenaires')}>Partenaires</li>
+                <li onClick={() => handleNav('comment')}>Comment ça marche</li>
+                <li onClick={() => handleNav('blog')}>Blog</li>
+                <li onClick={() => handleNav('contact')} className="nav-contact-btn">
                     Contact
                 </li>
             </ul>
