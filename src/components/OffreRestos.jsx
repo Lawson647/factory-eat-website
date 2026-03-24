@@ -7,7 +7,16 @@ const OffreRestos = () => {
                 <div className="container">
                     <h1>Offre Restaurants : Boostez votre CA</h1>
                     <p style={{ fontSize: '1.2rem', marginTop: '1rem' }}>Multi-plateformes Uber Eats + Deliveroo. <br /> Uber Eats prend <b>30%</b> · Factory Eat ajoute <b>+10%</b> de frais de service · Le restaurant conserve <b>90%</b> de notre marge.</p>
-                    <button className="btn btn-primary" style={{ marginTop: '2rem' }}>Démarrer le Boost</button>
+                    
+                    <div style={{ marginTop: '2rem', padding: '1.5rem', background: 'rgba(39, 174, 96, 0.15)', borderLeft: '4px solid #27AE60', borderRadius: '8px', textAlign: 'left', display: 'inline-block', maxWidth: '800px' }}>
+                        <h4 style={{ color: '#27AE60', marginBottom: '0.5rem', fontSize: '1.3rem' }}>💡 Le Secret de la Rentabilité : Ajustement des Prix</h4>
+                        <p style={{ color: '#fff', fontSize: '1.1rem', margin: 0 }}>
+                            Pour annuler l'impact des commissions, <strong>nous répercutons systématiquement les 30% sur les prix de vente en ligne.</strong> <br/>
+                            <span style={{ color: '#ccc', fontStyle: 'italic', display: 'block', marginTop: '8px' }}>👉 Exemple : Un burger vendu 10€ dans votre restaurant physique sera affiché à 13€ sur les applications. La commission est ainsi totalement absorbée, préservant 100% de votre marge !</span>
+                        </p>
+                    </div><br/>
+
+                    <button className="btn btn-primary" style={{ marginTop: '2.5rem' }}>Démarrer le Boost</button>
                 </div>
             </section>
 

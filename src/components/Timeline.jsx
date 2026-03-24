@@ -20,8 +20,8 @@ const Timeline = () => {
                 </div>
                 <div className="timeline-item" style={{ marginBottom: '2rem', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <div className="card" style={{ width: '300px', background: '#2C2C2C', borderLeft: '4px solid #FF6B35' }}>
-                        <h3>3. Modèle Transparent</h3>
-                        <p>Uber Eats : 30% standard. Factory Eat ajoute 10% de frais de service. Pas de surprise.</p>
+                        <h3>3. Prix Ajustés (0 Charge)</h3>
+                        <p>Les prix en ligne sont majorés pour absorber les 30% d'Uber. <b>Ex: Un burger à 10€ en salle sera vendu 13€ sur l'app.</b> Le restaurant ne perd aucune marge !</p>
                     </div>
                 </div>
                 <div className="timeline-item" style={{ marginBottom: '2rem', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
