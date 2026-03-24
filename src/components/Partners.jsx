@@ -76,7 +76,7 @@ const Partners = () => {
                             <p style={{fontStyle: 'italic'}}>"CA qui bondit de 35% le premier mois !"</p>
                         </div>
                     </div>
-                    <div className="card" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1598103442097-8b74394b95c6?q=80&w=2070')", backgroundSize: 'cover', position: 'relative' }}>
+                    <div className="card" style={{ backgroundImage: "url('/img/rotisserie.png')", backgroundSize: 'cover', position: 'relative' }}>
                         <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.7)', borderRadius: '12px' }}></div>
                         <div style={{ position: 'relative', zIndex: 1, color: '#fff' }}>
                             <h4>Grande Rôtisserie</h4>
