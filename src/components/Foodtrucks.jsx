@@ -5,7 +5,7 @@ const Foodtrucks = () => {
         <div className="animate-fade-up">
             <section className="hero-overlay" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?q=80&w=2070')" }}>
                 <div className="container">
-                    <h1 style={{ fontSize: '3rem', marginBottom: '1rem', color: '#fff' }}>Foodtrucks : Mobilité & Liberté</h1>
+                    <h1 style={{ fontSize: '3rem', marginBottom: '1rem', color: '#fff' }}><span translate="no">Factory Eat</span> Foodtrucks : Mobilité & Liberté</h1>
                     <p style={{ fontSize: '1.5rem', opacity: 0.9 }}>Soyez visible sur Uber Eats & Deliveroo partout où vous allez.</p>
                 </div>
             </section>

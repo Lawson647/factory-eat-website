@@ -37,7 +37,15 @@ const Contact = () => {
                             <label>Téléphone</label>
                             <input type="tel" style={{ width: '100%', padding: '0.8rem', background: '#333', border: '1px solid #444', color: 'white', borderRadius: '4px' }} />
                         </div>
-                        <button className="btn btn-primary" style={{ width: '100%' }}>Envoyer</button>
+                        <div style={{ marginBottom: '1rem' }}>
+                            <label>Adresse du Restaurant / Foodtruck</label>
+                            <input type="text" placeholder="Ex: 12 rue de la Paix, Paris" style={{ width: '100%', padding: '0.8rem', background: '#333', border: '1px solid #444', color: 'white', borderRadius: '4px' }} />
+                        </div>
+                        <div style={{ marginBottom: '1rem' }}>
+                            <label>Votre Message / Précisions</label>
+                            <textarea rows="4" style={{ width: '100%', padding: '0.8rem', background: '#333', border: '1px solid #444', color: 'white', borderRadius: '4px' }}></textarea>
+                        </div>
+                        <button className="btn btn-primary" style={{ width: '100%' }}>Envoyer ma demande</button>
                     </form>
                 </div>
                 <div style={{ height: '400px', borderRadius: '12px', overflow: 'hidden' }}>
