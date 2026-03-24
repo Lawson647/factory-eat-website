@@ -9,6 +9,7 @@ import Foodtrucks from './components/Foodtrucks';
 import Contact from './components/Contact';
 import Blog from './components/Blog';
 import Map from './components/Map';
+import FeaturedPartner from './components/FeaturedPartner';
 import './App.css';
 
 // Components for dedicated pages
@@ -17,7 +18,11 @@ const PartnersPage = () => (
     <div className="hero-overlay" style={{ minHeight: '40vh', backgroundImage: "linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1556910103-1c02745a30bf?q=80&w=2070')" }}>
       <div className="container"><h1>Nos Partenaires</h1></div>
     </div>
+    
+    <FeaturedPartner />
+
     <Partners /> {/* The chart and success stories */}
+    
     <div className="container my-10">
       <h2 className="text-center" style={{ marginBottom: '1rem' }}>Présents partout en France</h2>
       {/* Interactive France Map with data from Factory Eat network */}
