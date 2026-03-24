@@ -5,7 +5,7 @@ import { Bar } from 'react-chartjs-2';
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const data = {
-    labels: ['La Réole Grill', 'Sushi Tokyo', 'Nems Marseille', 'Asian Truck', 'Bao Street'],
+    labels: ["Biba's Come (La Réole)", 'Sushi Tokyo', 'Nems Marseille', 'Asian Truck', 'Bao Street'],
     datasets: [
         {
             label: 'CA Mensuel (Mois 1)',
@@ -45,21 +45,42 @@ const Partners = () => {
                     <Bar options={options} data={data} />
                 </div>
                 <div className="grid-2" style={{ gap: '1rem' }}>
-                    <div className="card" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2070')", backgroundSize: 'cover', position: 'relative' }}>
+                    <div className="card" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=2070')", backgroundSize: 'cover', position: 'relative' }}>
                         <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.7)', borderRadius: '12px' }}></div>
-                        <div style={{ position: 'relative', zIndex: 1 }}>
-                            <h4>La Réole Grill</h4>
-                            <p>"Passé de 0 à 4k€/mois grâce au multi-plateforme !"</p>
+                        <div style={{ position: 'relative', zIndex: 1, color: '#fff' }}>
+                            <h4>Biba's Come</h4>
+                            <p style={{fontStyle: 'italic', marginBottom: '8px'}}>"Factory Eat a été le tremplin idéal pour nos viandes locales ! En 2 semaines, nos commandes sur Uber Eats ont explosé."</p>
+                            <p style={{fontSize: '0.85rem', color: '#ccc', marginBottom: '16px'}}>📍 Foodtruck Grillades & Rôtisserie à La Réole, Gironde</p>
+                            <div style={{display: 'flex', gap: '10px', flexWrap: 'wrap'}}>
+                                <span style={{background: 'rgba(255, 107, 53, 0.2)', border: '1px solid #FF6B35', padding: '4px 8px', borderRadius: '4px', fontSize: '0.8rem', color: '#FF6B35'}}>+30% CA</span>
+                                <span style={{background: 'rgba(255, 107, 53, 0.2)', border: '1px solid #FF6B35', padding: '4px 8px', borderRadius: '4px', fontSize: '0.8rem', color: '#FF6B35'}}>Commission 15%</span>
+                                <span style={{background: 'rgba(255, 107, 53, 0.2)', border: '1px solid #FF6B35', padding: '4px 8px', borderRadius: '4px', fontSize: '0.8rem', color: '#FF6B35'}}>+45 commandes/semaine</span>
+                            </div>
                         </div>
                     </div>
                     <div className="card" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?q=80&w=1974')", backgroundSize: 'cover', position: 'relative' }}>
                         <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.7)', borderRadius: '12px' }}></div>
-                        <div style={{ position: 'relative', zIndex: 1 }}>
+                        <div style={{ position: 'relative', zIndex: 1, color: '#fff' }}>
                             <h4>Sushi Tokyo</h4>
-                            <p>"Seulement +10% Factory Eat, multi-plateformes, CA x2 en 3 mois !"</p>
+                            <p style={{fontStyle: 'italic'}}>"Seulement +10% Factory Eat, multi-plateformes, CA x2 en 3 mois !"</p>
                         </div>
                     </div>
-                    {/* More cards can be added here */}
+                    <div className="card" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2070')", backgroundSize: 'cover', position: 'relative' }}>
+                        <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.7)', borderRadius: '12px' }}></div>
+                        <div style={{ position: 'relative', zIndex: 1, color: '#fff' }}>
+                            <h4>Pizzeria (Bordeaux)</h4>
+                            <p style={{fontStyle: 'italic'}}>"En tant que pizzeria, je ne pensais pas être éligible. Factory Eat a optimisé mon profil et mon CA a bondi de 35% le premier mois !"</p>
+                            <p style={{marginTop: '10px', fontSize: '0.9rem', color: '#ccc'}}>— Marco R.</p>
+                        </div>
+                    </div>
+                    <div className="card" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2070')", backgroundSize: 'cover', position: 'relative' }}>
+                        <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.7)', borderRadius: '12px' }}></div>
+                        <div style={{ position: 'relative', zIndex: 1, color: '#fff' }}>
+                            <h4>Rôtisserie (Lyon)</h4>
+                            <p style={{fontStyle: 'italic'}}>"+40 commandes/semaine ! Factory Eat a boosté notre visibilité sans rien changer à nos recettes. Commission à 12%, top !"</p>
+                            <p style={{marginTop: '10px', fontSize: '0.9rem', color: '#ccc'}}>— Pierre L.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

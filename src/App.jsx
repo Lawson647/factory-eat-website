@@ -8,6 +8,7 @@ import OffreRestos from './components/OffreRestos';
 import Foodtrucks from './components/Foodtrucks';
 import Contact from './components/Contact';
 import Blog from './components/Blog';
+import Map from './components/Map';
 import './App.css';
 
 // Components for dedicated pages
@@ -18,9 +19,9 @@ const PartnersPage = () => (
     </div>
     <Partners /> {/* The chart and success stories */}
     <div className="container my-10">
-      <h2 className="text-center">Présents partout en France</h2>
-      {/* Reusing Contact map for visualization if needed, or placeholder */}
-      <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2074" alt="Map Placeholder" style={{ width: '100%', borderRadius: '12px', marginTop: '2rem' }} />
+      <h2 className="text-center" style={{ marginBottom: '1rem' }}>Présents partout en France</h2>
+      {/* Interactive France Map with data from Factory Eat network */}
+      <Map />
     </div>
   </div>
 );

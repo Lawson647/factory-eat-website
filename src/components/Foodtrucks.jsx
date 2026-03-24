@@ -22,7 +22,13 @@ const Foodtrucks = () => {
                         </ul>
                     </div>
                     <div className="card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#27AE60', color: 'white' }}>
-                        <h3>+30% de CA via Applications Mobiles</h3>
+                        <div>
+                            <h3 style={{ textAlign: 'center', marginBottom: '1rem' }}>+30% de CA via Applications Mobiles</h3>
+                            <div style={{ background: 'rgba(255,255,255,0.1)', padding: '1.5rem', borderRadius: '12px', marginTop: '1rem' }}>
+                                <p style={{ fontStyle: 'italic', fontSize: '1.1rem', marginBottom: '1rem' }}>"Avec mon foodtruck asiatique à La Réole, je change de spot tous les midis. Factory Eat gère la mise à jour Uber. J'ai pris +25 commandes/jour !"</p>
+                                <p style={{ fontWeight: 'bold' }}>— Foodtruck "Le Dragon", La Réole (33)</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
