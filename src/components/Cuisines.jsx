@@ -3,13 +3,13 @@ import React from 'react';
 const cuisines = [
     { name: 'Burgers', img: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1500' },
     { name: 'Sushis Japonais', img: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?q=80&w=1500' },
-    { name: 'Nems Chinois', img: 'https://images.unsplash.com/photo-1606333664324-4ba20ec26e79?q=80&w=1500' },
+    { name: 'Nems Chinois', img: '/img/nems.png' },
     { name: 'Poké / Bao', img: 'https://images.unsplash.com/photo-1546069901-d5bfd2cbfb1f?q=80&w=1500' },
     { name: 'Foodtrucks', img: 'https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?q=80&w=1500' },
     { name: 'Rôtisserie', img: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?q=80&w=1500' },
-    { name: 'Spécialités Portugaises', img: 'https://images.unsplash.com/photo-1544148103-0773bf10dca1?q=80&w=1500' },
+    { name: 'Spécialités Portugaises', img: '/img/portugais.png' },
     { name: 'Tacos Français', img: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=1500' },
-    { name: 'Kebab Gourmand', img: 'https://images.unsplash.com/photo-1529193591184-b1d58b34ecdf?q=80&w=1500' },
+    { name: 'Kebab Gourmand', img: '/img/kebab.png' },
 ];
 
 const Cuisines = ({ setPage }) => {
