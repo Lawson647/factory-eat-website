@@ -14,7 +14,7 @@ const FeaturedPartner = ({ partner }) => {
             { label: "+45 commandes/semaine", color: "#FF6B35" }
         ],
         quote: "Factory Eat a été le tremplin idéal pour nos viandes locales ! En 2 semaines, nos commandes sur Uber Eats ont explosé. Le meilleur investissement qu'on ait fait.",
-        facebook: "https://www.facebook.com/bibascome/",
+        facebook: "https://www.facebook.com/profile.php?id=61581283250102",
         mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45000!2d-0.03!3d44.58!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd552c5f9a9a9a9%3A0x0!2sLa+R%C3%A9ole!5e0!3m2!1sfr!2sfr!4v1"
     };
 

@@ -63,7 +63,7 @@ const Partners = () => {
                                 <span style={{background: 'rgba(255, 107, 53, 0.2)', border: '1px solid #FF6B35', padding: '3px 7px', borderRadius: '4px', fontSize: '0.75rem', color: '#FF6B35'}}>Commission 15%</span>
                             </div>
                             <div style={{display: 'flex', gap: '12px', alignItems: 'center'}}>
-                                <a href="https://www.facebook.com/bibascome/" target="_blank" rel="noopener noreferrer" style={{color: '#FF6B35'}} title="Voir leur Facebook">
+                                <a href="https://www.facebook.com/profile.php?id=61581283250102" target="_blank" rel="noopener noreferrer" style={{color: '#FF6B35'}} title="Voir leur Facebook">
                                     {facebookIcon}
                                 </a>
                                 <img src="https://scontent-cdg4-1.xx.fbcdn.net/v/t39.30808-6/577069038_122110887489042775_7143367543133135439_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=2a1932&_nc_ohc=l66OYB-MEk0Q7kNvwHINNkP&_nc_oc=Adp0juWfuchUk_fmPN8P1jwLKzJU1mk47em74GdHZ150UTzVn-NxLKoYQH_qEIucdFT5Q6s34U2dhPRygZLkze9i&_nc_zt=23&_nc_ht=scontent-cdg4-1.xx&_nc_gid=eZKRIIukvzNySeuuwaYpdw&_nc_ss=7a30f&oh=00_Afwsz49OZSOs-S53vVHOLSMFUJjvOOjqb5UCqmYU2SPjGw&oe=69C9E7C1" alt="Signature Biba's" style={{width: '40px', height: '40px', borderRadius: '50%', border: '2px solid #FF6B35', objectFit: 'cover'}} />
