@@ -41,13 +41,20 @@ const Map = () => {
         { lat: 48.1173, lng: -1.6778, name: 'Rennes', count: 4, type: 'standard' },
         { lat: 43.1242, lng: -0.0014, name: 'Tarbes', count: 2, type: 'standard' },
         { lat: 43.2333, lng: 0.0833, name: 'Aureilhan', count: 1, type: 'standard' },
-        { lat: 44.58, lng: -0.03, name: 'La Réole', count: 1, type: 'special' }
+        { lat: 44.58, lng: -0.03, name: 'La Réole', count: 1, type: 'special' },
+        { lat: 44.202, lng: -1.229, name: 'Mimizan Ville', count: 1, type: 'folies' }
     ];
+
+    const foliesIcon = L.divIcon({
+        html: '<div style="font-size:24px; text-shadow:0 2px 5px rgba(0,0,0,0.2);">☕</div>',
+        iconSize: [24, 24],
+        className: ''
+    });
 
     return (
         <div style={{ width: '100%', height: '500px', borderRadius: '12px', marginTop: '2rem', position: 'relative', zIndex: 1 }}>
             <style dangerouslySetInnerHTML={{__html: `@keyframes pulse-emoji { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }`}} />
-            <MapContainer center={[46.5, 2.5]} zoom={6} scrollWheelZoom={false} style={{ width: '100%', height: '100%', borderRadius: '12px', zIndex: 1 }}>
+            <MapContainer center={[44.5, -0.5]} zoom={8} scrollWheelZoom={false} style={{ width: '100%', height: '100%', borderRadius: '12px', zIndex: 1 }}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -58,16 +65,22 @@ const Map = () => {
                     if (c.type === 'truck') { icon = truckIcon; extra = <><br/><em>Spécial Foodtrucks !</em></>; }
                     else if (c.type === 'sushi') { icon = sushiIcon; extra = <><br/><em>Spécial Asian / Sushi !</em></>; }
                     else if (c.type === 'special') { icon = specialIcon; }
+                    else if (c.type === 'folies') { icon = foliesIcon; }
 
                     return (
                         <Marker key={i} position={[c.lat, c.lng]} icon={icon}>
                             <Popup>
                                 {c.type === 'special' ? (
                                     <>
-                                        <strong style={{color: '#FF6B35'}}>★ Premier partenaire Truck !</strong><br/>
+                                        <strong style={{color: '#FF6B35'}}>★ Rôtisserie & Grillades</strong><br/>
                                         <strong>Biba's Come</strong><br/>
-                                        La Réole (Gironde)<br/>
-                                        <span style={{color: '#FF6B35', fontWeight: 600, cursor: 'pointer'}}>Voir succès →</span>
+                                        La Réole (Gironde)
+                                    </>
+                                ) : c.type === 'folies' ? (
+                                    <>
+                                        <strong style={{color: '#FF6B35'}}>★ Café-Restaurant & Planchas</strong><br/>
+                                        <strong>Folies Café</strong><br/>
+                                        Mimizan Ville (Landes)
                                     </>
                                 ) : (
                                     <>

@@ -17,9 +17,9 @@ const PartnersPage = () => {
   const foliesData = {
     name: "Le Folie’s Café Mimizan",
     tag: "⭐ Nouvelle Star Landes",
-    location: "📍 Mimizan Plage, Landes",
-    img: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=600&fit=crop&q=80",
-    description: "Café-Restaurant & Planchas situé à Mimizan Plage. Réputé pour son ambiance conviviale, ses planches apéro et son poulet Churrasco. Un modèle de réussite locale boosté par Factory Eat.",
+    location: "📍 Mimizan Ville (Bourg), Landes",
+    img: "https://scontent-cdg4-1.xx.fbcdn.net/v/t39.30808-6/653474327_122164874546905218_5711820587859352252_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=7b2446&_nc_ohc=voTzB1elE0wQ7kNvwEOrr32&_nc_oc=Adrgy7_UJdic3gshQFivCJS7zZAyj0NjVdORYA_E6IXddkk5HUKu0Xi3oygK-zrDV3KuF2ZdUAEmJlGdOyNEY--r&_nc_zt=23&_nc_ht=scontent-cdg4-1.xx&_nc_gid=cn4EvtFT6xtV3R7bzDSu5A&_nc_ss=7a30f&oh=00_Afzt4Luw-4embyFtTFXulSn-SgS0dFzM_yCpIS7OG8df5Q&oe=69CA0DBF",
+    description: "Café-Restaurant & Planchas situé au cœur de Mimizan Ville. Réputé pour son ambiance conviviale, ses planches apéro et ses burgers généreux. Un modèle de réussite locale boosté par Factory Eat.",
     stats: [
         { label: "+35% CA Apéro", color: "#FF6B35" },
         { label: "Négo commissions -10%", color: "#FF6B35" },

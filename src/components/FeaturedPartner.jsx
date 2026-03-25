@@ -61,19 +61,6 @@ const FeaturedPartner = ({ partner }) => {
                     </div>
                 </div>
             </div>
-
-            <div style={{ marginTop: '2rem', borderRadius: '12px', overflow: 'hidden', height: '350px' }}>
-                <iframe
-                    title={`Carte Google Maps ${data.name}`}
-                    src={data.mapSrc}
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-            </div>
         </section>
     );
 };
