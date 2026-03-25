@@ -10,6 +10,8 @@ const cuisines = [
     { name: 'Spécialités Portugaises', img: '/img/portugais.png' },
     { name: 'Tacos Français', img: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=1500' },
     { name: 'Kebab Gourmand', img: '/img/kebab.png' },
+    { name: 'Cuisine Turque', img: 'https://images.unsplash.com/photo-1544124499-58912cbddaad?q=80&w=1500' },
+    { name: 'Saveurs Indiennes', img: 'https://images.unsplash.com/photo-1585932231552-058210b4200e?q=80&w=1500' },
 ];
 
 const Cuisines = ({ setPage }) => {
