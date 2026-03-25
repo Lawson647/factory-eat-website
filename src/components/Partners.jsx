@@ -87,15 +87,16 @@ const Partners = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="card" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2070')", backgroundSize: 'cover', position: 'relative' }}>
+                    <div className="card" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2070')", backgroundSize: 'cover', position: 'relative' }}>
                         <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.7)', borderRadius: '12px' }}></div>
                         <div style={{ position: 'relative', zIndex: 1, color: '#fff' }}>
                             <h4>Folies Café</h4>
-                            <p style={{fontStyle: 'italic', marginBottom: '8px'}}>"À Mimizan, Factory Eat nous aide à rester au top toute l'année via la livraison."</p>
-                            <p style={{fontSize: '0.85rem', color: '#ccc', marginBottom: '16px'}}>📍 Brasserie & Cocktails à Mimizan Plage</p>
-                            <div style={{display: 'flex', gap: '5px', flexWrap: 'wrap'}}>
-                                <span style={{background: 'rgba(255, 107, 53, 0.2)', border: '1px solid #FF6B35', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', color: '#FF6B35'}}>Saisonnalité Optimisée</span>
-                                <span style={{background: 'rgba(255, 107, 53, 0.2)', border: '1px solid #FF6B35', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', color: '#FF6B35'}}>Négo 20%</span>
+                            <p style={{fontStyle: 'italic', marginBottom: '8px'}}>"À Mimizan, nos planches apéro et notre poulet Churrasco sont devenus des best-sellers sur les apps grâce à Factory Eat !"</p>
+                            <p style={{fontSize: '0.85rem', color: '#ccc', marginBottom: '16px'}}>📍 Café-Restaurant & Planchas à Mimizan Plage, Landes</p>
+                            <div style={{display: 'flex', gap: '8px', flexWrap: 'wrap'}}>
+                                <span style={{background: 'rgba(255, 107, 53, 0.2)', border: '1px solid #FF6B35', padding: '3px 7px', borderRadius: '4px', fontSize: '0.75rem', color: '#FF6B35'}}>+35% CA Apéro</span>
+                                <span style={{background: 'rgba(255, 107, 53, 0.2)', border: '1px solid #FF6B35', padding: '3px 7px', borderRadius: '4px', fontSize: '0.75rem', color: '#FF6B35'}}>Négo 20%</span>
+                                <span style={{background: 'rgba(255, 107, 53, 0.2)', border: '1px solid #FF6B35', padding: '3px 7px', borderRadius: '4px', fontSize: '0.75rem', color: '#FF6B35'}}>Top Board</span>
                             </div>
                         </div>
                     </div>
