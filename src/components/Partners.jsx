@@ -51,10 +51,15 @@ const Partners = () => {
                             <h4>Biba's Come</h4>
                             <p style={{fontStyle: 'italic', marginBottom: '8px'}}>"Factory Eat a été le tremplin idéal pour nos viandes locales ! En 2 semaines, nos commandes sur Uber Eats ont explosé."</p>
                             <p style={{fontSize: '0.85rem', color: '#ccc', marginBottom: '16px'}}>📍 Foodtruck Grillades & Rôtisserie à La Réole, Gironde</p>
-                            <div style={{display: 'flex', gap: '10px', flexWrap: 'wrap'}}>
+                            <div style={{display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '16px'}}>
                                 <span style={{background: 'rgba(255, 107, 53, 0.2)', border: '1px solid #FF6B35', padding: '4px 8px', borderRadius: '4px', fontSize: '0.8rem', color: '#FF6B35'}}>+30% CA</span>
                                 <span style={{background: 'rgba(255, 107, 53, 0.2)', border: '1px solid #FF6B35', padding: '4px 8px', borderRadius: '4px', fontSize: '0.8rem', color: '#FF6B35'}}>Commission 15%</span>
                                 <span style={{background: 'rgba(255, 107, 53, 0.2)', border: '1px solid #FF6B35', padding: '4px 8px', borderRadius: '4px', fontSize: '0.8rem', color: '#FF6B35'}}>+45 commandes/semaine</span>
+                            </div>
+                            <div style={{display: 'flex', gap: '12px'}}>
+                                <a href="https://www.facebook.com/bibascome/" target="_blank" rel="noopener noreferrer" style={{color: '#fff', opacity: '0.8'}} title="Voir leur Facebook">
+                                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.34-.86 9.4-5.46 9.4-10.95z"></path></svg>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -93,10 +98,15 @@ const Partners = () => {
                             <h4>Folies Café</h4>
                             <p style={{fontStyle: 'italic', marginBottom: '8px'}}>"À Mimizan, nos planches apéro et notre poulet Churrasco sont devenus des best-sellers sur les apps grâce à Factory Eat !"</p>
                             <p style={{fontSize: '0.85rem', color: '#ccc', marginBottom: '16px'}}>📍 Café-Restaurant & Planchas à Mimizan Plage, Landes</p>
-                            <div style={{display: 'flex', gap: '8px', flexWrap: 'wrap'}}>
+                            <div style={{display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '16px'}}>
                                 <span style={{background: 'rgba(255, 107, 53, 0.2)', border: '1px solid #FF6B35', padding: '3px 7px', borderRadius: '4px', fontSize: '0.75rem', color: '#FF6B35'}}>+35% CA Apéro</span>
                                 <span style={{background: 'rgba(255, 107, 53, 0.2)', border: '1px solid #FF6B35', padding: '3px 7px', borderRadius: '4px', fontSize: '0.75rem', color: '#FF6B35'}}>Négo 20%</span>
                                 <span style={{background: 'rgba(255, 107, 53, 0.2)', border: '1px solid #FF6B35', padding: '3px 7px', borderRadius: '4px', fontSize: '0.75rem', color: '#FF6B35'}}>Top Board</span>
+                            </div>
+                            <div style={{display: 'flex', gap: '12px'}}>
+                                <a href="https://fr-fr.facebook.com/p/Folies-Caf%C3%A9-Mimizan-100063640244673/" target="_blank" rel="noopener noreferrer" style={{color: '#fff', opacity: '0.8'}} title="Voir leur Facebook">
+                                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.34-.86 9.4-5.46 9.4-10.95z"></path></svg>
+                                </a>
                             </div>
                         </div>
                     </div>
