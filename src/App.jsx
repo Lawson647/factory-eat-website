@@ -62,7 +62,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <Navbar setPage={setPage} />
+      <Navbar setPage={setPage} currentPage={page} />
 
       {page === 'home' && (
         <>
